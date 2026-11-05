@@ -26,6 +26,17 @@ def sync_display_labels():
 			if row and row.label == label.replace(BRANDING["erpName"], "ERPNext"):
 				frappe.db.set_value("DocField", row.name, "label", label, update_modified=False)
 				changed.append(definition["name"])
+	custom_labels = {
+		("CRM Deal", "erpnext_customer"): f"Customer in {BRANDING['erpName']}",
+		("CRM Product", "erpnext_item_code"): f"Item Code in {BRANDING['erpName']}",
+	}
+	for (doctype, fieldname), label in custom_labels.items():
+		row = frappe.db.get_value(
+			"Custom Field", {"dt": doctype, "fieldname": fieldname}, ["name", "label"], as_dict=True,
+		)
+		if row and row.label == label.replace(BRANDING["erpName"], "ERPNext"):
+			frappe.db.set_value("Custom Field", row.name, "label", label, update_modified=False)
+			changed.append(doctype)
 	# This field's upstream help action was intentionally retired in CRM source.
 	row = frappe.db.get_value(
 		"DocField", {"parent": "CRM Form Script", "fieldname": "script"},
