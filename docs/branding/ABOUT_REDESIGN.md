@@ -69,3 +69,11 @@ light/dark/mobile layouts, both legal entry points, exact source commit, local
 license downloads and read-only list navigation. Supply `REYBILL_SESSION_FILE`
 and `REYBILL_QA_OUTPUT` through the environment. Session secrets, screenshots
 and detailed runtime evidence must stay outside Git.
+
+Verification completed on the normal test runtime: 377 frontend tests across
+46 files, nine authenticated browser checks, 48 served-asset byte checks,
+production frontend build and changed-file ESLint all passed. The browser
+checks include ordinary refresh, keyboard focus, mobile Escape and Close,
+light/dark/mobile About, both Legal Notices entry points and read-only CRM
+list navigation. No JavaScript errors were recorded. Screenshots and detailed
+runtime evidence are retained privately outside the repository.

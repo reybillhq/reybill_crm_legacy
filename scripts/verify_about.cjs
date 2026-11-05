@@ -70,7 +70,18 @@ async function main() {
     }
     await opener.click();
     await page.getByRole("menuitem", { name, exact: true }).click();
-    const dialog = page.getByRole("dialog").last();
+    // On mobile the closing sidebar is itself a dialog. Wait for the
+    // requested information surface, rather than whichever dialog exists first.
+    const marker =
+      name === "About"
+        ? "[data-about-dialog]"
+        : name === "Legal Notices"
+        ? "[data-legal-notices]"
+        : '[data-page="Legal Notices"]';
+    const dialog = page
+      .getByRole("dialog")
+      .filter({ has: page.locator(marker) })
+      .last();
     await dialog.waitFor();
     return dialog;
   }
