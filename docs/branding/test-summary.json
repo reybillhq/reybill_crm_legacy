@@ -1,0 +1,57 @@
+{
+  "tested_source_commit": "7e43e6b2dd6026ebf2502f108e3b53560e3977b9",
+  "baseline": "1cd8334c4d889df541588b5112f029070e013987",
+  "branch": "feat/reybill-sales-branding",
+  "frontend": {
+    "files": 42,
+    "passed": 365
+  },
+  "backend": {
+    "branding_contracts": 4,
+    "erp_pricing_and_script": 7,
+    "passed": 11
+  },
+  "browser": {
+    "smoke_checks": 15,
+    "passed": true,
+    "page_errors": 0,
+    "native_password_login_logout": true,
+    "temporary_user_removed": true
+  },
+  "build": {
+    "passed": true,
+    "service_worker_precache_entries": 155
+  },
+  "translations": {
+    "compiled_catalogs": 33,
+    "branding_specific_strings_per_de_ar_catalog": 40
+  },
+  "links": {
+    "checked": 16,
+    "all_http_200": true
+  },
+  "lint": {
+    "errors": 0,
+    "preexisting_warnings": 1
+  },
+  "erp": {
+    "enabled": false,
+    "remote_actions_executed": false,
+    "live_sync_verified": false
+  },
+  "remaining_reference_lines": 9124,
+  "crm_data_counts_unchanged": true,
+  "active_checkout_original_sources_hash_verified": true,
+  "environment": {
+    "frappe": "16.36.1",
+    "frappe_commit": "97a5dd93ca5883bcc9c4ef9834120c5cba397b67",
+    "erpnext": "16.37.0",
+    "crm": "1.91.1"
+  },
+  "qa_cleanup": {
+    "temporary_user_removed": true,
+    "sessions_revoked": true,
+    "credentials_removed": true,
+    "temporary_server_stopped": true
+  }
+}

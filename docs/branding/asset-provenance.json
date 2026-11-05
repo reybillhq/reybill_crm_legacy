@@ -1,0 +1,62 @@
+[
+  {
+    "asset": "crm/public/images/branding/reybill-logo-black.svg",
+    "source": "apps/reybill_core/reybill_core/public/images/branding/reybill-logo-black.svg",
+    "sha256": "62f8ac4f504211e11efe5279c98b69904daa25d9954f35ba0dff3321a6a743ac",
+    "unchanged": true
+  },
+  {
+    "asset": "crm/public/images/branding/reybill-logo-white.svg",
+    "source": "apps/reybill_core/reybill_core/public/images/branding/reybill-logo-white.svg",
+    "sha256": "d2040b692c56636cca374c054ae3e80fb56c043b4262e65589a037126d12f129",
+    "unchanged": true
+  },
+  {
+    "asset": "crm/public/images/branding/reybill-icon-black.png",
+    "source": "apps/reybill_core/reybill_core/public/images/branding/reybill-icon-black.png",
+    "sha256": "987fe5b3db29a66ec163658b63b87eb49bcc1a7ab5e5e29d11601cd2d9cc396e",
+    "unchanged": true
+  },
+  {
+    "asset": "crm/public/images/branding/reybill-icon-white.png",
+    "source": "apps/reybill_core/reybill_core/public/images/branding/reybill-icon-white.png",
+    "sha256": "88cc491247c4e2aa960357cba87b1a008ac14c180fdeef4d63ca2a9657a33fbc",
+    "unchanged": true
+  },
+  {
+    "asset": ".github/logo.svg",
+    "source": "apps/reybill_core/reybill_core/public/images/branding/reybill-logo-black.svg",
+    "sha256": "62f8ac4f504211e11efe5279c98b69904daa25d9954f35ba0dff3321a6a743ac",
+    "unchanged": true
+  },
+  {
+    "asset": ".github/logo.png",
+    "source": "apps/reybill_core/reybill_core/public/images/branding/reybill-icon-black.png",
+    "sha256": "987fe5b3db29a66ec163658b63b87eb49bcc1a7ab5e5e29d11601cd2d9cc396e",
+    "unchanged": true
+  },
+  {
+    "asset": ".github/crm_logo.png",
+    "source": "apps/reybill_core/reybill_core/public/images/branding/reybill-icon-black.png",
+    "sha256": "987fe5b3db29a66ec163658b63b87eb49bcc1a7ab5e5e29d11601cd2d9cc396e",
+    "unchanged": true
+  },
+  {
+    "asset": "crm/public/images/logo.svg",
+    "source": "apps/reybill_core/reybill_core/public/images/branding/reybill-logo-black.svg",
+    "sha256": "62f8ac4f504211e11efe5279c98b69904daa25d9954f35ba0dff3321a6a743ac",
+    "unchanged": true
+  },
+  {
+    "asset": "crm/public/images/logo.png",
+    "source": "apps/reybill_core/reybill_core/public/images/branding/reybill-icon-black.png",
+    "sha256": "987fe5b3db29a66ec163658b63b87eb49bcc1a7ab5e5e29d11601cd2d9cc396e",
+    "unchanged": true
+  },
+  {
+    "asset": "crm/public/images/desk.png",
+    "source": "apps/reybill_core/reybill_core/public/images/branding/reybill-icon-black.png",
+    "sha256": "987fe5b3db29a66ec163658b63b87eb49bcc1a7ab5e5e29d11601cd2d9cc396e",
+    "unchanged": true
+  }
+]

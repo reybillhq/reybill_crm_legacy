@@ -1,0 +1,32 @@
+Starting test run with parameters: site=reybill.localhost, module=crm.fcrm.doctype.crm_products.test_crm_products, verbose=False, tests=(), force=False, profile=False, failfast=False, skip_before_tests=True, debug=False, selected_categories=[]
+View detailed logs (using --verbose): /home/frappe/frappe/frappe-bench-v16/logs/frappe.testing.log
+
+Running 6 integration tests for crm
+
+crm.fcrm.doctype.crm_products.test_crm_products.TestGetDealProductRate
+  Test Records created: CRM Products (0), CRM Product (0)
+    ✔  test_passes_price_list_uom_and_date_context
+    ✔  test_reads_v15_tuple_result
+    ✔  test_returns_none_when_no_matching_price
+    ✔  test_returns_none_without_price_list
+
+crm.fcrm.doctype.crm_products.test_crm_products.TestGetProductRateDetails
+    ✔  test_falls_back_to_standard_rate
+    ✔  test_prefers_contextual_rate
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.188s
+
+OK
+
+Running 1 unspecified-category tests for crm
+
+crm.fcrm.doctype.crm_products.test_crm_products.TestProductDetailsScript
+    ✔  test_product_change_replaces_existing_rate
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK

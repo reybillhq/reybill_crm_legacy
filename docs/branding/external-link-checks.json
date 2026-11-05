@@ -1,0 +1,82 @@
+[
+  {
+    "url": "https://developers.facebook.com/docs/facebook-login/guides/access-tokens/",
+    "status": 200,
+    "final_url": "https://developers.facebook.com/documentation/facebook-login/guides/access-tokens"
+  },
+  {
+    "url": "https://exchangerate.host/#/docs/access_key",
+    "status": 200,
+    "final_url": "https://exchangerate.host/#/docs/access_key"
+  },
+  {
+    "url": "https://github.com/reybillhq/reybill_crm",
+    "status": 200,
+    "final_url": "https://github.com/reybillhq/reybill_crm"
+  },
+  {
+    "url": "https://help.yahoo.com/kb/SLN15241.html",
+    "status": 200,
+    "final_url": "https://help.yahoo.com/kb/SLN15241.html"
+  },
+  {
+    "url": "https://reybill.com",
+    "status": 200,
+    "final_url": "https://reybill.com/"
+  },
+  {
+    "url": "https://sendgrid.com/docs/ui/account-and-settings/two-factor-authentication/",
+    "status": 200,
+    "final_url": "https://www.twilio.com:443/docs/sendgrid/ui/account-and-settings/two-factor-authentication"
+  },
+  {
+    "url": "https://support.google.com/accounts/answer/185833",
+    "status": 200,
+    "final_url": "https://support.google.com/accounts/answer/185833"
+  },
+  {
+    "url": "https://support.microsoft.com/en-us/account-billing/how-to-get-and-use-app-passwords-5896ed9b-4263-e681-128a-a6f2979a7944",
+    "status": 200,
+    "final_url": "https://support.microsoft.com/en-us/accounts-billing/manage/how-to-get-and-use-app-passwords"
+  },
+  {
+    "url": "https://support.sparkpost.com/docs/my-account-and-profile/enabling-two-factor-authentication",
+    "status": 200,
+    "final_url": "https://bird.com/docs/knowledge-base/account-security/login-mfa"
+  },
+  {
+    "url": "https://www.exchangerate-api.com",
+    "status": 200,
+    "final_url": "https://www.exchangerate-api.com/"
+  },
+  {
+    "url": "https://www.facebook.com/business/help/503306463479099?id=2190812977867143",
+    "status": 200,
+    "final_url": "https://www.facebook.com/business/help/503306463479099?id=2190812977867143"
+  },
+  {
+    "url": "https://www.openstreetmap.org/copyright",
+    "status": 200,
+    "final_url": "https://www.openstreetmap.org/copyright"
+  },
+  {
+    "url": "https://www.stadiamaps.com/",
+    "status": 200,
+    "final_url": "https://stadiamaps.com/"
+  },
+  {
+    "url": "https://www.stamen.com/",
+    "status": 200,
+    "final_url": "https://stamen.com/"
+  },
+  {
+    "url": "https://yandex.com/support/id/authorization/app-passwords.html",
+    "status": 200,
+    "final_url": "https://yandex.com/support/id/en/authorization/app-passwords.html"
+  },
+  {
+    "url": "https://github.com/reybillhq/reybill_crm/tree/feat/reybill-sales-branding",
+    "status": 200,
+    "final_url": "https://github.com/reybillhq/reybill_crm/tree/feat/reybill-sales-branding"
+  }
+]

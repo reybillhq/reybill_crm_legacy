@@ -1,0 +1,16 @@
+Starting test run with parameters: site=reybill.localhost, module=crm.tests.test_branding, verbose=False, tests=(), force=False, profile=False, failfast=False, skip_before_tests=True, debug=False, selected_categories=[]
+View detailed logs (using --verbose): /home/frappe/frappe/frappe-bench-v16/logs/frappe.testing.log
+
+Running 4 unspecified-category tests for crm
+
+crm.tests.test_branding.TestBranding
+    ✔  test_erp_field_names_survive_display_label_changes
+    ✔  test_invitation_uses_brand_without_changing_acceptance_link
+    ✔  test_native_app_identity_and_official_assets
+    ✔  test_remote_erp_api_path_is_preserved
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.224s
+
+OK
