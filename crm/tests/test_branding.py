@@ -14,7 +14,7 @@ class TestBranding(unittest.TestCase):
 		from crm import hooks
 
 		self.assertEqual(hooks.app_name, "crm")
-		self.assertEqual(hooks.app_title, PRODUCT_NAME)
+		self.assertEqual(hooks.app_title, BRANDING["appName"])
 		self.assertEqual(hooks.add_to_apps_screen[0]["route"], "/crm")
 		public = Path(__file__).parents[1] / "public"
 		for key in ("logoLight", "logoDark", "iconLight", "iconDark"):

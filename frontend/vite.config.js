@@ -26,7 +26,7 @@ export default defineConfig(() => {
         transformIndexHtml: (html) =>
           html
             .replaceAll('%REYBILL_PRODUCT_NAME%', branding.productName)
-            .replaceAll('%REYBILL_ICON%', branding.iconLight),
+            .replaceAll('%REYBILL_ICON%', branding.appIcon),
       },
       vue(),
       vueJsx(),
@@ -50,9 +50,9 @@ export default defineConfig(() => {
           description: branding.description,
           icons: [
             {
-              src: branding.iconLight,
-              sizes: '2133x2133',
-              type: 'image/png',
+              src: branding.appIcon,
+              sizes: 'any',
+              type: 'image/svg+xml',
               purpose: 'any',
             },
           ],

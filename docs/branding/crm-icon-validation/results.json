@@ -1,0 +1,67 @@
+{
+  "base": "http://reybill.localhost:8000",
+  "expectedIcon": "/assets/crm/images/reybill-crm.svg",
+  "sourceSha256": "9d004a8f2129c0b2ac24bab71dc63fc4e39850e2423d227eb9e5ce4a87d22862",
+  "checks": [
+    {
+      "name": "Official SVG served unchanged",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "sha256": "9d004a8f2129c0b2ac24bab71dc63fc4e39850e2423d227eb9e5ce4a87d22862"
+      }
+    },
+    {
+      "name": "Live Desk tile and native app metadata",
+      "passed": true,
+      "details": {
+        "title": "ReyBill CRM",
+        "name": "crm",
+        "route": "/crm",
+        "icon": "/assets/crm/images/reybill-crm.svg"
+      }
+    },
+    {
+      "name": "Browser refresh retains the new icon and label",
+      "passed": true,
+      "details": {
+        "refreshed": true,
+        "internalRecordName": "Frappe CRM"
+      }
+    },
+    {
+      "name": "Cached saved-layout metadata refreshes without changing storage or other apps",
+      "passed": true,
+      "details": {
+        "sourceLabel": "Frappe CRM",
+        "sourceLogo": "/assets/crm/images/logo.svg",
+        "storageUnchanged": true,
+        "otherAppsUnchanged": true
+      }
+    },
+    {
+      "name": "CRM sidebar, favicon and PWA use the official SVG after refresh",
+      "passed": true,
+      "details": {
+        "sidebar": "/assets/crm/images/reybill-crm.svg",
+        "favicon": "/assets/crm/images/reybill-crm.svg",
+        "manifestIcon": {
+          "src": "/assets/crm/images/reybill-crm.svg",
+          "sizes": "any",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        }
+      }
+    },
+    {
+      "name": "CRM icon retains the supplied colors in dark mode",
+      "passed": true,
+      "details": {
+        "theme": "dark",
+        "noRecoloring": true
+      }
+    }
+  ],
+  "pageErrors": [],
+  "passed": true
+}

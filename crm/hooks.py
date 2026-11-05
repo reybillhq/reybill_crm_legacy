@@ -1,15 +1,15 @@
 import frappe
 
-from crm.branding import BRANDING, PRODUCT_NAME
+from crm.branding import BRANDING
 
 app_name = "crm"
-app_title = PRODUCT_NAME
+app_title = BRANDING["appName"]
 app_publisher = BRANDING["companyName"]
 app_description = BRANDING["description"]
 app_email = ""  # No unverified ReyBill support mailbox.
 app_license = "AGPLv3"
-app_icon_url = BRANDING["iconLight"]
-app_icon_title = PRODUCT_NAME
+app_icon_url = BRANDING["appIcon"]
+app_icon_title = BRANDING["appName"]
 app_icon_route = "/crm"
 
 # Apps
@@ -19,8 +19,8 @@ app_icon_route = "/crm"
 add_to_apps_screen = [
 	{
 		"name": "crm",
-		"logo": BRANDING["iconLight"],
-		"title": PRODUCT_NAME,
+		"logo": BRANDING["appIcon"],
+		"title": BRANDING["appName"],
 		"route": "/crm",
 		"has_permission": "crm.api.check_app_permission",
 	}
@@ -50,7 +50,7 @@ require_type_annotated_api_methods = True
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
 # include js in page
-# page_js = {"page" : "public/js/file.js"}
+page_js = {"desktop": "public/js/desktop_crm_icon.js"}
 
 # include js in doctype views
 doctype_js = {
@@ -431,6 +431,7 @@ ignore_links_on_delete = ["Failed Lead Sync Log"]
 on_session_creation = ["crm.api.onboarding.complete_setup_for_fc_site"]
 
 after_migrate = [
+	"crm.app_icon.sync_desktop_icon",
 	"crm.fcrm.doctype.fcrm_settings.fcrm_settings.after_migrate",
 	"crm.api.whatsapp.add_roles",
 	"crm.install.add_default_scripts",
@@ -487,3 +488,6 @@ standard_dropdown_items = [
 		"is_standard": 1,
 	},
 ]
+
+# CRM-only Desktop presentation; saved layouts keep their native identities.
+boot_session = "crm.app_icon.extend_bootinfo"

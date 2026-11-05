@@ -1,0 +1,15 @@
+yarn run v1.22.22
+$ vitest run
+
+ RUN  v4.1.10 /home/frappe/frappe/frappe-bench-v16/apps/crm/frontend
+
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+ Test Files  41 passed (41)
+      Tests  361 passed (361)
+   Start at  10:30:25
+   Duration  72.84s (transform 12.40s, setup 626ms, import 21.28s, tests 4.16s, environment 29.35s)
+
+Done in 74.67s.

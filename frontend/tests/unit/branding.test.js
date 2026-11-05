@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest'
 import { createApp, nextTick } from 'vue'
 import branding from '../../src/branding'
 import CRMLogo from '../../src/components/Icons/CRMLogo.vue'
+import ERPNextIcon from '../../src/components/Icons/ERPNextIcon.vue'
 
 const resource = vi.hoisted(() => ({ options: null }))
 vi.mock('frappe-ui', () => ({
@@ -17,7 +18,7 @@ describe('ReyBill branding and tenant overrides', () => {
     const { brand } = getSettings()
     expect(brand.name).toBe('ReyBill Sales')
     resource.options.onSuccess({})
-    expect(brand.favicon).toBe(branding.iconLight)
+    expect(brand.favicon).toBe(branding.appIcon)
   })
 
   it('retains configured customer branding and supports restoring defaults', () => {
@@ -32,7 +33,7 @@ describe('ReyBill branding and tenant overrides', () => {
     expect(brand.favicon).toBe('/files/favicon.png')
     resource.options.onSuccess({ brand_name: '', brand_logo: '', favicon: '' })
     expect(brand.name).toBe(branding.productName)
-    expect(brand.favicon).toBe(branding.iconLight)
+    expect(brand.favicon).toBe(branding.appIcon)
   })
 
   it('treats a saved upstream product name as the inherited default', () => {
@@ -41,6 +42,24 @@ describe('ReyBill branding and tenant overrides', () => {
     resource.options.onSuccess({ brand_name: 'Customer CRM' })
     expect(getSettings().brand.name).toBe('Customer CRM')
     resource.options.onSuccess({})
+  })
+
+  it('uses the CRM-specific SVG without changing ERP artwork', () => {
+    const crmHost = document.createElement('div')
+    const erpHost = document.createElement('div')
+    const crm = createApp(CRMLogo)
+    const erp = createApp(ERPNextIcon)
+    crm.mount(crmHost)
+    erp.mount(erpHost)
+    expect(crmHost.querySelector('img').getAttribute('src')).toBe(
+      branding.appIcon
+    )
+    expect(erpHost.querySelector('img').getAttribute('src')).toBe(
+      branding.iconLight
+    )
+    expect(erpHost.querySelector(`img[src="${branding.appIcon}"]`)).toBeNull()
+    crm.unmount()
+    erp.unmount()
   })
 
   it('uses the supplied theme variants and switches artwork without modifying it', async () => {

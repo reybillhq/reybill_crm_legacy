@@ -28,5 +28,7 @@
       "foreground": "#e6a3c2",
       "border": "#54303f"
     }
-  }
+  },
+  "appName": "ReyBill CRM",
+  "appIcon": "/assets/crm/images/reybill-crm.svg"
 }

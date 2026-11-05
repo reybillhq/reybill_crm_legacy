@@ -2,17 +2,25 @@
   <span
     class="inline-flex shrink-0"
     role="img"
-    :aria-label="branding.productName"
+    :aria-label="wordmark ? branding.productName : branding.appName"
   >
+    <template v-if="wordmark">
+      <img
+        :src="branding.logoLight"
+        alt=""
+        class="h-full w-full object-contain dark:hidden"
+      />
+      <img
+        :src="branding.logoDark"
+        alt=""
+        class="hidden h-full w-full object-contain dark:block"
+      />
+    </template>
     <img
-      :src="wordmark ? branding.logoLight : branding.iconLight"
+      v-else
+      :src="branding.appIcon"
       alt=""
-      class="h-full w-full object-contain dark:hidden"
-    />
-    <img
-      :src="wordmark ? branding.logoDark : branding.iconDark"
-      alt=""
-      class="hidden h-full w-full object-contain dark:block"
+      class="h-full w-full object-contain"
     />
   </span>
 </template>

@@ -5,7 +5,7 @@ import branding from '@/branding'
 const settings = ref({})
 const brand = reactive({
   name: branding.productName,
-  favicon: branding.iconLight,
+  favicon: branding.appIcon,
 })
 
 const _settings = createDocumentResource({
@@ -26,7 +26,7 @@ export function getSettings() {
         ? name
         : branding.productName
     brand.logo = settings.value?.brand_logo
-    brand.favicon = settings.value?.favicon || branding.iconLight
+    brand.favicon = settings.value?.favicon || branding.appIcon
   }
 
   return {

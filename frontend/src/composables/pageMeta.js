@@ -12,7 +12,7 @@ export function usePageMeta(getMeta) {
       ...meta,
       title:
         meta.title && meta.title !== name ? `${meta.title} | ${name}` : name,
-      icon: meta.icon || brand.favicon || branding.iconLight,
+      icon: meta.icon || brand.favicon || branding.appIcon,
     }
   })
 }
