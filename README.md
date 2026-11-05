@@ -13,8 +13,10 @@ until corresponding articles are available.
 
 The internal Frappe app and Python package name remain `crm`. Use a Frappe v16
 bench with the compatible ERPNext v16 app when validating ERP integration.
-Keep the checkout at `apps/crm` in a normal bench installation; the folder name
-`reybill_crm` in this audit is an isolated checkout protecting existing work.
+A standard bench may keep this checkout at `apps/crm`. In this development bench,
+the active editable package and CRM asset link point to `apps/reybill_crm`; the
+original dirty `apps/crm` checkout is preserved. See [activation and rollback](docs/branding/ACTIVATION.md)
+before changing that binding. Build this fork explicitly when maintaining the local setup.
 
 ```sh
 bench get-app crm https://github.com/reybillhq/reybill_crm.git

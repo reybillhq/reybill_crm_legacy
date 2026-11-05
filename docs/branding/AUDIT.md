@@ -1,6 +1,6 @@
 # ReyBill CRM branding audit
 
-Current product name: **ReyBill CRM**. The sections below preserve the original audit and its former working name. See [the current About/switcher correction and runtime findings](ABOUT_SWITCHER.md) and [official icon update](CRM_ICON.md) for the final customer-facing identity.
+Current product name: **ReyBill CRM**. **Active on the normal test site at version 1.92.0**; see [activation and rollback](ACTIVATION.md). The sections below preserve the original audit and its former working name. See [the current About/switcher correction and runtime findings](ABOUT_SWITCHER.md) and [official icon update](CRM_ICON.md) for the final customer-facing identity.
 
 Inventory captured before implementation on 2026-11-05 from fork baseline `1cd8334c4d889df541588b5112f029070e013987`.
 

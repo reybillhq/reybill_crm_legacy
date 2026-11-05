@@ -1,12 +1,14 @@
 # ReyBill CRM About and app-switcher correction
 
+**Activation completed:** the normal test site now serves the reconciled **ReyBill CRM 1.92.0** fork. See [activation summary](ACTIVATION.md). The earlier preview-stage findings below are retained as history.
+
 Official product: **ReyBill CRM**. Branch: `feat/reybill-sales-branding` (existing branch name retained). This report supersedes the product naming and switcher behavior in the earlier historical audit; previous commits and evidence are preserved.
 
 ## Causes and runtime diagnosis
 
 | Issue | Cause | Correction |
 | --- | --- | --- |
-| Browser still showed Desk, ERPNext and upstream About | The default local service imports `apps/crm/crm`, version **1.92.0**, and `/assets/crm` points to that checkout. Previous full branding was committed and built in `apps/reybill_crm`, version **1.91.1**. The icon patch alone was applied to the installed checkout. | Build and authenticate against the exact fork backend and assets on the same development site through loopback port **8012**. Default-runtime activation is pending the user's choice because changing checkout also changes the running application version. |
+| Browser still showed Desk, ERPNext and upstream About | The default local service imports `apps/crm/crm`, version **1.92.0**, and `/assets/crm` points to that checkout. Previous full branding was committed and built in `apps/reybill_crm`, version **1.91.1**. The icon patch alone was applied to the installed checkout. | Build and authenticate against the exact fork backend and assets on the same development site through loopback port **8012**. This mismatch is now resolved by merging the exact installed 1.92.0 release into the branded fork and activating it on the normal test endpoint; see ACTIVATION.md. |
 | Incorrect fork product name | Shared JSON and several literal UI/server strings still used the former working name ReyBill Sales. | Correct central defaults, setup/access messages, package descriptions, Workspace display labels, integration messages and active translation catalogs. Normalize saved former defaults while preserving custom customer names. |
 | ERPNext remained in fork switcher | Previous implementation renamed its entry to ReyBill ERP instead of excluding it. | Filter the registry by `app.name`, excluding `erpnext` and the current `crm` entry. Insert one ReyBill platform entry at `/desk`; do not change the global registry. |
 | Stale switcher metadata | The old `apps` resource cache could restore an earlier permission-filtered registry snapshot from IndexedDB. | Fetch registry data for each new dropdown instance without restoring that cache. Native permission checks remain authoritative. |
@@ -76,4 +78,4 @@ GitHub's repository description still uses the former product name; this is exte
 
 The pre-task source hashes, statuses and original fork HEAD are private under `backups/reybill-crm-about-20261105T131137Z`. The prior icon and full rebranding archives remain intact. Work stays on the existing feature branch; no stable merge, release or production deployment is performed.
 
-The default local service remains on its original `apps/crm` checkout. The isolated fork preview uses `http://reybill.localhost:8012/crm` and the same development database. A runtime switch must be deliberate because the fork is 1.91.1 while the installed checkout is 1.92.0; source work and authenticated validation are complete before that decision.
+At the time of this historical report, activation was pending because the fork was 1.91.1 and the installed checkout was 1.92.0. That blocker is resolved: the fork incorporates the exact 1.92.0 release and is active on the normal test URL. The old preview server has been stopped. See [activation evidence and rollback](ACTIVATION.md).
