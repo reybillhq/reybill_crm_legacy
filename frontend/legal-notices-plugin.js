@@ -125,6 +125,19 @@ export function legalNoticesPlugin(frontendRoot) {
       const moduleIds = Object.values(bundle)
         .filter((entry) => entry.type === 'chunk')
         .flatMap((chunk) => Object.keys(chunk.modules))
+      const projectNotices = read(
+        path.join(frontendRoot, 'legal/PROJECT_NOTICES.txt')
+      )
+      this.emitFile({
+        type: 'asset',
+        fileName: 'legal/LICENSE_INFORMATION.txt',
+        source: [
+          projectNotices,
+          `Corresponding Source: ${source.sourceUrl}`,
+          `Source Download: ${source.archiveUrl}`,
+          read(path.resolve(frontendRoot, '../LICENSE')),
+        ].join('\n\n'),
+      })
       this.emitFile({
         type: 'asset',
         fileName: 'legal/AGPL-3.0.txt',
@@ -133,7 +146,8 @@ export function legalNoticesPlugin(frontendRoot) {
       this.emitFile({
         type: 'asset',
         fileName: 'legal/THIRD_PARTY_NOTICES.txt',
-        source: bundledNotices(moduleIds, frontendRoot),
+        source:
+          projectNotices + '\n\n' + bundledNotices(moduleIds, frontendRoot),
       })
     },
   }

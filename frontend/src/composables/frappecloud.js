@@ -20,10 +20,8 @@ export const confirmLoginToFrappeCloud = () => {
   const { $dialog } = globalStore()
 
   $dialog({
-    title: __('Login to Frappe Cloud?'),
-    message: __(
-      'Are you sure you want to login to your Frappe Cloud dashboard?',
-    ),
+    title: __('Open Hosting Dashboard?'),
+    message: __("Are you sure you want to open your site's hosting dashboard?"),
     actions: [
       {
         label: __('Confirm'),
@@ -40,6 +38,6 @@ export const confirmLoginToFrappeCloud = () => {
 const loginToFrappeCloud = () => {
   window.open(
     `${baseEndpoint.value}/dashboard/sites/${siteName.value}`,
-    '_blank',
+    '_blank'
   )
 }

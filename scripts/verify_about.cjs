@@ -225,30 +225,37 @@ async function main() {
       const dialog = await menuItem("Legal Notices");
       const text = await dialog.innerText();
       for (const term of [
-        "Frappe Technologies Pvt. Ltd.",
         "AGPLv3",
-        "no warranty",
+        "without warranty",
         "copy, modify and redistribute",
-        "at no charge",
       ])
         assert(text.includes(term));
+      assert(!/Frapp[eé]|ERPNext|ReyBill Sales/.test(text));
+      assert.equal(await dialog.getByRole("link").count(), 3);
       const source = await (
         await page.request.get(base + "/assets/crm/frontend/legal/source.json")
       ).json();
       assert.equal(source.commit, report.runtime.commit);
       assert.equal(
         await dialog
-          .getByRole("link", { name: "View Corresponding Source", exact: true })
-          .getAttribute("href"),
-        source.sourceUrl
-      );
-      assert.equal(
-        await dialog
-          .getByRole("link", { name: "Download Source Archive", exact: true })
+          .getByRole("link", {
+            name: "Access Corresponding Source",
+            exact: true,
+          })
           .getAttribute("href"),
         source.archiveUrl
       );
-      for (const filename of ["AGPL-3.0.txt", "THIRD_PARTY_NOTICES.txt"]) {
+      assert.equal(
+        await dialog
+          .getByRole("link", { name: "View License", exact: true })
+          .getAttribute("href"),
+        "/assets/crm/frontend/legal/LICENSE_INFORMATION.txt"
+      );
+      for (const filename of [
+        "AGPL-3.0.txt",
+        "LICENSE_INFORMATION.txt",
+        "THIRD_PARTY_NOTICES.txt",
+      ]) {
         const response = await page.request.get(
           base + "/assets/crm/frontend/legal/" + filename
         );
@@ -259,7 +266,17 @@ async function main() {
             body,
             fs.readFileSync(path.join(__dirname, "../LICENSE"), "utf8")
           );
-        else
+        else if (filename === "LICENSE_INFORMATION.txt") {
+          assert(
+            body.includes("Frappe Technologies Pvt. Ltd. and contributors")
+          );
+          assert(body.includes(source.archiveUrl));
+          assert(
+            body.includes(
+              fs.readFileSync(path.join(__dirname, "../LICENSE"), "utf8")
+            )
+          );
+        } else
           for (const notice of [
             "Frappe Framework UI",
             "Frappe UI compatibility shim",
@@ -281,7 +298,9 @@ async function main() {
       const dialog = await menuItem("Settings");
       await dialog.locator('[data-page="Legal Notices"]').click();
       await dialog.locator("[data-legal-notices]").waitFor();
-      assert((await dialog.innerText()).includes("Corresponding Source"));
+      assert(
+        (await dialog.innerText()).includes("Access Corresponding Source")
+      );
       return { location: "Settings → Legal Notices" };
     }
   );

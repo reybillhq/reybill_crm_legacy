@@ -170,9 +170,9 @@ async function main() {
     await openMenu(page)
     await page.getByRole('menuitem', { name: 'Legal Notices', exact: true }).click()
     const legal = page.getByRole('dialog').last()
-    assert((await legal.innerText()).includes('Frappe Technologies'))
-    const source = await legal.getByRole('link', { name: 'View Corresponding Source', exact: true }).getAttribute('href')
-    assert(source.startsWith(branding.repository + '/tree/'))
+    assert(!/Frapp[eé]|ERPNext|ReyBill Sales/.test(await legal.innerText()))
+    const source = await legal.getByRole('link', { name: 'Access Corresponding Source', exact: true }).getAttribute('href')
+    assert(source.startsWith(branding.repository + '/archive/'))
     await page.keyboard.press('Escape')
     return { theme: 'dark', source, artwork: branding.appIcon }
   })

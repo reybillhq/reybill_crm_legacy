@@ -1,3 +1,4 @@
+import branding from '@/branding'
 import BranchIcon from '~icons/lucide/git-branch'
 import EventIcon from '~icons/lucide/webhook'
 import WaitIcon from '~icons/lucide/timer'
@@ -58,7 +59,9 @@ export function groupActionsByApp(actions, toOption) {
 
 /** The framework's actions are the built-in ones; every other app goes by its own name. */
 function groupLabel(action) {
-  if (action.app === 'frappe') return __('Core')
+  if (action.app === 'frappe') return branding.platformName
+  if (action.app === 'crm') return branding.productName
+  if (action.app === 'erpnext') return branding.erpName
   return shortTitle(action.app_title) || action.app || __('Other')
 }
 

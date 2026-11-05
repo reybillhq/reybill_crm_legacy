@@ -66,7 +66,7 @@
           v-model="template.subject"
           size="md"
           :label="__('Subject')"
-          :placeholder="__('Payment reminder from Frappé - (#{{ name }})')"
+          :placeholder="examples.subject"
           :required="true"
         />
       </div>
@@ -92,11 +92,7 @@
           :label="__('Content')"
           :required="true"
           :rows="10"
-          :placeholder="
-            __(
-              '<p>Dear {{ lead_name }},</p>\n\n<p>This is a reminder for the payment of {{ grand_total }}.</p>\n\n<p>Thanks,</p>\n<p>Frappé</p>',
-            )
-          "
+          :placeholder="examples.html"
         />
         <div v-else>
           <div class="mb-1.5 text-base text-ink-gray-5">
@@ -106,11 +102,7 @@
           <RichTextField
             editor-class="!prose-sm max-w-full overflow-auto min-h-[180px] max-h-80 py-1.5 px-2 rounded-4 border border-[--surface-gray-2] bg-surface-gray-2 placeholder-ink-gray-4 hover:border-outline-elevation-2 hover:bg-surface-gray-3 hover:shadow-sm focus:bg-surface-base focus:border-outline-gray-4 focus:ring-0 focus-visible:ring-2 focus-visible:ring-outline-gray-3 text-ink-gray-8 transition-colors"
             :content="template.response"
-            :placeholder="
-              __(
-                'Dear {{ lead_name }}, \n\nThis is a reminder for the payment of {{ grand_total }}. \n\nThanks, \nFrappé',
-              )
-            "
+            :placeholder="examples.text"
             @change="(val) => (template.response = val)"
           />
         </div>
@@ -122,6 +114,8 @@
   </div>
 </template>
 <script setup>
+import { emailTemplateExamples } from '@/utils/emailTemplateExamples'
+const examples = emailTemplateExamples()
 import RichTextField from '@/components/RichTextField.vue'
 import { FormControl, Switch, toast, createResource } from 'frappe-ui'
 import { computed, inject, onMounted, ref } from 'vue'
@@ -198,7 +192,7 @@ const updateTemplate = async () => {
           errorMessage.value =
             error.messages[0] || __('Failed to update template')
         },
-      },
+      }
     )
   }
 }

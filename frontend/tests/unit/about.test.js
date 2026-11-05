@@ -62,17 +62,14 @@ describe('customer About and separate legal notices', () => {
 
   it('keeps attribution, rights, warranty, license and downloadable source outside About', async () => {
     const { host, cleanup } = await mount(LegalNoticesContent)
-    expect(host.textContent).toContain(
-      'Frappe Technologies Pvt. Ltd. and contributors'
-    )
+    expect(host.textContent).toContain(branding.companyName)
+    expect(host.textContent).not.toMatch(/Frapp[eé]|ERPNext|ReyBill Sales/)
     expect(host.textContent).toMatch(/copy, modify and redistribute/)
-    expect(host.textContent).toMatch(/no warranty/)
-    expect(host.textContent).toMatch(/at no charge/)
+    expect(host.textContent).toMatch(/without warranty/)
     expect(
       [...host.querySelectorAll('a')].map((a) => a.getAttribute('href'))
     ).toEqual([
-      '/assets/crm/frontend/legal/AGPL-3.0.txt',
-      source.sourceUrl,
+      '/assets/crm/frontend/legal/LICENSE_INFORMATION.txt',
       source.archiveUrl,
       '/assets/crm/frontend/legal/THIRD_PARTY_NOTICES.txt',
     ])

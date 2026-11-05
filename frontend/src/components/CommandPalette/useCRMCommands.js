@@ -344,7 +344,7 @@ function settingsCommands(tracked, isManager, whatsappInstalled) {
         group: 'Account',
         icon: 'settings',
         keywords:
-          'configure preferences profile users brand telephony erpnext automations',
+          'configure preferences profile users brand telephony reybill erp automations',
         children: () =>
           settingsChildren(tracked, isManager(), whatsappInstalled),
       },

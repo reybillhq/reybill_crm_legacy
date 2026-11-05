@@ -1,0 +1,22 @@
+ReyBill CRM — Copyright and Author Notices
+
+ReyBill modifications: © 2026 ReyBill Technologies Ltd.
+Modified version maintained by ReyBill Technologies Ltd.; branding updated 2026-11-05.
+
+Original CRM source: © Frappe Technologies Pvt. Ltd. and contributors.
+Original project: Frappe CRM.
+Original author metadata remains in pyproject.toml and the source headers.
+For example, the original CRM web entry retains:
+Copyright (c) 2022, Frappe Technologies Pvt. Ltd. and Contributors
+
+ReyBill does not claim ownership of the original authors' work. All original
+copyright headers, license texts and author metadata remain in the source.
+
+ReyBill CRM is distributed under the GNU Affero General Public License,
+version 3 (AGPLv3). You may copy, modify and redistribute the software under
+that license. The software is provided without warranty except where
+separately agreed in writing.
+
+Corresponding source, including the modified CRM, dependency lockfiles,
+installation and build scripts, is available at no charge through the
+exact-build source links below.
