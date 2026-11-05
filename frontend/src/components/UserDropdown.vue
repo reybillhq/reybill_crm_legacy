@@ -172,7 +172,7 @@ function deskApp() {
   return {
     name: 'frappe',
     logo: branding.iconLight,
-    title: __('ReyBill ERP'),
+    title: __('ReyBill'),
     route: '/desk',
   }
 }

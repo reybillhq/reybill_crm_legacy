@@ -103,7 +103,17 @@ async function main() {
     await cleanLinks(page)
     return { route: '/crm/deals/view/kanban', title: await page.title() }
   })
-  await check('About light artwork and attribution', async () => {
+  await check('Platform and ERP app-selector identity', async () => {
+    await openMenu(page)
+    await page.getByRole('menuitem', { name: 'Apps', exact: true }).hover()
+    await page.getByRole('menuitem', { name: 'ReyBill', exact: true }).waitFor()
+    await page.getByRole('menuitem', { name: 'ReyBill ERP', exact: true }).waitFor()
+    assert.equal(await page.getByRole('menuitem', { name: 'ReyBill ERP', exact: true }).count(), 1)
+    await page.keyboard.press('Escape')
+    await page.keyboard.press('Escape')
+    return { platform: 'ReyBill', erp: 'ReyBill ERP' }
+  })
+  await check('About light artwork and attribution' , async () => {
     await openMenu(page)
     await page.getByRole('menuitem', { name: 'About', exact: true }).click()
     const dialog = page.getByRole('dialog').last()
@@ -165,9 +175,14 @@ async function main() {
       await localized.goto(base + '/crm?_lang=' + lang, { waitUntil: 'networkidle' })
       assert.equal(await localized.evaluate(() => window.translated_messages['ReyBill ERP Settings']), expected)
       assert(!/Frappe CRM/.test(await localized.title()))
+      const label = await localized.evaluate(() => window.__('Settings'))
+      await openMenu(localized)
+      await localized.getByRole('menuitem', { name: label, exact: true }).click()
+      await localized.locator('[data-page="ReyBill ERP"]').click()
+      await localized.getByText(expected, { exact: true }).first().waitFor()
       await cleanLinks(localized)
       await ctx.close()
-      return { brandSettingsLabel: expected, placeholdersChecked: true }
+      return { brandSettingsLabel: expected, visibleSettingsHeading: true, placeholdersChecked: true }
     })
   }
   await check('Mobile navigation, drawer branding and responsive viewport', async () => {
