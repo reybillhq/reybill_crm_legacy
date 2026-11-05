@@ -4,11 +4,18 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 import { VitePWA } from 'vite-plugin-pwa'
 import frappeui from 'frappe-ui/vite'
+import { frameworkUiCompatibility } from './compat/framework-ui-plugin.js'
+
+const frameworkUiRoot = path.resolve(import.meta.dirname, '../../frappe/ui/src')
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
   const config = {
     plugins: [
+      frameworkUiCompatibility(
+        frameworkUiRoot,
+        path.resolve(import.meta.dirname, 'compat/framework-frappe-ui.js'),
+      ),
       vue(),
       vueJsx(),
       VitePWA({
@@ -62,10 +69,7 @@ export default defineConfig(() => {
         // `@framework/ui/components/Notifications` resolve. Importing subpaths avoids the
         // barrel, which `export *`s components (Grid/Phone/FormLayout) that need a newer
         // frappe-ui (`frappe-ui/internals`) than this app pins.
-        '@framework/ui': path.resolve(
-          import.meta.dirname,
-          '../../frappe/ui/src',
-        ),
+        '@framework/ui': frameworkUiRoot,
       },
       // ensure the linked framework package reuses the host app's single copy of each peer.
       // `dompurify` is an implicit dep of @framework/ui's sanitize util (not declared in its
