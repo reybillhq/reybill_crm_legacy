@@ -10,7 +10,14 @@ const out =
 assert.equal(new URL(base).hostname, "reybill.localhost");
 assert.notEqual(new URL(base).port, "8012");
 fs.mkdirSync(out, { recursive: true });
-const report = { base, screens: [], checks: [], pageErrors: [] };
+const report = {
+  base,
+  screens: [],
+  checks: [],
+  pageErrors: [],
+  readErrors: [],
+};
+let currentScreen = "initial";
 const forbidden = /Frapp[eé]|ERP\s?Next|ReyBill Sales/i;
 async function main() {
   const browser = await chromium.launch({
@@ -34,7 +41,30 @@ async function main() {
       : route.abort()
   );
   const page = await ctx.newPage();
-  page.on("pageerror", (e) => report.pageErrors.push(String(e)));
+  page.on("pageerror", (e) =>
+    report.pageErrors.push({
+      screen: currentScreen,
+      url: page.url(),
+      error: String(e),
+    })
+  );
+  page.on("response", async (response) => {
+    if (response.status() < 400 || !response.url().includes("/api/")) return;
+    let body;
+    try {
+      body = await response.json();
+    } catch {
+      return;
+    }
+    report.readErrors.push({
+      screen: currentScreen,
+      page: page.url(),
+      path: new URL(response.url()).pathname,
+      status: response.status(),
+      type: body.exc_type,
+      exception: body.exception,
+    });
+  });
   const save = () =>
     fs.writeFileSync(
       path.join(out, "rendered-audit.json"),
@@ -81,6 +111,7 @@ async function main() {
     assert(!promoLinks.length, name + ": upstream promotional links");
   }
   async function check(name, fn) {
+    currentScreen = name;
     try {
       await fn();
       report.checks.push({ name, passed: true });
@@ -100,11 +131,9 @@ async function main() {
   await page.goto(base + "/crm/dashboard", { waitUntil: "networkidle" });
   await check("Dashboard, navigation and onboarding", async () => {
     await scan("Dashboard and initial onboarding");
-    const help = page
-      .locator("aside")
-      .filter({
-        has: page.getByRole("button", { name: "Close", exact: true }),
-      });
+    const help = page.locator("aside").filter({
+      has: page.getByRole("button", { name: "Close", exact: true }),
+    });
     if (await help.count())
       await help.getByRole("button", { name: "Close", exact: true }).click();
     const helpButton = page
@@ -299,6 +328,10 @@ async function main() {
       await page.keyboard.press("Escape");
     });
   await browser.close();
+  report.brandingPassed = report.screens.every(
+    (screen) => !screen.matches.length && !screen.upstreamPromotionalLinks
+  );
+  report.screenChecksPassed = report.checks.every((check) => check.passed);
   report.passed =
     report.checks.every((c) => c.passed) && !report.pageErrors.length;
   save();
@@ -306,6 +339,8 @@ async function main() {
     JSON.stringify(
       {
         passed: report.passed,
+        brandingPassed: report.brandingPassed,
+        screenChecksPassed: report.screenChecksPassed,
         screens: report.screens.length,
         failures: report.checks.filter((c) => !c.passed),
         pageErrors: report.pageErrors,

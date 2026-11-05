@@ -71,3 +71,22 @@ no global text masking or response rewriting is used.
 
 Detailed source classifications, screenshots and runtime evidence stay outside
 Git. Production and other applications are not changed.
+
+## Observed pre-existing site issues
+
+The broad audit found zero upstream branding in 49 rendered states and all
+36 screen checks passed. Its health result remains separate from branding:
+four native read errors were observed on two Settings pages. They were reproduced
+with the untouched pre-task frontend assets in an isolated browser using the
+same test backend, without switching the actual running site.
+
+- Email Templates requests `Email Template.enabled`; the site rejects it with
+  `Field not permitted in query: enabled` (HTTP 417).
+- Telephony requests the Administrator's missing `CRM Telephony Agent` record;
+  assignment, permission and document reads return HTTP 404.
+
+These errors are not caused by the display changes. No database field, agent
+record or integration setting is added or altered to hide them. The audit
+retains the errors explicitly and does not report full site health as passing.
+The enabled ReyBill ERP settings, quotation permission and sync-status reads
+passed, as did the native API/field compatibility contracts.
