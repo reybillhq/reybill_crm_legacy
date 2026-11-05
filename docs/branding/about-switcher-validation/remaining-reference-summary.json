@@ -1,0 +1,12 @@
+{
+  "Technical ERPNext/Frappe integration, class, API, stored field or provider identity; preserve compatibility": 114,
+  "Clearly identified upstream open-source provenance/legal attribution": 6,
+  "Original author/legal attribution; retain accurately": 179,
+  "Regression fixture/assertion or detection of old identity; not displayed as product branding": 16,
+  "Existing Twilio resource identity; retain compatibility with provisioned resources": 1,
+  "Exact remote ERPNext setting name required to configure existing integration": 1,
+  "Native Workspace record name/technical identity; visible label is ReyBill CRM": 1,
+  "Translation lookup/context for upstream technical objects, providers, or historical inactive messages; active product translations use ReyBill CRM": 2394,
+  "Inactive vendor hosting adapter; no CRM customer menu/import entry point": 4,
+  "Legacy saved default detection; normalized to ReyBill CRM at runtime": 1
+}

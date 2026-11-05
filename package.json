@@ -2,7 +2,7 @@
 	"private": true,
 	"type": "module",
 	"name": "crm",
-	"description": "ReyBill Sales helps teams manage leads, deals and customer relationships.",
+	"description": "ReyBill CRM helps teams manage leads, deals and customer relationships.",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/reybillhq/reybill_crm.git"

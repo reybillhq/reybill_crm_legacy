@@ -16,7 +16,7 @@ import { getSettings } from '../../src/stores/settings'
 describe('ReyBill branding and tenant overrides', () => {
   it('shows ReyBill defaults before settings load and when overrides are cleared', () => {
     const { brand } = getSettings()
-    expect(brand.name).toBe('ReyBill Sales')
+    expect(brand.name).toBe('ReyBill CRM')
     resource.options.onSuccess({})
     expect(brand.favicon).toBe(branding.appIcon)
   })
@@ -38,6 +38,8 @@ describe('ReyBill branding and tenant overrides', () => {
 
   it('treats a saved upstream product name as the inherited default', () => {
     resource.options.onSuccess({ brand_name: 'Frappe CRM' })
+    expect(getSettings().brand.name).toBe(branding.productName)
+    resource.options.onSuccess({ brand_name: 'ReyBill Sales' })
     expect(getSettings().brand.name).toBe(branding.productName)
     resource.options.onSuccess({ brand_name: 'Customer CRM' })
     expect(getSettings().brand.name).toBe('Customer CRM')

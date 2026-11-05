@@ -1,0 +1,12 @@
+test_passes_price_list_uom_and_date_context (crm.fcrm.doctype.crm_products.test_crm_products.TestGetDealProductRate.test_passes_price_list_uom_and_date_context) ... ok
+test_reads_v15_tuple_result (crm.fcrm.doctype.crm_products.test_crm_products.TestGetDealProductRate.test_reads_v15_tuple_result) ... ok
+test_returns_none_when_no_matching_price (crm.fcrm.doctype.crm_products.test_crm_products.TestGetDealProductRate.test_returns_none_when_no_matching_price) ... ok
+test_returns_none_without_price_list (crm.fcrm.doctype.crm_products.test_crm_products.TestGetDealProductRate.test_returns_none_without_price_list) ... ok
+test_falls_back_to_standard_rate (crm.fcrm.doctype.crm_products.test_crm_products.TestGetProductRateDetails.test_falls_back_to_standard_rate) ... ok
+test_prefers_contextual_rate (crm.fcrm.doctype.crm_products.test_crm_products.TestGetProductRateDetails.test_prefers_contextual_rate) ... ok
+test_product_change_replaces_existing_rate (crm.fcrm.doctype.crm_products.test_crm_products.TestProductDetailsScript.test_product_change_replaces_existing_rate) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.661s
+
+OK

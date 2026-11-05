@@ -1,6 +1,6 @@
-# ReyBill Sales
+# ReyBill CRM
 
-ReyBill Sales is ReyBill's sales CRM for managing leads, deals, contacts,
+ReyBill CRM is ReyBill's sales CRM for managing leads, deals, contacts,
 organizations and pipelines. It is built on the open-source Frappe CRM project
 and Frappe Framework, with integration support for ReyBill ERP (ERPNext).
 

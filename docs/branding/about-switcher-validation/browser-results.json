@@ -1,0 +1,151 @@
+{
+  "base": "http://reybill.localhost:8012",
+  "checks": [
+    {
+      "name": "Guest access and branded native login",
+      "passed": true,
+      "details": {
+        "denied": 403,
+        "login": 200,
+        "title": "Login - ReyBill"
+      }
+    },
+    {
+      "name": "Authenticated load, onboarding, favicon and primary accent",
+      "passed": true,
+      "details": {
+        "title": "Leads - List | ReyBill CRM",
+        "icon": "/assets/crm/images/reybill-crm.svg",
+        "accent": "rgb(116, 0, 58)"
+      }
+    },
+    {
+      "name": "Leads navigation and create form",
+      "passed": true,
+      "details": {
+        "title": "Leads - List | ReyBill CRM",
+        "createForm": true,
+        "recordsSaved": false
+      }
+    },
+    {
+      "name": "Deals navigation and create form",
+      "passed": true,
+      "details": {
+        "title": "Deals - List | ReyBill CRM",
+        "createForm": true,
+        "recordsSaved": false
+      }
+    },
+    {
+      "name": "Contacts navigation and create form",
+      "passed": true,
+      "details": {
+        "title": "Contacts - List | ReyBill CRM",
+        "createForm": true,
+        "recordsSaved": false
+      }
+    },
+    {
+      "name": "Organizations navigation and create form",
+      "passed": true,
+      "details": {
+        "title": "Organizations - List | ReyBill CRM",
+        "createForm": true,
+        "recordsSaved": false
+      }
+    },
+    {
+      "name": "Deal pipeline view",
+      "passed": true,
+      "details": {
+        "route": "/crm/deals/view/kanban",
+        "title": "Deals - Kanban | ReyBill CRM"
+      }
+    },
+    {
+      "name": "Platform app-selector identity and ERP exclusion",
+      "passed": true,
+      "details": {
+        "platform": "ReyBill",
+        "erpEntryAbsent": true
+      }
+    },
+    {
+      "name": "About light artwork and attribution",
+      "passed": true,
+      "details": {
+        "artwork": "/assets/crm/images/reybill-crm.svg",
+        "upstreamNotice": true
+      }
+    },
+    {
+      "name": "Command palette uses the current ERP settings label and opens its page",
+      "passed": true,
+      "details": {
+        "label": "ReyBill ERP",
+        "settingsNavigation": true
+      }
+    },
+    {
+      "name": "Settings and disabled ERP integration UI",
+      "passed": true,
+      "details": {
+        "integrationEnabled": false,
+        "remoteActionsExecuted": false,
+        "nativeThemeSwitcher": true
+      }
+    },
+    {
+      "name": "About, dark artwork, legal notice and source access",
+      "passed": true,
+      "details": {
+        "theme": "dark",
+        "source": "https://github.com/reybillhq/reybill_crm/tree/feat/reybill-sales-branding",
+        "artwork": "/assets/crm/images/reybill-crm.svg"
+      }
+    },
+    {
+      "name": "PWA manifest, unchanged official icon and service worker",
+      "passed": true,
+      "details": {
+        "name": "ReyBill CRM",
+        "scope": "/crm",
+        "iconDimensions": "any",
+        "serviceWorkerServed": true
+      }
+    },
+    {
+      "name": "de compiled branding translations",
+      "passed": true,
+      "details": {
+        "brandSettingsLabel": "ReyBill ERP-Einstellungen",
+        "visibleSettingsHeading": true,
+        "placeholdersChecked": true
+      }
+    },
+    {
+      "name": "ar compiled branding translations",
+      "passed": true,
+      "details": {
+        "brandSettingsLabel": "إعدادات ReyBill ERP",
+        "visibleSettingsHeading": true,
+        "placeholdersChecked": true
+      }
+    },
+    {
+      "name": "Mobile navigation, drawer branding and responsive viewport",
+      "passed": true,
+      "details": {
+        "width": 390,
+        "drawerBranded": true,
+        "navigation": "Deals"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "externalRequests": [
+    "pulse.m.frappe.cloud"
+  ],
+  "passed": true
+}

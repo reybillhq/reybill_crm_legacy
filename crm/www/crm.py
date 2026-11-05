@@ -17,7 +17,7 @@ def get_context():
 	from crm.api import check_app_permission
 
 	if not check_app_permission():
-		frappe.throw(_("You do not have permission to access ReyBill Sales"), frappe.PermissionError)
+		frappe.throw(_("You do not have permission to access ReyBill CRM"), frappe.PermissionError)
 
 	redirect_to_set_password()
 
@@ -66,9 +66,12 @@ def get_context_for_dev():
 
 
 def get_boot():
+	from crm import __version__
+
 	return frappe._dict(
 		{
 			"frappe_version": frappe.__version__,
+			"crm_version": __version__,
 			"has_automation_engine": HAS_AUTOMATION_ENGINE,
 			"default_route": get_default_route(),
 			"site_name": frappe.local.site,

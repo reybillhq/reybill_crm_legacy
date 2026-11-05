@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://reybill.com",
+    "status": 200,
+    "finalUrl": "https://reybill.com/",
+    "contentType": "text/html; charset=utf-8",
+    "title": "Reybill \u2014 Business Management Software"
+  },
+  {
+    "url": "https://docs.reybill.com",
+    "status": 404,
+    "finalUrl": "https://docs.reybill.com/",
+    "contentType": "text/html; charset=utf-8",
+    "title": "404 Not Found"
+  },
+  {
+    "url": "https://console.reybill.com/console/support",
+    "status": 200,
+    "finalUrl": "https://console.reybill.com/login?redirectTo=%2Fconsole%2Fsupport",
+    "contentType": "text/html; charset=utf-8",
+    "title": "ReyBill \u2014 ERP Cloud Platform"
+  },
+  {
+    "url": "https://github.com/reybillhq/reybill_crm",
+    "status": 200,
+    "finalUrl": "https://github.com/reybillhq/reybill_crm",
+    "contentType": "text/html; charset=utf-8",
+    "title": "GitHub - reybillhq/reybill_crm: ReyBill Sales - Fully featured, Sales CRM \u00b7 GitHub"
+  },
+  {
+    "url": "https://github.com/reybillhq/reybill_crm/tree/feat/reybill-sales-branding",
+    "status": 200,
+    "finalUrl": "https://github.com/reybillhq/reybill_crm/tree/feat/reybill-sales-branding",
+    "contentType": "text/html; charset=utf-8",
+    "title": "GitHub - reybillhq/reybill_crm at feat/reybill-sales-branding \u00b7 GitHub"
+  },
+  {
+    "url": "https://github.com/reybillhq/reybill_crm/issues",
+    "status": 200,
+    "finalUrl": "https://github.com/reybillhq/reybill_crm/issues",
+    "contentType": "text/html; charset=utf-8",
+    "title": "Issues \u00b7 reybillhq/reybill_crm \u00b7 GitHub"
+  }
+]

@@ -65,16 +65,16 @@ async function main() {
     const response = await page.goto(base + '/crm?_lang=en', { waitUntil: 'networkidle' })
     assert.equal(response.status(), 200)
     await page.getByRole('button').filter({ hasText: branding.productName }).first().waitFor()
-    assert.match(await page.title(), /ReyBill Sales/)
+    assert.match(await page.title(), /ReyBill CRM/)
     const help = page.locator('aside').first()
     if (!(await help.isVisible())) {
       await page.getByRole('button', { name: /^(Continue|Start now|Help)$/ }).click()
     }
     await help.waitFor()
     assert((await help.innerText()).includes(branding.productName), 'Onboarding panel must use ReyBill identity')
-    assert(/Welcome to ReyBill Sales|All steps are completed successfully/.test(await help.innerText()), 'Preserve either active or completed onboarding state')
+    assert(/Welcome to ReyBill CRM|All steps are completed successfully/.test(await help.innerText()), 'Preserve either active or completed onboarding state')
     const icon = await page.locator('link[rel="icon"]').getAttribute('href')
-    assert(icon.includes('/assets/crm/images/branding/'))
+    assert.equal(icon, branding.appIcon)
     const accent = await page.getByRole('button', { name: 'Create', exact: true }).first().evaluate(el => getComputedStyle(el).backgroundColor)
     assert.equal(accent, 'rgb(116, 0, 58)')
     await cleanLinks(page)
@@ -103,15 +103,15 @@ async function main() {
     await cleanLinks(page)
     return { route: '/crm/deals/view/kanban', title: await page.title() }
   })
-  await check('Platform and ERP app-selector identity', async () => {
+  await check('Platform app-selector identity and ERP exclusion', async () => {
     await openMenu(page)
     await page.getByRole('menuitem', { name: 'Apps', exact: true }).hover()
     await page.getByRole('menuitem', { name: 'ReyBill', exact: true }).waitFor()
-    await page.getByRole('menuitem', { name: 'ReyBill ERP', exact: true }).waitFor()
-    assert.equal(await page.getByRole('menuitem', { name: 'ReyBill ERP', exact: true }).count(), 1)
+    assert.equal(await page.getByRole('menuitem', { name: 'ReyBill ERP', exact: true }).count(), 0)
+    assert.equal(await page.getByRole('menuitem', { name: 'ERPNext', exact: true }).count(), 0)
     await page.keyboard.press('Escape')
     await page.keyboard.press('Escape')
-    return { platform: 'ReyBill', erp: 'ReyBill ERP' }
+    return { platform: 'ReyBill', erpEntryAbsent: true }
   })
   await check('About light artwork and attribution' , async () => {
     await openMenu(page)
@@ -119,18 +119,29 @@ async function main() {
     const dialog = page.getByRole('dialog').last()
     await dialog.waitFor()
     const logo = dialog.locator('img:visible')
-    assert.equal(await logo.getAttribute('src'), branding.logoLight)
+    assert.equal(await logo.getAttribute('src'), branding.appIcon)
     assert(await logo.evaluate(el => el.complete && el.naturalWidth > 0))
     await dialog.screenshot({ path: path.join(output, 'about-light.png') })
     await cleanLinks(page)
     await page.keyboard.press('Escape')
-    return { artwork: branding.logoLight, upstreamNotice: true }
+    return { artwork: branding.appIcon, upstreamNotice: true }
+  })
+  await check('Command palette uses the current ERP settings label and opens its page', async () => {
+    await page.getByRole('button', { name: 'Search', exact: true }).click()
+    const input = page.getByPlaceholder('Search records or type a command...')
+    await input.fill('Settings')
+    await page.getByRole('option', { name: /^Settings/ }).first().click()
+    await input.fill(branding.erpName)
+    await page.getByRole('option', { name: new RegExp(branding.erpName) }).click()
+    await page.getByText('Connect ReyBill ERP to ReyBill CRM', { exact: true }).waitFor()
+    await page.keyboard.press('Escape')
+    return { label: branding.erpName, settingsNavigation: true }
   })
   await check('Settings and disabled ERP integration UI' , async () => {
     await openMenu(page)
     await page.getByRole('menuitem', { name: 'Settings', exact: true }).click()
     await page.locator('[data-page="ReyBill ERP"]').click()
-    await page.getByText('Connect ReyBill ERP to ReyBill Sales', { exact: true }).waitFor()
+    await page.getByText('Connect ReyBill ERP to ReyBill CRM', { exact: true }).waitFor()
     const dialog = page.getByRole('dialog').last()
     assert(!/Frappe Cloud|Manage Billing/.test(await dialog.innerText()))
     await cleanLinks(page)
@@ -147,14 +158,17 @@ async function main() {
     const dialog = page.getByRole('dialog').last()
     await dialog.waitFor()
     assert.equal(await dialog.getByRole('link', { name: 'Source Code', exact: true }).getAttribute('href'), branding.sourceUrl)
+    await dialog.locator('summary').click()
     assert((await dialog.innerText()).includes('Frappe Technologies'))
+    assert((await dialog.innerText()).includes('ReyBill Technologies Ltd.'))
+    assert.equal(await dialog.locator('[data-crm-version]').innerText(), 'Version ' + await page.evaluate(() => window.crm_version))
     const logo = dialog.locator('img:visible')
-    assert.equal(await logo.getAttribute('src'), branding.logoDark)
+    assert.equal(await logo.getAttribute('src'), branding.appIcon)
     assert(await logo.evaluate(el => el.complete && el.naturalWidth > 0))
     await dialog.screenshot({ path: path.join(output, 'about-dark.png') })
     await cleanLinks(page)
     await page.keyboard.press('Escape')
-    return { theme: 'dark', source: branding.sourceUrl, artwork: branding.logoDark }
+    return { theme: 'dark', source: branding.sourceUrl, artwork: branding.appIcon }
   })
   await check('PWA manifest, unchanged official icon and service worker', async () => {
     const response = await page.request.get(base + '/assets/crm/frontend/manifest.webmanifest')

@@ -47,6 +47,7 @@
 
 <script setup>
 import branding from '@/branding'
+import { crmSwitcherApps } from '@/utils/appSwitcher'
 import BrandLogo from '@/components/BrandLogo.vue'
 import AppsIcon from '@/components/Icons/AppsIcon.vue'
 import { sessionStore } from '@/stores/session'
@@ -70,9 +71,8 @@ const user = computed(() => getUser() || {})
 
 const apps = createResource({
   url: 'frappe.apps.get_apps',
-  cache: 'apps',
   auto: true,
-  transform: (data) => [deskApp(), ...crmSiblingApps(data)],
+  transform: (data) => crmSwitcherApps(data, __),
 })
 
 const dropdownItems = computed(() => {
@@ -166,26 +166,5 @@ function appMenuItems() {
       prefix: () => h('img', { class: 'size-5 rounded-4', src: app.logo }),
     },
   }))
-}
-
-function deskApp() {
-  return {
-    name: 'frappe',
-    logo: branding.iconLight,
-    title: __('ReyBill'),
-    route: '/desk',
-  }
-}
-
-function crmSiblingApps(data) {
-  return data
-    .filter((app) => app.name !== 'crm')
-    .map((app) => ({
-      name: app.name,
-      logo: app.logo,
-      title: app.name === 'erpnext' ? __('ReyBill ERP') : __(app.title),
-      ...(app.name === 'erpnext' ? { logo: branding.iconLight } : {}),
-      route: app.route,
-    }))
 }
 </script>

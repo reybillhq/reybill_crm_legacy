@@ -58,4 +58,4 @@ class TestBranding(unittest.TestCase):
 		self.assertEqual(fields["CRM Deal"][0]["fieldname"], "erpnext_customer")
 		self.assertEqual(fields["CRM Product"][0]["fieldname"], "erpnext_item_code")
 		self.assertEqual(fields["Quotation"][0]["fieldname"], "crm_deal")
-		self.assertEqual(fields["Quotation"][0]["label"], "ReyBill Sales Deal")
+		self.assertEqual(fields["Quotation"][0]["label"], "ReyBill CRM Deal")

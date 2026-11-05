@@ -1,0 +1,65 @@
+{
+  "base": "http://reybill.localhost:8012",
+  "checks": [
+    {
+      "name": "Native registry remains intact; ERPNext hidden only in CRM menu",
+      "passed": true,
+      "details": {
+        "nativeERPEntryPreserved": true,
+        "crmERPEntryAbsent": true
+      }
+    },
+    {
+      "name": "ReyBill click opens native functional Desk",
+      "passed": true,
+      "details": {
+        "route": "/desk",
+        "nativeBootLoaded": true
+      }
+    },
+    {
+      "name": "Rental click preserves registered route and functional app",
+      "passed": true,
+      "details": {
+        "route": "/rental",
+        "status": 200
+      }
+    },
+    {
+      "name": "Refresh ignores stale app cache and retains current branding",
+      "passed": true,
+      "details": {
+        "ordinaryReload": true,
+        "legacyCacheIgnored": true,
+        "registrations": [
+          {
+            "scope": "http://reybill.localhost:8012/assets/crm/frontend/",
+            "script": "http://reybill.localhost:8012/assets/crm/frontend/sw.js"
+          },
+          {
+            "scope": "http://reybill.localhost:8012/rental",
+            "script": "http://reybill.localhost:8012/api/method/reybill_equipment_rental.api.pwa.worker"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Independent sales session 1: native permissions and refreshed switcher",
+      "passed": true,
+      "details": {
+        "nativePermissionFilteredApps": [],
+        "refreshed": true
+      }
+    },
+    {
+      "name": "Independent sales session 2: native permissions and refreshed switcher",
+      "passed": true,
+      "details": {
+        "nativePermissionFilteredApps": [],
+        "refreshed": true
+      }
+    }
+  ],
+  "pageErrors": [],
+  "passed": true
+}

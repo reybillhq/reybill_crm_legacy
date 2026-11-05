@@ -2133,7 +2133,7 @@ msgid "Confirm {0}"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:436
-msgid "Connect ReyBill ERP to ReyBill Sales"
+msgid "Connect ReyBill ERP to ReyBill CRM"
 msgstr ""
 
 #: frontend/src/components/Setup/SetupEmail.vue:124
@@ -2315,7 +2315,7 @@ msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:158
 #, python-brace-format
-msgid "Could not create the ReyBill Sales custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
+msgid "Could not create the ReyBill CRM custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
 msgstr ""
 
 #: frontend/src/components/Settings/WorkflowAutomations/WorkflowAutomationPage.vue:367
@@ -4464,11 +4464,11 @@ msgstr ""
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json:14
-msgid "ReyBill Sales"
+msgid "ReyBill CRM"
 msgstr ""
 
 #: frontend/src/components/Layouts/AppSidebar.vue:685
-msgid "ReyBill Sales mobile"
+msgid "ReyBill CRM mobile"
 msgstr ""
 
 #: frontend/src/components/Settings/emailConfig.js:81
@@ -8812,7 +8812,7 @@ msgid "Set the name of your brand. Appears in the left sidebar."
 msgstr ""
 
 #: frontend/src/pages/Setup.vue:206
-msgid "Set up ReyBill Sales"
+msgid "Set up ReyBill CRM"
 msgstr ""
 
 #: frontend/src/components/Settings/Enrichment/EnrichmentSettings.vue:16
@@ -10747,7 +10747,7 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr ""
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access ReyBill Sales. Please contact your administrator if you believe this is an error."
+msgid "You do not have enough permissions to access ReyBill CRM. Please contact your administrator if you believe this is an error."
 msgstr ""
 
 #: crm/integrations/exotel/handler.py:102
@@ -10755,7 +10755,7 @@ msgid "You do not have mobile number set in your Telephony Agent"
 msgstr ""
 
 #: crm/www/crm.py:20
-msgid "You do not have permission to access ReyBill Sales"
+msgid "You do not have permission to access ReyBill CRM"
 msgstr ""
 
 #: frontend/src/data/document.js:85
@@ -11630,35 +11630,35 @@ msgid "⚠️ No row found for idx: {0} in parent field: {1}"
 msgstr ""
 
 
-#: ReyBill Sales branding
-msgid "Welcome to ReyBill Sales"
+#: ReyBill CRM branding
+msgid "Welcome to ReyBill CRM"
 msgstr ""
 
-#: ReyBill Sales branding
-msgid "How many people will use ReyBill Sales?"
+#: ReyBill CRM branding
+msgid "How many people will use ReyBill CRM?"
 msgstr ""
 
-#: ReyBill Sales branding
-msgid "We are changing how permissions work in ReyBill Sales"
+#: ReyBill CRM branding
+msgid "We are changing how permissions work in ReyBill CRM"
 msgstr ""
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "No synced ReyBill ERP Items"
 msgstr ""
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "You have been invited to join {0}"
 msgstr ""
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "Source Code"
 msgstr ""
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "Setting up Frappe Mail requires an API key and API secret for your email account."
 msgstr ""
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "Expression referencing other fields as doc.<fieldname>, e.g. eval:doc.country == 'India'. Leave blank for no condition."
 msgstr ""
 

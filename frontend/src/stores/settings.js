@@ -22,7 +22,7 @@ export function getSettings() {
   function setupBrand() {
     const name = settings.value?.brand_name
     brand.name =
-      name && !['CRM', 'Frappe CRM'].includes(name)
+      name && !['CRM', 'Frappe CRM', 'ReyBill Sales'].includes(name)
         ? name
         : branding.productName
     brand.logo = settings.value?.brand_logo

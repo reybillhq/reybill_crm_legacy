@@ -1,0 +1,29 @@
+{
+  "crmBusinessCountsUnchanged": true,
+  "businessCounts": {
+    "CRM Lead": 1,
+    "CRM Deal": 0,
+    "Contact": 1156,
+    "CRM Organization": 0
+  },
+  "erpIntegration": {
+    "enabled": false,
+    "remote": false,
+    "syncProducts": true,
+    "liveSyncExecuted": false
+  },
+  "defaultRuntime": {
+    "source": "/home/frappe/frappe/frappe-bench-v16/apps/crm/crm/__init__.py",
+    "version": "1.92.0",
+    "changed": false
+  },
+  "verifiedRuntime": {
+    "source": "/home/frappe/frappe/frappe-bench-v16/apps/reybill_crm/crm/__init__.py",
+    "version": "1.91.1",
+    "origin": "http://reybill.localhost:8012"
+  },
+  "temporaryRoleUsersRemaining": 0,
+  "temporarySessionsRevoked": true,
+  "temporarySessionFilesRemoved": true,
+  "demoResetMetadataRestored": true
+}

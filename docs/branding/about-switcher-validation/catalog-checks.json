@@ -1,0 +1,22 @@
+[
+  {
+    "catalog": "bs.po",
+    "existingChecks": 1,
+    "newChecks": 0
+  },
+  {
+    "catalog": "eo.po",
+    "existingChecks": 1,
+    "newChecks": 0
+  },
+  {
+    "catalog": "sv.po",
+    "existingChecks": 1,
+    "newChecks": 0
+  },
+  {
+    "catalog": "hr.po",
+    "existingChecks": 1,
+    "newChecks": 0
+  }
+]

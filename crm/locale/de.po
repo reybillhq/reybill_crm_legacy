@@ -1733,8 +1733,8 @@ msgid "Confirm {0}"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:274
-msgid "Connect ReyBill ERP to ReyBill Sales"
-msgstr "ReyBill ERP mit ReyBill Sales verbinden"
+msgid "Connect ReyBill ERP to ReyBill CRM"
+msgstr "ReyBill ERP mit ReyBill CRM verbinden"
 
 #: frontend/src/pages/Welcome.vue:35
 msgid "Connect your Email"
@@ -1862,7 +1862,7 @@ msgid "Copied to Clipboard"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:156
-msgid "Could not create the ReyBill Sales custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
+msgid "Could not create the ReyBill CRM custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
 msgstr ""
 
 #: frontend/src/components/Settings/Hierarchy/useRemoveNode.js:16
@@ -3584,12 +3584,12 @@ msgstr ""
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
-msgid "ReyBill Sales"
-msgstr "ReyBill Sales"
+msgid "ReyBill CRM"
+msgstr "ReyBill CRM"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:638
-msgid "ReyBill Sales mobile"
-msgstr "ReyBill Sales mobil"
+msgid "ReyBill CRM mobile"
+msgstr "ReyBill CRM mobil"
 
 #: frontend/src/components/Settings/emailConfig.js:81
 msgid "Frappe Mail Site"
@@ -3826,8 +3826,8 @@ msgid "How do new leads usually come to you?"
 msgstr ""
 
 #: frontend/src/pages/PersonaForm.vue:108
-msgid "How many people will use ReyBill Sales?"
-msgstr "Wie viele Personen werden ReyBill Sales nutzen?"
+msgid "How many people will use ReyBill CRM?"
+msgstr "Wie viele Personen werden ReyBill CRM nutzen?"
 
 #. Description of the 'Timeline Timestamp Format' (Select) field in DocType
 #. 'FCRM Settings'
@@ -8108,8 +8108,8 @@ msgid "Walk-ins"
 msgstr ""
 
 #: frontend/src/components/SalesHierarchyBanner.vue:20
-msgid "We are changing how permissions work in ReyBill Sales"
-msgstr "Wir ändern die Funktionsweise der Berechtigungen in ReyBill Sales"
+msgid "We are changing how permissions work in ReyBill CRM"
+msgstr "Wir ändern die Funktionsweise der Berechtigungen in ReyBill CRM"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:593
 msgid "Web Form"
@@ -8166,8 +8166,8 @@ msgid "Welcome Message"
 msgstr ""
 
 #: frontend/src/pages/PersonaForm.vue:132
-msgid "Welcome to ReyBill Sales"
-msgstr "Willkommen bei ReyBill Sales"
+msgid "Welcome to ReyBill CRM"
+msgstr "Willkommen bei ReyBill CRM"
 
 #: frontend/src/pages/Welcome.vue:4
 msgid "Welcome {0}, lets add your first lead"
@@ -8310,16 +8310,16 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr ""
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access ReyBill Sales. Please contact your administrator if you believe this is an error."
-msgstr "Sie haben nicht genügend Berechtigungen, um auf ReyBill Sales zuzugreifen. Wenden Sie sich an Ihre Administration, wenn Sie einen Fehler vermuten."
+msgid "You do not have enough permissions to access ReyBill CRM. Please contact your administrator if you believe this is an error."
+msgstr "Sie haben nicht genügend Berechtigungen, um auf ReyBill CRM zuzugreifen. Wenden Sie sich an Ihre Administration, wenn Sie einen Fehler vermuten."
 
 #: crm/integrations/exotel/handler.py:92
 msgid "You do not have mobile number set in your Telephony Agent"
 msgstr ""
 
 #: crm/www/crm.py:18
-msgid "You do not have permission to access ReyBill Sales"
-msgstr "Sie haben keine Berechtigung, auf ReyBill Sales zuzugreifen"
+msgid "You do not have permission to access ReyBill CRM"
+msgstr "Sie haben keine Berechtigung, auf ReyBill CRM zuzugreifen"
 
 #: frontend/src/data/document.js:45
 msgid "You do not have permission to access this document"
@@ -8928,47 +8928,47 @@ msgstr ""
 
 
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "Run a manual bi-directional sync between ReyBill ERP Items and CRM Products."
 msgstr "Manuelle bidirektionale Synchronisierung zwischen ReyBill ERP-Artikeln und CRM-Produkten starten."
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "No synced ReyBill ERP Items"
 msgstr "Keine synchronisierten ReyBill ERP-Artikel"
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "Setting up Frappe Mail requires an API key and API secret for your email account."
 msgstr "Zum Einrichten von Frappe Mail benötigen Sie einen API-Schlüssel und ein API-Geheimnis für Ihr E-Mail-Konto."
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "Expression referencing other fields as doc.<fieldname>, e.g. eval:doc.country == 'India'. Leave blank for no condition."
 msgstr "Ausdruck mit Verweisen auf andere Felder als doc.<fieldname>, z. B. eval:doc.country == 'India'. Für keine Bedingung leer lassen."
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "You have been invited to join {0}"
 msgstr "Sie wurden eingeladen, {0} beizutreten"
 
-#: ReyBill Sales branding
-msgid "Set up ReyBill Sales"
-msgstr "ReyBill Sales einrichten"
+#: ReyBill CRM branding
+msgid "Set up ReyBill CRM"
+msgstr "ReyBill CRM einrichten"
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "Manage ReyBill ERP integration settings."
 msgstr "Einstellungen für die ReyBill ERP-Integration verwalten."
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "ReyBill ERP Items always sync into CRM Products. Turn this on to also sync CRM Product changes back to ReyBill ERP Items."
 msgstr "ReyBill ERP-Artikel werden immer mit CRM-Produkten synchronisiert. Aktivieren Sie diese Option, um auch Änderungen an CRM-Produkten zurück in ReyBill ERP-Artikel zu übertragen."
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "Source Code"
 msgstr "Quellcode"
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "Run a manual synchronization to pull the latest Items from ReyBill ERP."
 msgstr "Manuelle Synchronisierung starten, um die neuesten Artikel aus ReyBill ERP abzurufen."
 
-#: ReyBill Sales branding
+#: ReyBill CRM branding
 msgid "Enable the integration to create quotations and more in ReyBill ERP."
 msgstr "Aktivieren Sie die Integration, um Angebote und mehr in ReyBill ERP zu erstellen."
 

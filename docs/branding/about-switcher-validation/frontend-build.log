@@ -1,0 +1,200 @@
+yarn run v1.22.22
+$ vite build --base=/assets/crm/frontend/ && yarn copy-html-entry
+vite v8.2.0 building client environment for production...
+[2K
+transforming...Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+✓ 3311 modules transformed.
+rendering chunks...
+[frappeui-build-config-plugin] Successfully copied index.html to ../crm/www/crm.html
+computing gzip size...
+../crm/public/frontend/registerSW.js                                     0.17 kB
+../crm/public/frontend/manifest.webmanifest                              0.38 kB
+../crm/public/frontend/index.html                                        5.36 kB │ gzip:   1.26 kB
+../crm/public/frontend/assets/spritesheet-DpIxuf5L.svg                   5.55 kB │ gzip:   1.67 kB
+../crm/public/frontend/assets/sparkpost-BE6L4Zsb.webp                    6.88 kB
+../crm/public/frontend/assets/gmail-63izsubs.png                         7.26 kB
+../crm/public/frontend/assets/yandex-BsPU5tMy.png                       13.93 kB
+../crm/public/frontend/assets/yahoo-DiTp7aZW.png                        37.26 kB
+../crm/public/frontend/assets/outlook-CSGNsWQK.png                     220.22 kB
+../crm/public/frontend/assets/Inter.var-C9xDBOS3.woff2                 264.23 kB
+../crm/public/frontend/assets/Inter-Italic.var-BGHziHgI.woff2          297.26 kB
+../crm/public/frontend/assets/ContactModal-y9jUi39v.css                  0.05 kB │ gzip:   0.07 kB
+../crm/public/frontend/assets/FadedScrollableDiv-Bgy2uHt-.css            0.12 kB │ gzip:   0.10 kB
+../crm/public/frontend/assets/ViewBreadcrumbs-AvAQzuGr.css               0.13 kB │ gzip:   0.10 kB
+../crm/public/frontend/assets/vuedraggable-Zf7Qbc9C.css                  0.27 kB │ gzip:   0.14 kB
+../crm/public/frontend/assets/CallLogDetailModal-MHeFUjkk.css            0.28 kB │ gzip:   0.16 kB
+../crm/public/frontend/assets/FileUploader-DndzlMjC.css                  0.36 kB │ gzip:   0.21 kB
+../crm/public/frontend/assets/Dropdown-B1tZgOiP.css                      0.38 kB │ gzip:   0.23 kB
+../crm/public/frontend/assets/useActiveTabManager-BOg2SdH-.css           0.63 kB │ gzip:   0.30 kB
+../crm/public/frontend/assets/Dialog-C-Jv5HzQ.css                        0.68 kB │ gzip:   0.21 kB
+../crm/public/frontend/assets/view-OaGnpvU8.css                          1.35 kB │ gzip:   0.47 kB
+../crm/public/frontend/assets/FieldLayout-6vQtUYyv.css                   1.38 kB │ gzip:   0.43 kB
+../crm/public/frontend/assets/Icon-BVkV0Lbx.css                          2.09 kB │ gzip:   0.54 kB
+../crm/public/frontend/assets/FormControl-Bui2OTRH.css                   2.34 kB │ gzip:   0.54 kB
+../crm/public/frontend/assets/Dashboard-D6yIa55y.css                     3.01 kB │ gzip:   0.93 kB
+../crm/public/frontend/assets/L.Control.Locate-C-imx2w4.css              3.22 kB │ gzip:   0.78 kB
+../crm/public/frontend/assets/leaflet-CmhQEJDa.css                       4.93 kB │ gzip:   1.13 kB
+../crm/public/frontend/assets/Setup-B-mVLY8N.css                        10.16 kB │ gzip:   2.62 kB
+../crm/public/frontend/assets/document-BUU9lMXo.css                     11.21 kB │ gzip:   2.55 kB
+../crm/public/frontend/assets/leaflet-CcXJxNtP.css                      14.80 kB │ gzip:   6.31 kB
+../crm/public/frontend/assets/GlobalModals-BOZDno3J.css                 20.46 kB │ gzip:   4.58 kB
+../crm/public/frontend/assets/index-CL_IgRq9.css                       611.77 kB │ gzip:  57.08 kB
+../crm/public/frontend/assets/_plugin-vue_export-helper-BDNMzG2s.js      0.08 kB │ gzip:   0.09 kB
+../crm/public/frontend/assets/modals-D5pxAmeG.js                         0.20 kB │ gzip:   0.18 kB │ map:     0.52 kB
+../crm/public/frontend/assets/spriteIcon-DF_UYjjX.js                     0.23 kB │ gzip:   0.21 kB │ map:     0.56 kB
+../crm/public/frontend/assets/useUnsavedChangesWarning-1kxyzcxn.js       0.31 kB │ gzip:   0.24 kB │ map:     0.80 kB
+../crm/public/frontend/assets/global-DFWCFiMT.js                         0.35 kB │ gzip:   0.27 kB │ map:     0.85 kB
+../crm/public/frontend/assets/doctypeModal-DPYmbDJz.js                   0.45 kB │ gzip:   0.31 kB │ map:     1.39 kB
+../crm/public/frontend/assets/calendar-Y_U2IUWA.js                       0.50 kB │ gzip:   0.36 kB │ map:     0.95 kB
+../crm/public/frontend/assets/form-DsqzQuu6.js                           0.50 kB │ gzip:   0.30 kB │ map:     1.38 kB
+../crm/public/frontend/assets/form-Ce3d_tx5.js                           0.50 kB │ gzip:   0.30 kB │ map:     1.39 kB
+../crm/public/frontend/assets/organizations-DEfnKQgE.js                  0.56 kB │ gzip:   0.39 kB │ map:     1.51 kB
+../crm/public/frontend/assets/InvalidPage-CllrqtBC.js                    0.59 kB │ gzip:   0.41 kB │ map:     0.81 kB
+../crm/public/frontend/assets/settings-CM61gluF.js                       0.62 kB │ gzip:   0.40 kB │ map:     1.49 kB
+../crm/public/frontend/assets/LayoutHeader-DINDpsuh.js                   0.64 kB │ gzip:   0.40 kB │ map:     1.16 kB
+../crm/public/frontend/assets/ErrorMessage-BYKy4buP.js                   0.64 kB │ gzip:   0.46 kB │ map:     4.40 kB
+../crm/public/frontend/assets/useTimelinePreferences-Fe_fKxkT.js         0.68 kB │ gzip:   0.41 kB │ map:     2.08 kB
+../crm/public/frontend/assets/DesktopLayout-C2mS2ZSD.js                  0.73 kB │ gzip:   0.46 kB │ map:     1.45 kB
+../crm/public/frontend/assets/telephony-yUs7SSs5.js                      0.74 kB │ gzip:   0.43 kB │ map:     1.94 kB
+../crm/public/frontend/assets/ErrorPage-D1EQbjxi.js                      0.76 kB │ gzip:   0.50 kB │ map:     1.08 kB
+../crm/public/frontend/assets/AvatarIcon-aa_njAcw.js                     0.83 kB │ gzip:   0.56 kB │ map:     1.00 kB
+../crm/public/frontend/assets/rolldown-runtime-B0Z9INg1.js               0.90 kB │ gzip:   0.51 kB
+../crm/public/frontend/assets/pageMeta-BKQcX_4Z.js                       0.97 kB │ gzip:   0.63 kB │ map:     3.84 kB
+../crm/public/frontend/assets/RefreshIcon-DKHTzCsD.js                    0.99 kB │ gzip:   0.63 kB │ map:     1.36 kB
+../crm/public/frontend/assets/NotPermitted-BMI8SQfg.js                   1.03 kB │ gzip:   0.66 kB │ map:     1.44 kB
+../crm/public/frontend/assets/ArrowUpRightIcon-DXsQzWWU.js               1.05 kB │ gzip:   0.65 kB │ map:     1.20 kB
+../crm/public/frontend/assets/ContactsIcon-BN62EWaf.js                   1.09 kB │ gzip:   0.61 kB │ map:     1.47 kB
+../crm/public/frontend/assets/CheckIcon-DeFJNvqc.js                      1.09 kB │ gzip:   0.72 kB │ map:     2.92 kB
+../crm/public/frontend/assets/dataImport-CIRUFm2V.js                     1.10 kB │ gzip:   0.57 kB │ map:     4.36 kB
+../crm/public/frontend/assets/Tooltip-TD6-8bwu.js                        1.13 kB │ gzip:   0.64 kB │ map:     5.26 kB
+../crm/public/frontend/assets/branding-DdZUlsDx.js                       1.15 kB │ gzip:   0.57 kB │ map:     1.83 kB
+../crm/public/frontend/assets/DealsIcon-BHaxm07K.js                      1.17 kB │ gzip:   0.78 kB │ map:     1.32 kB
+../crm/public/frontend/assets/PinIcon-qI_h2qW8.js                        1.21 kB │ gzip:   0.77 kB │ map:     1.36 kB
+../crm/public/frontend/assets/dialogs-7hCQLj_h.js                        1.25 kB │ gzip:   0.73 kB │ map:     4.61 kB
+../crm/public/frontend/assets/erpnext-BDPBsx2-.js                        1.27 kB │ gzip:   0.79 kB │ map:     1.79 kB
+../crm/public/frontend/assets/useColorScheme-CzHJAfNT.js                 1.31 kB │ gzip:   0.65 kB │ map:    12.18 kB
+../crm/public/frontend/assets/noteView-7BvKyNxr.js                       1.33 kB │ gzip:   0.74 kB │ map:     4.33 kB
+../crm/public/frontend/assets/ListFooter-1kvjMGTS.js                     1.42 kB │ gzip:   0.75 kB │ map:     2.87 kB
+../crm/public/frontend/assets/NoteIcon-DZd44c8z.js                       1.47 kB │ gzip:   0.82 kB │ map:     1.63 kB
+../crm/public/frontend/assets/statuses-B1m1cUtq.js                       1.62 kB │ gzip:   0.74 kB │ map:     5.16 kB
+../crm/public/frontend/assets/MultipleAvatar-G0mWtk_F.js                 1.73 kB │ gzip:   0.84 kB │ map:     3.21 kB
+../crm/public/frontend/assets/CameraIcon-DKPfKtjl.js                     1.89 kB │ gzip:   0.92 kB │ map:     2.04 kB
+../crm/public/frontend/assets/TaskIcon-DCAi1_lW.js                       1.90 kB │ gzip:   1.08 kB │ map:     2.04 kB
+../crm/public/frontend/assets/PhoneIcon-Bcq9O59t.js                      1.93 kB │ gzip:   1.12 kB │ map:     2.08 kB
+../crm/public/frontend/assets/Resizer-dJTDycrY.js                        1.96 kB │ gzip:   0.90 kB │ map:     4.30 kB
+../crm/public/frontend/assets/telemetry-CvJG__yY.js                      1.96 kB │ gzip:   1.04 kB │ map:     9.75 kB
+../crm/public/frontend/assets/DetailsIcon-CHcvLkYT.js                    2.00 kB │ gzip:   0.85 kB │ map:     2.15 kB
+../crm/public/frontend/assets/useContactFields-B0fnWwR5.js               2.10 kB │ gzip:   0.84 kB │ map:     7.74 kB
+../crm/public/frontend/assets/WhatsAppIcon-GiVLkVBs.js                   2.15 kB │ gzip:   0.97 kB │ map:     2.49 kB
+../crm/public/frontend/assets/ViewBreadcrumbs-Cn_WLjsB.js                2.20 kB │ gzip:   1.08 kB │ map:     3.98 kB
+../crm/public/frontend/assets/EmptyState-DrCkiShm.js                     2.21 kB │ gzip:   1.05 kB │ map:     4.15 kB
+../crm/public/frontend/assets/Badge-Bd5-cKrY.js                          2.22 kB │ gzip:   0.85 kB │ map:     9.62 kB
+../crm/public/frontend/assets/CalendarIcon-h0a1OpWi.js                   2.25 kB │ gzip:   1.03 kB │ map:     2.40 kB
+../crm/public/frontend/assets/LeadsIcon-_wkIve2M.js                      2.32 kB │ gzip:   1.12 kB │ map:     2.47 kB
+../crm/public/frontend/assets/CommentIcon-hf9MQLMD.js                    2.33 kB │ gzip:   1.32 kB │ map:     4.26 kB
+../crm/public/frontend/assets/DurationInput-BLEvdPpl.js                  2.47 kB │ gzip:   1.26 kB │ map:     7.58 kB
+../crm/public/frontend/assets/onboarding-DmZsoTNZ.js                     2.47 kB │ gzip:   1.13 kB │ map:    10.39 kB
+../crm/public/frontend/assets/LostReasonModal-BVNAmivA.js                2.66 kB │ gzip:   1.29 kB │ map:     5.54 kB
+../crm/public/frontend/assets/fileUploadHandler-DCeB7HKi.js              2.73 kB │ gzip:   1.21 kB │ map:     8.98 kB
+../crm/public/frontend/assets/MobileNotification-DW_9mteF.js             2.75 kB │ gzip:   1.35 kB │ map:     5.75 kB
+../crm/public/frontend/assets/OrganizationsIcon-8TFcrCFu.js              3.04 kB │ gzip:   1.43 kB │ map:     3.20 kB
+../crm/public/frontend/assets/Breadcrumbs-CJmatIXx.js                    3.12 kB │ gzip:   1.25 kB │ map:    13.87 kB
+../crm/public/frontend/assets/useCommandPalette-DTKnaPAk.js              3.18 kB │ gzip:   1.57 kB │ map:    11.74 kB
+../crm/public/frontend/assets/OrganizationModal-BypHio8P.js              3.38 kB │ gzip:   1.66 kB │ map:     7.96 kB
+../crm/public/frontend/assets/Contacts-Cc7ErgM6.js                       3.84 kB │ gzip:   1.68 kB │ map:     8.41 kB
+../crm/public/frontend/assets/useFileUpload-Dt0ztnzT.js                  3.89 kB │ gzip:   1.69 kB │ map:    15.60 kB
+../crm/public/frontend/assets/KanbanActivityCounts-CV1kcIes.js           3.91 kB │ gzip:   2.08 kB │ map:     5.71 kB
+../crm/public/frontend/assets/Progress-DeUrt159.js                       4.12 kB │ gzip:   1.83 kB │ map:    17.64 kB
+../crm/public/frontend/assets/LeadModal-gz4XTg7O.js                      4.21 kB │ gzip:   2.04 kB │ map:    10.16 kB
+../crm/public/frontend/assets/ContactModal-BAnkLMNX.js                   4.22 kB │ gzip:   2.06 kB │ map:    10.52 kB
+../crm/public/frontend/assets/notifications-CMsAqsdL.js                  4.25 kB │ gzip:   2.11 kB │ map:     5.71 kB
+../crm/public/frontend/assets/recordCommands-Dy3HJjlp.js                 4.67 kB │ gzip:   2.19 kB │ map:    11.38 kB
+../crm/public/frontend/assets/FadedScrollableDiv-svuOhpqR.js             4.69 kB │ gzip:   1.74 kB │ map:     7.29 kB
+../crm/public/frontend/assets/RadioGroupItem-DNI5hjAM.js                 4.84 kB │ gzip:   1.83 kB │ map:    19.66 kB
+../crm/public/frontend/assets/Notes-CGjB0379.js                          5.07 kB │ gzip:   2.28 kB │ map:    10.39 kB
+../crm/public/frontend/assets/ContactsListView-BcSllQV5.js               5.19 kB │ gzip:   2.18 kB │ map:    11.68 kB
+../crm/public/frontend/assets/dialog-CJnGET5P.js                         5.22 kB │ gzip:   2.13 kB │ map:    29.75 kB
+../crm/public/frontend/assets/nativeElements-OhUfC26q.js                 5.34 kB │ gzip:   2.03 kB │ map:    25.44 kB
+../crm/public/frontend/assets/DealModal-D-nZvtUk.js                      5.41 kB │ gzip:   2.32 kB │ map:    13.20 kB
+../crm/public/frontend/assets/TabButtons-E95D8z0R.js                     5.61 kB │ gzip:   2.48 kB │ map:    33.83 kB
+../crm/public/frontend/assets/UserAvatar-Dtx5I75D.js                     5.87 kB │ gzip:   2.50 kB │ map:    22.61 kB
+../crm/public/frontend/assets/ConvertToDealModal-BDOTXwJ3.js             6.06 kB │ gzip:   2.55 kB │ map:    15.17 kB
+../crm/public/frontend/assets/KanbanView-BUt7bot0.js                     6.06 kB │ gzip:   2.48 kB │ map:    15.06 kB
+../crm/public/frontend/assets/DealsListView-Bal2Hj0s.js                  6.11 kB │ gzip:   2.44 kB │ map:    14.49 kB
+../crm/public/frontend/assets/EnrichFromWebsite-V19tj_te.js              6.22 kB │ gzip:   2.66 kB │ map:    20.38 kB
+../crm/public/frontend/assets/DataImports-Dwjgulh7.js                    7.34 kB │ gzip:   2.92 kB │ map:    29.57 kB
+../crm/public/frontend/assets/Organizations-4BQV_VRJ.js                  8.30 kB │ gzip:   3.22 kB │ map:    18.91 kB
+../crm/public/frontend/assets/MobileLead-BIvrPjFh.js                     8.30 kB │ gzip:   3.28 kB │ map:    18.93 kB
+../crm/public/frontend/assets/MobileContact-DJ_0Dyr4.js                  8.41 kB │ gzip:   3.54 kB │ map:    19.56 kB
+../crm/public/frontend/assets/Password-D8Om34KK.js                       8.58 kB │ gzip:   3.64 kB │ map:    43.85 kB
+../crm/public/frontend/assets/CallLogs-BTGCOmZW.js                       8.73 kB │ gzip:   3.46 kB │ map:    19.64 kB
+../crm/public/frontend/assets/demoData-9SyrRCzN.js                       9.19 kB │ gzip:   3.20 kB │ map:    16.89 kB
+../crm/public/frontend/assets/Contact-BF9fPnZi.js                        9.54 kB │ gzip:   3.93 kB │ map:    22.44 kB
+../crm/public/frontend/assets/MobileOrganization-Dtn5-5ZQ.js             9.57 kB │ gzip:   3.71 kB │ map:    22.40 kB
+../crm/public/frontend/assets/DeleteLinkedDocModal-DmZ-n6G4.js          10.08 kB │ gzip:   3.66 kB │ map:    25.48 kB
+../crm/public/frontend/assets/Welcome-CMfYnqsB.js                       10.10 kB │ gzip:   6.76 kB │ map:    11.99 kB
+../crm/public/frontend/assets/Deals-CQL6Tb6j.js                         10.84 kB │ gzip:   4.05 kB │ map:    27.88 kB
+../crm/public/frontend/assets/activityHash-CN3XjrM8.js                  11.40 kB │ gzip:   4.80 kB │ map:    23.64 kB
+../crm/public/frontend/assets/CallLogDetailModal-RfGb1bTU.js            11.62 kB │ gzip:   4.59 kB │ map:    28.16 kB
+../crm/public/frontend/assets/MobileDeal-C0WHtzKi.js                    12.67 kB │ gzip:   4.70 kB │ map:    32.39 kB
+../crm/public/frontend/assets/Tasks-BDKrWmj0.js                         13.20 kB │ gzip:   4.76 kB │ map:    33.22 kB
+../crm/public/frontend/assets/Lead-CVVieC0x.js                          13.26 kB │ gzip:   5.07 kB │ map:    31.94 kB
+../crm/public/frontend/assets/L.Control.Locate.esm-CaRv_DP-.js          13.52 kB │ gzip:   4.14 kB │ map:    47.90 kB
+../crm/public/frontend/assets/FileUploader-591DfQkZ.js                  13.56 kB │ gzip:   5.36 kB │ map:    69.20 kB
+../crm/public/frontend/assets/Link-4x5D4uYY.js                          13.59 kB │ gzip:   4.32 kB │ map:    52.90 kB
+../crm/public/frontend/assets/Organization-BEeRAvER.js                  13.97 kB │ gzip:   5.62 kB │ map:    30.66 kB
+../crm/public/frontend/assets/Dialog-ChTKsOpz.js                        14.34 kB │ gzip:   4.47 kB │ map:    76.51 kB
+../crm/public/frontend/assets/ListView-FIw7oQcS.js                      14.56 kB │ gzip:   5.01 kB │ map:    38.76 kB
+../crm/public/frontend/assets/ListBulkActions-ZJ0Ij5Td.js               16.08 kB │ gzip:   5.66 kB │ map:    39.54 kB
+../crm/public/frontend/assets/Leads-B0dPe3Zh.js                         16.72 kB │ gzip:   5.61 kB │ map:    43.91 kB
+../crm/public/frontend/assets/Deal-CjcPqJSG.js                          17.93 kB │ gzip:   6.47 kB │ map:    46.09 kB
+../crm/public/frontend/assets/MobileLayout-hBjdhm8K.js                  25.72 kB │ gzip:   9.18 kB │ map:    66.92 kB
+../crm/public/frontend/assets/view-D7h6ZoI0.js                          26.16 kB │ gzip:   8.07 kB │ map:    73.30 kB
+../crm/public/frontend/assets/DataImport-b5WyRXSG.js                    33.75 kB │ gzip:  10.23 kB │ map:   154.73 kB
+../crm/public/frontend/assets/Dropdown-WVlz491s.js                      38.27 kB │ gzip:   9.35 kB │ map:   168.96 kB
+../crm/public/frontend/assets/Link-SqPFw_6R.js                          55.68 kB │ gzip:  17.87 kB │ map:   152.43 kB
+../crm/public/frontend/assets/ButtonControl-CyjDIv8l.js                 58.78 kB │ gzip:  22.93 kB │ map:   193.09 kB
+../crm/public/frontend/assets/Setup-DVBwFHua.js                         59.59 kB │ gzip:  18.65 kB │ map:   197.75 kB
+../crm/public/frontend/assets/FieldLayout-CwzK8ZqC.js                   60.51 kB │ gzip:  15.62 kB │ map:   163.54 kB
+../crm/public/frontend/assets/leaflet.draw-lpeKTWFs.js                  67.06 kB │ gzip:  14.24 kB │ map:   129.30 kB
+../crm/public/frontend/assets/users-C3mi9nO5.js                         78.81 kB │ gzip:  22.13 kB │ map:   305.38 kB
+../crm/public/frontend/assets/framework-frappe-ui-BBaSvmVH.js           90.56 kB │ gzip:  22.98 kB │ map:   221.05 kB
+../crm/public/frontend/assets/vue.runtime.esm-bundler-jluGaO9U.js      124.71 kB │ gzip:  47.80 kB │ map:   586.35 kB
+../crm/public/frontend/assets/leaflet-src-nreKTQ4P.js                  148.87 kB │ gzip:  43.44 kB │ map:   655.31 kB
+../crm/public/frontend/assets/FormControl-ScQNeJMe.js                  161.89 kB │ gzip:  39.39 kB │ map:   836.44 kB
+../crm/public/frontend/assets/ViewControls-DzOkUY28.js                 182.37 kB │ gzip:  60.96 kB │ map: 1,044.78 kB
+../crm/public/frontend/assets/vuedraggable.umd-ClJ_SWOG.js             182.77 kB │ gzip:  63.69 kB │ map:   720.69 kB
+../crm/public/frontend/assets/useActiveTabManager-pgdzIsLB.js          267.80 kB │ gzip:  67.42 kB │ map:   400.87 kB
+../crm/public/frontend/assets/Icon-BNXjVQ7Y.js                         396.84 kB │ gzip: 103.51 kB │ map: 1,701.17 kB
+../crm/public/frontend/assets/index-zy55N-7v.js                        583.89 kB │ gzip: 113.05 kB │ map:   257.91 kB
+../crm/public/frontend/assets/Dashboard-C6oQi5qy.js                    782.02 kB │ gzip: 262.11 kB │ map: 3,950.96 kB
+../crm/public/frontend/assets/document-C9lTADEE.js                     986.82 kB │ gzip: 303.76 kB │ map: 3,609.59 kB
+../crm/public/frontend/assets/GlobalModals-Dk2Aup6T.js               1,093.65 kB │ gzip: 314.93 kB │ map: 4,264.25 kB
+
+[33m[PLUGIN_TIMINGS] [0mYour build spent significant time in plugins. Here is a breakdown:
+  - unplugin-vue-components (50%)
+  - frappe-ui-lucide-icons (21%)
+  - vite:vue (13%)
+  - unplugin-auto-import (5%)
+  - vite:css (4%)
+See https://rolldown.rs/reference/InputOptions.checks#plugintimings for more details.
+
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 34.33s
+
+PWA v1.3.0
+mode      generateSW
+precache  155 entries (6544.91 KiB)
+files generated
+  ../crm/public/frontend/sw.js.map
+  ../crm/public/frontend/sw.js
+  ../crm/public/frontend/workbox-9c191d2f.js.map
+  ../crm/public/frontend/workbox-9c191d2f.js
+$ cp ../crm/public/frontend/index.html ../crm/www/crm.html
+Done in 41.55s.

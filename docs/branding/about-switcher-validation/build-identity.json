@@ -1,0 +1,14 @@
+{
+  "backendSource": "/home/frappe/frappe/frappe-bench-v16/apps/reybill_crm/crm/__init__.py",
+  "backendVersion": "1.91.1",
+  "htmlSha256": "e6897d6f6040eb901f3dfc737b89fdce2a884386bce43bc94d26fb403419951d",
+  "manifestSha256": "934c3d6afc914cd5a272759d9f28e5a0609de197b1d98fc9f9aa470804739307",
+  "serviceWorkerSha256": "78fa79fa07377e9e32f206f9d47982592361dd186c57e03daaf1cec76d2c5478",
+  "htmlScriptPaths": [
+    "/assets/crm/frontend/assets/index-zy55N-7v.js",
+    "/assets/crm/frontend/registerSW.js"
+  ],
+  "sourceBaseline": "d54ba561a8a1efeb5289c6f84a4798d2f3e0d218",
+  "servedArtifactHashesMatch": true,
+  "verifiedOrigin": "http://reybill.localhost:8012"
+}

@@ -44,7 +44,7 @@
       <SetupTelemetryConsent class="mb-3" />
       <footer class="flex items-center gap-2 text-sm text-ink-gray-5">
         <CRMLogo class="size-4" />
-        ReyBill Sales
+        ReyBill CRM
       </footer>
     </section>
     <SetupPreview
@@ -204,7 +204,7 @@ async function markSetupDone() {
   }
 }
 
-usePageMeta(() => ({ title: __('Set up ReyBill Sales') }))
+usePageMeta(() => ({ title: __('Set up ReyBill CRM') }))
 </script>
 
 <style scoped>

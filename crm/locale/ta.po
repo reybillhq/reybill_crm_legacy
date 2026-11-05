@@ -2876,11 +2876,11 @@ msgstr ""
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
-msgid "ReyBill Sales"
+msgid "ReyBill CRM"
 msgstr ""
 
 #: frontend/src/components/Layouts/AppSidebar.vue:608
-msgid "ReyBill Sales mobile"
+msgid "ReyBill CRM mobile"
 msgstr ""
 
 #. Option for the 'Weekly Off' (Select) field in DocType 'CRM Holiday List'
@@ -6425,7 +6425,7 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr ""
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access ReyBill Sales. Please contact your administrator if you believe this is an error."
+msgid "You do not have enough permissions to access ReyBill CRM. Please contact your administrator if you believe this is an error."
 msgstr ""
 
 #: crm/integrations/exotel/handler.py:93
@@ -6433,7 +6433,7 @@ msgid "You do not have mobile number set in your Telephony Agent"
 msgstr ""
 
 #: crm/www/crm.py:20
-msgid "You do not have permission to access ReyBill Sales"
+msgid "You do not have permission to access ReyBill CRM"
 msgstr ""
 
 #: frontend/src/data/document.js:35

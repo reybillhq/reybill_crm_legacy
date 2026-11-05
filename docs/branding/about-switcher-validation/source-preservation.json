@@ -1,0 +1,26 @@
+{
+  "crm": {
+    "sourceFilesUnchanged": true,
+    "gitStateUnchanged": true
+  },
+  "reybill_core": {
+    "sourceFilesUnchanged": true,
+    "gitStateUnchanged": true
+  },
+  "erpnext": {
+    "sourceFilesUnchanged": true,
+    "gitStateUnchanged": true
+  },
+  "frappe": {
+    "sourceFilesUnchanged": true,
+    "gitStateUnchanged": true
+  },
+  "reybill_farm": {
+    "sourceFilesUnchanged": true,
+    "gitStateUnchanged": true
+  },
+  "reybill_equipment_rental": {
+    "sourceFilesUnchanged": true,
+    "gitStateUnchanged": true
+  }
+}

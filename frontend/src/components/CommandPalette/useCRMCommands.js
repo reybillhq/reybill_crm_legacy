@@ -1,4 +1,5 @@
 import { call, dayjs, dayjsLocal } from 'frappe-ui'
+import branding from '@/branding'
 import { nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useTelemetry } from '@framework/ui/telemetry'
@@ -86,7 +87,7 @@ const SETTINGS_SECTIONS = [
     pages: [
       ['SLA Policies', 'timer'],
       ['Accounts', 'at-sign'],
-      ['ERPNext', 'blocks'],
+      [branding.erpName, 'blocks'],
       ['Lead Syncing', 'refresh-cw'],
     ],
   },

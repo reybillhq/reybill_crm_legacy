@@ -3,7 +3,7 @@ name = "crm"
 authors = [
     { name = "Frappe Technologies Pvt. Ltd.", email = "shariq@frappe.io"}
 ]
-description = "ReyBill Sales helps teams manage leads, deals and customer relationships."
+description = "ReyBill CRM helps teams manage leads, deals and customer relationships."
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

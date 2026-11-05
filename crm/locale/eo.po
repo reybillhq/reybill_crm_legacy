@@ -1733,7 +1733,7 @@ msgid "Confirm {0}"
 msgstr "crwdns199516:0{0}crwdne199516:0"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:274
-msgid "Connect ReyBill ERP to ReyBill Sales"
+msgid "Connect ReyBill ERP to ReyBill CRM"
 msgstr "crwdns200070:0crwdne200070:0"
 
 #: frontend/src/pages/Welcome.vue:35
@@ -1862,7 +1862,7 @@ msgid "Copied to Clipboard"
 msgstr "crwdns196224:0crwdne196224:0"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:156
-msgid "Could not create the ReyBill Sales custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
+msgid "Could not create the ReyBill CRM custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
 msgstr "crwdns206089:0{0}crwdne206089:0"
 
 #: frontend/src/components/Settings/Hierarchy/useRemoveNode.js:16
@@ -3584,11 +3584,11 @@ msgstr "crwdns153279:0crwdne153279:0"
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
-msgid "ReyBill Sales"
+msgid "ReyBill CRM"
 msgstr "crwdns153281:0crwdne153281:0"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:638
-msgid "ReyBill Sales mobile"
+msgid "ReyBill CRM mobile"
 msgstr "crwdns156384:0crwdne156384:0"
 
 #: frontend/src/components/Settings/emailConfig.js:81
@@ -3826,7 +3826,7 @@ msgid "How do new leads usually come to you?"
 msgstr "crwdns207247:0crwdne207247:0"
 
 #: frontend/src/pages/PersonaForm.vue:108
-msgid "How many people will use ReyBill Sales?"
+msgid "How many people will use ReyBill CRM?"
 msgstr "crwdns207249:0crwdne207249:0"
 
 #. Description of the 'Timeline Timestamp Format' (Select) field in DocType
@@ -8108,7 +8108,7 @@ msgid "Walk-ins"
 msgstr "crwdns207301:0crwdne207301:0"
 
 #: frontend/src/components/SalesHierarchyBanner.vue:20
-msgid "We are changing how permissions work in ReyBill Sales"
+msgid "We are changing how permissions work in ReyBill CRM"
 msgstr "crwdns203745:0crwdne203745:0"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:593
@@ -8166,7 +8166,7 @@ msgid "Welcome Message"
 msgstr "crwdns154077:0crwdne154077:0"
 
 #: frontend/src/pages/PersonaForm.vue:132
-msgid "Welcome to ReyBill Sales"
+msgid "Welcome to ReyBill CRM"
 msgstr "crwdns207305:0crwdne207305:0"
 
 #: frontend/src/pages/Welcome.vue:4
@@ -8310,7 +8310,7 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr "crwdns154099:0crwdne154099:0"
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access ReyBill Sales. Please contact your administrator if you believe this is an error."
+msgid "You do not have enough permissions to access ReyBill CRM. Please contact your administrator if you believe this is an error."
 msgstr "crwdns160948:0crwdne160948:0"
 
 #: crm/integrations/exotel/handler.py:92
@@ -8318,7 +8318,7 @@ msgid "You do not have mobile number set in your Telephony Agent"
 msgstr "crwdns154101:0crwdne154101:0"
 
 #: crm/www/crm.py:18
-msgid "You do not have permission to access ReyBill Sales"
+msgid "You do not have permission to access ReyBill CRM"
 msgstr "crwdns161452:0crwdne161452:0"
 
 #: frontend/src/data/document.js:45

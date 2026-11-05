@@ -1733,8 +1733,8 @@ msgid "Confirm {0}"
 msgstr "{0} ni tasdiqlang"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:274
-msgid "Connect ReyBill ERP to ReyBill Sales"
-msgstr "ERP ni ReyBill Sales ga ulang"
+msgid "Connect ReyBill ERP to ReyBill CRM"
+msgstr "ERP ni ReyBill CRM ga ulang"
 
 #: frontend/src/pages/Welcome.vue:35
 msgid "Connect your Email"
@@ -1862,7 +1862,7 @@ msgid "Copied to Clipboard"
 msgstr "Buferga nusxalandi"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:156
-msgid "Could not create the ReyBill Sales custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
+msgid "Could not create the ReyBill CRM custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
 msgstr ""
 
 #: frontend/src/components/Settings/Hierarchy/useRemoveNode.js:16
@@ -3584,12 +3584,12 @@ msgstr "Forma skripti muvaffaqiyatli yangilandi"
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
-msgid "ReyBill Sales"
-msgstr "ReyBill Sales"
+msgid "ReyBill CRM"
+msgstr "ReyBill CRM"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:638
-msgid "ReyBill Sales mobile"
-msgstr "ReyBill Sales mobil"
+msgid "ReyBill CRM mobile"
+msgstr "ReyBill CRM mobil"
 
 #: frontend/src/components/Settings/emailConfig.js:81
 msgid "Frappe Mail Site"
@@ -3826,7 +3826,7 @@ msgid "How do new leads usually come to you?"
 msgstr ""
 
 #: frontend/src/pages/PersonaForm.vue:108
-msgid "How many people will use ReyBill Sales?"
+msgid "How many people will use ReyBill CRM?"
 msgstr ""
 
 #. Description of the 'Timeline Timestamp Format' (Select) field in DocType
@@ -8108,8 +8108,8 @@ msgid "Walk-ins"
 msgstr ""
 
 #: frontend/src/components/SalesHierarchyBanner.vue:20
-msgid "We are changing how permissions work in ReyBill Sales"
-msgstr "Biz ReyBill Sales da ruxsatnomalar qanday ishlashini o'zgartirmoqdamiz"
+msgid "We are changing how permissions work in ReyBill CRM"
+msgstr "Biz ReyBill CRM da ruxsatnomalar qanday ishlashini o'zgartirmoqdamiz"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:593
 msgid "Web Form"
@@ -8166,7 +8166,7 @@ msgid "Welcome Message"
 msgstr "Xush kelibsiz xabari"
 
 #: frontend/src/pages/PersonaForm.vue:132
-msgid "Welcome to ReyBill Sales"
+msgid "Welcome to ReyBill CRM"
 msgstr ""
 
 #: frontend/src/pages/Welcome.vue:4
@@ -8310,16 +8310,16 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr "Sizning telefon agentingizda Exotel raqami o'rnatilmagan"
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access ReyBill Sales. Please contact your administrator if you believe this is an error."
-msgstr "Sizda ReyBill Sales ga kirish uchun yetarli ruxsat yo'q. Agar bu xatolik deb hisoblasangiz, iltimos, administratoringizga murojaat qiling."
+msgid "You do not have enough permissions to access ReyBill CRM. Please contact your administrator if you believe this is an error."
+msgstr "Sizda ReyBill CRM ga kirish uchun yetarli ruxsat yo'q. Agar bu xatolik deb hisoblasangiz, iltimos, administratoringizga murojaat qiling."
 
 #: crm/integrations/exotel/handler.py:92
 msgid "You do not have mobile number set in your Telephony Agent"
 msgstr "Sizning telefon agentingizda mobil raqamingiz o'rnatilmagan"
 
 #: crm/www/crm.py:18
-msgid "You do not have permission to access ReyBill Sales"
-msgstr "Sizda ReyBill Sales-ga kirish uchun ruxsat yo'q"
+msgid "You do not have permission to access ReyBill CRM"
+msgstr "Sizda ReyBill CRM-ga kirish uchun ruxsat yo'q"
 
 #: frontend/src/data/document.js:45
 msgid "You do not have permission to access this document"

@@ -1,0 +1,9 @@
+test_erp_field_names_survive_display_label_changes (crm.tests.test_branding.TestBranding.test_erp_field_names_survive_display_label_changes) ... ok
+test_invitation_uses_brand_without_changing_acceptance_link (crm.tests.test_branding.TestBranding.test_invitation_uses_brand_without_changing_acceptance_link) ... ok
+test_native_app_identity_and_official_assets (crm.tests.test_branding.TestBranding.test_native_app_identity_and_official_assets) ... ok
+test_remote_erp_api_path_is_preserved (crm.tests.test_branding.TestBranding.test_remote_erp_api_path_is_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.918s
+
+OK

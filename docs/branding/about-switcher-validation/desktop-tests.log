@@ -1,0 +1,12 @@
+✔ updates only CRM App presentation and leaves saved source objects intact (8.609135ms)
+✔ edit mode preserves native removal state and uses the edit array only (2.828501ms)
+✔ repeated installation does not stack wrappers (3.448046ms)
+✔ installs after native page creation and preserves its return value (5.546977ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 222.508989
