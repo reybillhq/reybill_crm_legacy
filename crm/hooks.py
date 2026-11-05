@@ -3,9 +3,11 @@ import frappe
 from crm.branding import BRANDING
 
 app_name = "crm"
-app_title = BRANDING["appName"]
-app_publisher = BRANDING["companyName"]
-app_description = BRANDING["description"]
+# Keep application metadata literal: Press reads hooks.py without importing it.
+# test_press_metadata guards these values against the central branding config.
+app_title = "ReyBill CRM"
+app_publisher = "ReyBill Technologies Ltd."
+app_description = "ReyBill CRM helps teams manage leads, deals and customer relationships."
 app_email = ""  # No unverified ReyBill support mailbox.
 app_license = "AGPLv3"
 app_icon_url = BRANDING["appIcon"]

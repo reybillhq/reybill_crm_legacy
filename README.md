@@ -6,6 +6,9 @@ and Frappe Framework, with integration support for ReyBill ERP (ERPNext).
 
 [ReyBill](https://reybill.com) · [Source code](https://github.com/reybillhq/reybill_crm)
 
+For the ReyBill Press App Manager, select branch **`release/v0.0.2`**.
+See [Press installation and existing CRM replacement](docs/PRESS_INSTALLATION.md).
+
 The ReyBill documentation portal is planned. Product help links remain hidden
 until corresponding articles are available.
 
@@ -19,7 +22,7 @@ original dirty `apps/crm` checkout is preserved. See [activation and rollback](d
 before changing that binding. Build this fork explicitly when maintaining the local setup.
 
 ```sh
-bench get-app crm https://github.com/reybillhq/reybill_crm.git
+bench get-app --branch release/v0.0.2 crm https://github.com/reybillhq/reybill_crm.git
 bench --site your-test-site install-app crm
 cd apps/crm/frontend
 yarn install --frozen-lockfile
