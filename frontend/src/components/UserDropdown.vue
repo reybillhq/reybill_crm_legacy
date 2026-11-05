@@ -47,13 +47,18 @@
 
 <script setup>
 import branding from '@/branding'
+import LucideScale from '~icons/lucide/scale'
 import { crmSwitcherApps } from '@/utils/appSwitcher'
 import BrandLogo from '@/components/BrandLogo.vue'
 import AppsIcon from '@/components/Icons/AppsIcon.vue'
 import { sessionStore } from '@/stores/session'
 import { usersStore } from '@/stores/users'
 import { getSettings } from '@/stores/settings'
-import { showSettings, isMobileView } from '@/composables/settings'
+import {
+  showSettings,
+  isMobileView,
+  closeMobileSidebar,
+} from '@/composables/settings'
 import { showAboutModal, showLegalNotices } from '@/composables/modals'
 import { spriteIcon } from '@/utils/spriteIcon'
 import { createResource, Dropdown } from 'frappe-ui'
@@ -109,8 +114,9 @@ const dropdownItems = computed(() => {
     options: [
       {
         label: __('Legal Notices'),
-        icon: spriteIcon('scale'),
-        onClick: () => (showLegalNotices.value = true),
+        icon: markRaw(LucideScale),
+        onClick: () =>
+          closeMobileSidebar(() => (showLegalNotices.value = true)),
       },
     ],
   })
@@ -158,7 +164,7 @@ function getStandardItem(item) {
       return {
         icon: item.icon,
         label: __(item.label),
-        onClick: () => (showAboutModal.value = true),
+        onClick: () => closeMobileSidebar(() => (showAboutModal.value = true)),
       }
     case 'logout':
       return {

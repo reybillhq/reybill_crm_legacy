@@ -11,7 +11,8 @@ appears in About.
 A permanent **Legal Notices** user-menu entry is available to every CRM user on
 desktop and mobile, independently of configurable standard menu items. The same
 content is under **Settings → Legal Notices**, in User Configuration with no
-manager-role restriction. It includes original Frappe CRM attribution, ReyBill
+manager-role restriction. Both information dialogs wait for the native mobile
+drawer to close, preserving keyboard focus and dismissal. It includes original Frappe CRM attribution, ReyBill
 modification attribution, AGPLv3 rights and warranty notice, the complete local
 AGPLv3 license, an immutable source permalink and downloadable source archive,
 and bundled dependency license/notice texts with package versions and source

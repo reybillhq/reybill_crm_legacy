@@ -10,7 +10,7 @@
           </Dialog.Title>
           <Button
             :aria-label="__('Close')"
-            icon="x"
+            :icon="LucideX"
             variant="ghost"
             @click="show = false"
           />
@@ -21,6 +21,7 @@
   </Dialog>
 </template>
 <script setup>
+import LucideX from '~icons/lucide/x'
 import { Button, Dialog } from 'frappe-ui'
 import LegalNoticesContent from '@/components/Settings/LegalNoticesContent.vue'
 const show = defineModel({ type: Boolean })

@@ -56,11 +56,19 @@ async function main() {
     save();
   }
   async function menuItem(name) {
-    await page
+    const opener = page
       .getByRole("button")
       .filter({ hasText: branding.productName })
-      .first()
-      .click();
+      .first();
+    // Native mobile navigation closes its drawer after selecting a menu action.
+    if (page.viewportSize().width < 768 && !(await opener.isVisible())) {
+      await page
+        .locator("button")
+        .filter({ has: page.locator("svg") })
+        .first()
+        .click();
+    }
+    await opener.click();
     await page.getByRole("menuitem", { name, exact: true }).click();
     const dialog = page.getByRole("dialog").last();
     await dialog.waitFor();
@@ -84,16 +92,14 @@ async function main() {
       )
     );
     assert.equal(await dialog.locator("details").count(), 0);
-    const links = await dialog
-      .locator("a")
-      .evaluateAll((nodes) =>
-        nodes.map((a) => ({
-          label: a.textContent.trim(),
-          href: a.getAttribute("href"),
-          target: a.target,
-          rel: a.rel,
-        }))
-      );
+    const links = await dialog.locator("a").evaluateAll((nodes) =>
+      nodes.map((a) => ({
+        label: a.textContent.trim(),
+        href: a.getAttribute("href"),
+        target: a.target,
+        rel: a.rel,
+      }))
+    );
     assert.deepEqual(
       links.map((a) => [a.label, a.href]),
       [
@@ -120,11 +126,9 @@ async function main() {
   }
   await check("Normal test runtime identity", async () => {
     await page.goto(base + "/crm/dashboard", { waitUntil: "networkidle" });
-    const help = page
-      .locator("aside")
-      .filter({
-        has: page.getByRole("button", { name: "Close", exact: true }),
-      });
+    const help = page.locator("aside").filter({
+      has: page.getByRole("button", { name: "Close", exact: true }),
+    });
     if (await help.count())
       await help.getByRole("button", { name: "Close", exact: true }).click();
     const response = await page.request.get(
@@ -144,6 +148,13 @@ async function main() {
         document.documentElement.setAttribute("data-theme", "light")
       );
       return aboutScreenshot("about-light");
+    }
+  );
+  await check(
+    "Ordinary browser refresh retains the current About build",
+    async () => {
+      await page.reload({ waitUntil: "networkidle" });
+      return aboutScreenshot("about-after-refresh");
     }
   );
   await check(
@@ -290,10 +301,13 @@ async function main() {
       );
       const result = await aboutScreenshot("about-mobile");
       await page.keyboard.press("Escape");
+      await page.locator("[data-about-dialog]").waitFor({ state: "hidden" });
       const legal = await menuItem("Legal Notices");
       assert(await legal.locator("[data-legal-notices]").isVisible());
       assert(await legal.evaluate((el) => el.scrollWidth <= el.clientWidth));
-      return { ...result, mobileLegalAccess: true };
+      await legal.getByRole("button", { name: "Close", exact: true }).click();
+      await legal.waitFor({ state: "hidden" });
+      return { ...result, mobileLegalAccess: true, mobileEscapeAndClose: true };
     }
   );
   await browser.close();
