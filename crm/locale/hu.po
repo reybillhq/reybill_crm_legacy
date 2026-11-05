@@ -1032,7 +1032,7 @@ msgid "Between"
 msgstr "Között"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:195
-msgid "Bidirectional sync of existing CRM Products and ERPNext Items. Runs in the background."
+msgid "Bidirectional sync of existing CRM Products and ReyBill ERP Items. Runs in the background."
 msgstr ""
 
 #: frontend/src/components/Settings/Settings.vue:137
@@ -1367,7 +1367,7 @@ msgid "Cannot delete standard items {0}"
 msgstr "Nem lehet törölni a standard elemeket {0}"
 
 #: crm/fcrm/doctype/crm_product/crm_product.py:81
-msgid "Cannot delete: linked ERPNext Item {0} is referenced by a Quotation. Remove the reference or delete the Item in ERPNext first."
+msgid "Cannot delete: linked ReyBill ERP Item {0} is referenced by a Quotation. Remove the reference or delete the Item in ReyBill ERP first."
 msgstr ""
 
 #: frontend/src/components/Settings/AssignmentRules/AssignmentRuleListItem.vue:170
@@ -1627,8 +1627,8 @@ msgstr "Válallkozás Neve"
 
 #. Label of the erpnext_company (Data) field in DocType 'ERPNext CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "Company in ERPNext site"
-msgstr "Vállalat az ERPNext oldalon"
+msgid "Company in ReyBill ERP site"
+msgstr "Vállalat az ReyBill ERP oldalon"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:517
 msgid "Company name is required"
@@ -1733,8 +1733,8 @@ msgid "Confirm {0}"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:274
-msgid "Connect ERPNext to Frappe CRM"
-msgstr "ERPNext összekapcsolása Frappe CRM-mel"
+msgid "Connect ReyBill ERP to ReyBill Sales"
+msgstr "ReyBill ERP összekapcsolása ReyBill Sales-mel"
 
 #: frontend/src/pages/Welcome.vue:35
 msgid "Connect your Email"
@@ -1862,7 +1862,7 @@ msgid "Copied to Clipboard"
 msgstr "Vágólapra másolva"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:156
-msgid "Could not create the Frappe CRM custom fields on {0} automatically. If it is running the latest ERPNext, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
+msgid "Could not create the ReyBill Sales custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
 msgstr ""
 
 #: frontend/src/components/Settings/Hierarchy/useRemoveNode.js:16
@@ -1940,8 +1940,8 @@ msgid "Create an Event"
 msgstr "Esemény létrehozása"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:217
-msgid "Create customer in ERPNext when the deal status is changed"
-msgstr "Ügyfél létrehozása az ERPNext-ben, amikor az ügylet állapota megváltozik"
+msgid "Create customer in ReyBill ERP when the deal status is changed"
+msgstr "Ügyfél létrehozása az ReyBill ERP-ben, amikor az ügylet állapota megváltozik"
 
 #. Label of the create_customer_on_status_change (Check) field in DocType
 #. 'ERPNext CRM Settings'
@@ -1952,7 +1952,7 @@ msgstr "Ügyfél létrehozása állapotváltozással"
 #: crm/fcrm/doctype/crm_product/crm_product.js:12
 #: crm/fcrm/doctype/crm_product/crm_product_list.js:10
 #: frontend/src/composables/document.js:29
-msgid "Create products as Items in ERPNext"
+msgid "Create products as Items in ReyBill ERP"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:435
@@ -2457,8 +2457,8 @@ msgid "Disable"
 msgstr "Tiltva"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:434
-msgid "Disable ERPNext Integration"
-msgstr "ERPNext integráció letiltása"
+msgid "Disable ReyBill ERP Integration"
+msgstr "ReyBill ERP integráció letiltása"
 
 #: frontend/src/components/Settings/Hierarchy/Hierarchy.vue:310
 msgid "Disable Sales Hierarchy"
@@ -2640,55 +2640,55 @@ msgstr "Időtartam"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:634
 #: frontend/src/components/Settings/Settings.vue:231
-msgid "ERPNext"
-msgstr "ERPNext"
+msgid "ReyBill ERP"
+msgstr "ReyBill ERP"
 
 #. Name of a DocType
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
 msgid "ERPNext CRM Settings"
-msgstr "ERPNext CRM beállítások"
+msgstr "ReyBill ERP CRM beállítások"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:3
 #: frontend/src/components/Settings/ERPNextSettings.vue:9
-msgid "ERPNext Settings"
+msgid "ReyBill ERP Settings"
 msgstr ""
 
 #. Label of the section_break_oubd (Section Break) field in DocType 'ERPNext
 #. CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "ERPNext Site API's"
-msgstr "ERPNext webhely API-k"
+msgid "ReyBill ERP Site API's"
+msgstr "ReyBill ERP webhely API-k"
 
 #. Label of the erpnext_site_url (Data) field in DocType 'ERPNext CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "ERPNext Site URL"
-msgstr "ERPNext webhely URL-címe"
+msgid "ReyBill ERP Site URL"
+msgstr "ReyBill ERP webhely URL-címe"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:161
-msgid "ERPNext custom fields not created"
+msgid "ReyBill ERP custom fields not created"
 msgstr ""
 
 #: crm/fcrm/doctype/crm_product/crm_product.py:42
-msgid "ERPNext integration is active. Create an Item in ERPNext and it will appear in CRM Product automatically."
+msgid "ReyBill ERP integration is active. Create an Item in ReyBill ERP and it will appear in CRM Product automatically."
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:220
-msgid "ERPNext integration must be enabled on the same site"
+msgid "ReyBill ERP integration must be enabled on the same site"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:70
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:87
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:523
-msgid "ERPNext is not installed in the current site"
-msgstr "Az ERPNext nincs telepítve az aktuális webhelyen"
+msgid "ReyBill ERP is not installed in the current site"
+msgstr "Az ReyBill ERP nincs telepítve az aktuális webhelyen"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:71
-msgid "ERPNext is not installed on this site either install it or enter the URL of your ERPNext site to connect"
-msgstr "Az ERPNext nincs telepítve erre az oldalra. Telepítsd vagy add meg az ERPNext oldal URL-címét a csatlakozáshoz"
+msgid "ReyBill ERP is not installed on this site either install it or enter the URL of your ReyBill ERP site to connect"
+msgstr "Az ReyBill ERP nincs telepítve erre az oldalra. Telepítsd vagy add meg az ReyBill ERP oldal URL-címét a csatlakozáshoz"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:27
-msgid "ERPNext is not integrated with the CRM"
-msgstr "Az ERPNext nincs integrálva a CRM-mel"
+msgid "ReyBill ERP is not integrated with the CRM"
+msgstr "Az ReyBill ERP nincs integrálva a CRM-mel"
 
 #: frontend/src/components/Activities/CommentArea.vue:94
 #: frontend/src/components/FieldLayout/Field.vue:110
@@ -2941,8 +2941,8 @@ msgid "Enable call recording for incoming and outgoing calls"
 msgstr "Hívásrögzítés engedélyezése bejövő és kimenő hívásokhoz"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:278
-msgid "Enable the integration to create quotations and auto create customers in ERPNext."
-msgstr "Engedélyezd az integrációt az árajánlatok létrehozásához és az ügyfelek automatikus létrehozásához az ERPNext-ben."
+msgid "Enable the integration to create quotations and auto create customers in ReyBill ERP."
+msgstr "Engedélyezd az integrációt az árajánlatok létrehozásához és az ügyfelek automatikus létrehozásához az ReyBill ERP-ben."
 
 #. Label of the enabled (Check) field in DocType 'CRM Exotel Settings'
 #. Label of the enabled (Check) field in DocType 'CRM Form Script'
@@ -3584,12 +3584,12 @@ msgstr "Űrlapszkript sikeresen frissítve"
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
-msgid "Frappe CRM"
-msgstr "Frappe CRM"
+msgid "ReyBill Sales"
+msgstr "ReyBill Sales"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:638
-msgid "Frappe CRM mobile"
-msgstr "Frappe CRM mobil"
+msgid "ReyBill Sales mobile"
+msgstr "ReyBill Sales mobil"
 
 #: frontend/src/components/Settings/emailConfig.js:81
 msgid "Frappe Mail Site"
@@ -3826,7 +3826,7 @@ msgid "How do new leads usually come to you?"
 msgstr ""
 
 #: frontend/src/pages/PersonaForm.vue:108
-msgid "How many people will use Frappe CRM?"
+msgid "How many people will use ReyBill Sales?"
 msgstr ""
 
 #. Description of the 'Timeline Timestamp Format' (Select) field in DocType
@@ -4155,8 +4155,8 @@ msgstr "Alapértelmezett"
 #. Label of the is_erpnext_in_different_site (Check) field in DocType 'ERPNext
 #. CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "Is ERPNext installed on a different site?"
-msgstr "Az ERPNext egy másik oldalon van telepítve?"
+msgid "Is ReyBill ERP installed on a different site?"
+msgstr "Az ReyBill ERP egy másik oldalon van telepítve?"
 
 #. Label of the is_group (Check) field in DocType 'CRM Sales Hierarchy'
 #. Label of the is_group (Check) field in DocType 'CRM Territory'
@@ -4708,8 +4708,8 @@ msgid "Manage CRM users by adding or inviting them, and assign roles to control 
 msgstr "CRM-felhasználók kezelése hozzáadással vagy meghívással, valamint szerepkörök hozzárendelése a hozzáférésük és engedélyeik szabályozásához"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:4
-msgid "Manage ERPNext integration settings"
-msgstr "ERPNext integrációs beállítások kezelése"
+msgid "Manage ReyBill ERP integration settings"
+msgstr "ReyBill ERP integrációs beállítások kezelése"
 
 #: frontend/src/components/Settings/Profile/ProfileSettings.vue:100
 msgid "Manage your account emails and email signature for communication."
@@ -6301,7 +6301,7 @@ msgid "Reset Changes"
 msgstr "Változások Visszaállítása"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.js:7
-msgid "Reset ERPNext Form Script"
+msgid "Reset ReyBill ERP Form Script"
 msgstr ""
 
 #: frontend/src/components/ColumnSettings.vue:86
@@ -6799,8 +6799,8 @@ msgid "Select the assignees for {0}."
 msgstr "Válassza ki a {0} hozzárendeltjeit."
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:245
-msgid "Select the deal status to trigger the auto customer creation in ERPNext"
-msgstr "Válaszd ki az ügylet állapotát az automatikus ügyféllétrehozás elindításához az ERPNext-ben"
+msgid "Select the deal status to trigger the auto customer creation in ReyBill ERP"
+msgstr "Válaszd ki az ügylet állapotát az automatikus ügyféllétrehozás elindításához az ReyBill ERP-ben"
 
 #: frontend/src/components/Settings/CalendarSettings.vue:38
 msgid "Select the default view for your calendar. This will be the initial view when you open the calendar"
@@ -6811,8 +6811,8 @@ msgid "Select whether to display time with or without seconds"
 msgstr "Válaszd ki, hogy az idő másodpercekkel vagy anélkül jelenjen meg"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:133
-msgid "Select your ERPNext company to connect with"
-msgstr "Válaszd ki az ERPNext vállalatodat, amellyel kapcsolatba szeretne lépni"
+msgid "Select your ReyBill ERP company to connect with"
+msgstr "Válaszd ki az ReyBill ERP vállalatodat, amellyel kapcsolatba szeretne lépni"
 
 #: frontend/src/components/FieldLayout/Field.vue:574
 msgid "Select {0}"
@@ -7312,7 +7312,7 @@ msgid "Sync Now"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:191
-msgid "Sync Products with ERPNext"
+msgid "Sync Products with ReyBill ERP"
 msgstr ""
 
 #: frontend/src/components/Settings/LeadSyncing/FailureLogs.vue:132
@@ -7995,7 +7995,7 @@ msgid "Uploading {0}%"
 msgstr ""
 
 #: crm/fcrm/doctype/crm_product/crm_product.py:45
-msgid "Use ERPNext to Create Products"
+msgid "Use ReyBill ERP to Create Products"
 msgstr ""
 
 #. Label of the user (Link) field in DocType 'CRM Dashboard'
@@ -8108,7 +8108,7 @@ msgid "Walk-ins"
 msgstr ""
 
 #: frontend/src/components/SalesHierarchyBanner.vue:20
-msgid "We are changing how permissions work in Frappe CRM"
+msgid "We are changing how permissions work in ReyBill Sales"
 msgstr ""
 
 #: frontend/src/components/Layouts/AppSidebar.vue:593
@@ -8166,7 +8166,7 @@ msgid "Welcome Message"
 msgstr "Üdvözlő üzenet"
 
 #: frontend/src/pages/PersonaForm.vue:132
-msgid "Welcome to Frappe CRM"
+msgid "Welcome to ReyBill Sales"
 msgstr ""
 
 #: frontend/src/pages/Welcome.vue:4
@@ -8310,15 +8310,15 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr ""
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access Frappe CRM. Please contact your administrator if you believe this is an error."
-msgstr "Nincs elegendő jogosultsága a Frappe CRM eléréséhez. Ha úgy gondolja, hogy hiba történt, kérjük, vegye fel a kapcsolatot a rendszergazdával."
+msgid "You do not have enough permissions to access ReyBill Sales. Please contact your administrator if you believe this is an error."
+msgstr "Nincs elegendő jogosultsága a ReyBill Sales eléréséhez. Ha úgy gondolja, hogy hiba történt, kérjük, vegye fel a kapcsolatot a rendszergazdával."
 
 #: crm/integrations/exotel/handler.py:92
 msgid "You do not have mobile number set in your Telephony Agent"
 msgstr ""
 
 #: crm/www/crm.py:18
-msgid "You do not have permission to access Frappe CRM"
+msgid "You do not have permission to access ReyBill Sales"
 msgstr ""
 
 #: frontend/src/data/document.js:45

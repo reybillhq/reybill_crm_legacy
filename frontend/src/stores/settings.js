@@ -1,8 +1,12 @@
 import { createDocumentResource } from 'frappe-ui'
 import { reactive, ref } from 'vue'
+import branding from '@/branding'
 
 const settings = ref({})
-const brand = reactive({})
+const brand = reactive({
+  name: branding.productName,
+  favicon: branding.iconLight,
+})
 
 const _settings = createDocumentResource({
   doctype: 'FCRM Settings',
@@ -16,9 +20,13 @@ const _settings = createDocumentResource({
 
 export function getSettings() {
   function setupBrand() {
-    brand.name = settings.value?.brand_name
+    const name = settings.value?.brand_name
+    brand.name =
+      name && !['CRM', 'Frappe CRM'].includes(name)
+        ? name
+        : branding.productName
     brand.logo = settings.value?.brand_logo
-    brand.favicon = settings.value?.favicon
+    brand.favicon = settings.value?.favicon || branding.iconLight
   }
 
   return {

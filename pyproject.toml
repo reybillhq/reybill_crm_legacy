@@ -3,7 +3,7 @@ name = "crm"
 authors = [
     { name = "Frappe Technologies Pvt. Ltd.", email = "shariq@frappe.io"}
 ]
-description = "Kick-ass Open Source CRM"
+description = "ReyBill Sales helps teams manage leads, deals and customer relationships."
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
@@ -80,6 +80,6 @@ indent-style = "tab"
 docstring-code-format = true
 
 [project.urls]
-Homepage = "https://frappe.io/crm"
-Repository = "https://github.com/frappe/crm.git"
-"Bug Reports" = "https://github.com/frappe/crm/issues"
+Homepage = "https://reybill.com"
+Repository = "https://github.com/reybillhq/reybill_crm.git"
+"Bug Reports" = "https://github.com/reybillhq/reybill_crm/issues"

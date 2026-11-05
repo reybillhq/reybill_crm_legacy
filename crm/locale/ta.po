@@ -1341,7 +1341,7 @@ msgstr ""
 
 #. Label of the erpnext_company (Data) field in DocType 'ERPNext CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "Company in ERPNext Site"
+msgid "Company in ReyBill ERP Site"
 msgstr ""
 
 #: crm/templates/emails/helpdesk_invitation.html:10
@@ -2133,7 +2133,7 @@ msgstr ""
 
 #: frontend/src/components/Layouts/AppSidebar.vue:604
 #: frontend/src/components/Settings/Settings.vue:197
-msgid "ERPNext"
+msgid "ReyBill ERP"
 msgstr ""
 
 #. Name of a DocType
@@ -2144,29 +2144,29 @@ msgstr ""
 #. Label of the section_break_oubd (Section Break) field in DocType 'ERPNext
 #. CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "ERPNext Site API's"
+msgid "ReyBill ERP Site API's"
 msgstr ""
 
 #. Label of the erpnext_site_url (Data) field in DocType 'ERPNext CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "ERPNext Site URL"
+msgid "ReyBill ERP Site URL"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:25
-msgid "ERPNext is not installed in the current site"
+msgid "ReyBill ERP is not installed in the current site"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:98
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:124
-msgid "ERPNext is not integrated with the CRM"
+msgid "ReyBill ERP is not integrated with the CRM"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:4
-msgid "ERPNext settings"
+msgid "ReyBill ERP settings"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:5
-msgid "ERPNext settings updated"
+msgid "ReyBill ERP settings updated"
 msgstr ""
 
 #: frontend/src/components/FieldLayout/Field.vue:91
@@ -2474,15 +2474,15 @@ msgid "Error updating field"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:279
-msgid "Error while creating customer in ERPNext, check error log for more details"
+msgid "Error while creating customer in ReyBill ERP, check error log for more details"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:191
-msgid "Error while creating prospect in ERPNext, check error log for more details"
+msgid "Error while creating prospect in ReyBill ERP, check error log for more details"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:117
-msgid "Error while fetching customer in ERPNext, check error log for more details"
+msgid "Error while fetching customer in ReyBill ERP, check error log for more details"
 msgstr ""
 
 #: frontend/src/components/Modals/EventModal.vue:368
@@ -2876,11 +2876,11 @@ msgstr ""
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
-msgid "Frappe CRM"
+msgid "ReyBill Sales"
 msgstr ""
 
 #: frontend/src/components/Layouts/AppSidebar.vue:608
-msgid "Frappe CRM mobile"
+msgid "ReyBill Sales mobile"
 msgstr ""
 
 #. Option for the 'Weekly Off' (Select) field in DocType 'CRM Holiday List'
@@ -3345,7 +3345,7 @@ msgstr ""
 #. Label of the is_erpnext_in_different_site (Check) field in DocType 'ERPNext
 #. CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "Is ERPNext installed on a different site?"
+msgid "Is ReyBill ERP installed on a different site?"
 msgstr ""
 
 #. Label of the is_group (Check) field in DocType 'CRM Territory'
@@ -4997,7 +4997,7 @@ msgid "Reset Changes"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.js:7
-msgid "Reset ERPNext Form Script"
+msgid "Reset ReyBill ERP Form Script"
 msgstr ""
 
 #: frontend/src/components/ColumnSettings.vue:86
@@ -6425,7 +6425,7 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr ""
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access Frappe CRM. Please contact your administrator if you believe this is an error."
+msgid "You do not have enough permissions to access ReyBill Sales. Please contact your administrator if you believe this is an error."
 msgstr ""
 
 #: crm/integrations/exotel/handler.py:93
@@ -6433,7 +6433,7 @@ msgid "You do not have mobile number set in your Telephony Agent"
 msgstr ""
 
 #: crm/www/crm.py:20
-msgid "You do not have permission to access Frappe CRM"
+msgid "You do not have permission to access ReyBill Sales"
 msgstr ""
 
 #: frontend/src/data/document.js:35

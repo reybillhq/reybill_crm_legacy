@@ -98,7 +98,7 @@
                 doc.email
                   ? openEmailBox()
                   : toast.error(
-                      __('Please set an email address to send emails'),
+                      __('Please set an email address to send emails')
                     )
               "
             />
@@ -339,6 +339,7 @@
   />
 </template>
 <script setup>
+import { usePageMeta } from '@/composables/pageMeta'
 import DeleteLinkedDocModal from '@/components/DeleteLinkedDocModal.vue'
 import ErrorPage from '@/components/ErrorPage.vue'
 import Icon from '@/components/Icon.vue'
@@ -399,7 +400,6 @@ import {
   Tabs,
   Breadcrumbs,
   call,
-  usePageMeta,
   toast,
 } from 'frappe-ui'
 import {
@@ -454,7 +454,7 @@ watch(error, (err) => {
     errorTitle.value = __(
       err.exc_type == 'DoesNotExistError'
         ? __('Document Not Found')
-        : __('Error Occurred'),
+        : __('Error Occurred')
     )
     errorMessage.value = __(err.messages?.[0] || __('An Error Occurred'))
   } else {
@@ -480,7 +480,7 @@ watch(
       document._statuses = s.statuses || []
     }
   },
-  { once: true },
+  { once: true }
 )
 
 const organizationDocument = ref(null)
@@ -491,12 +491,12 @@ watch(
     if (org && !organizationDocument.value?.doc) {
       let { document: _organizationDocument } = useDocument(
         'CRM Organization',
-        org,
+        org
       )
       organizationDocument.value = _organizationDocument
     }
   },
-  { immediate: true },
+  { immediate: true }
 )
 
 const organization = computed(() => organizationDocument.value?.doc || {})
@@ -613,7 +613,7 @@ async function contactPickerChildren() {
   })
   return results
     .filter(
-      (result) => !dealContacts.data?.some((c) => c.name === result.value),
+      (result) => !dealContacts.data?.some((c) => c.name === result.value)
     )
     .map((result) => ({
       id: `deal-add-contact-${result.value}`,
@@ -711,7 +711,7 @@ function dealScriptCommands() {
       (action) =>
         action.label &&
         action.onClick &&
-        (!action.condition || action.condition()),
+        (!action.condition || action.condition())
     )
     .map((action, index) => ({
       id: `deal-script-${index}-${action.label}`,

@@ -56,7 +56,6 @@
       __('Organizations are the companies your contacts and deals belong to.')
     "
     :filtered="!!Object.keys(organizations.params?.filters || {}).length"
-    docsLink="https://docs.frappe.io/crm/organization"
     importDoctype="CRM Organization"
     @create="showOrganizationModal = true"
   />
@@ -104,7 +103,7 @@ const rows = computed(() => {
       _rows[row] = organization[row]
 
       let fieldType = organizations.value?.data.columns?.find(
-        (col) => (col.key || col.value) == row,
+        (col) => (col.key || col.value) == row
       )?.type
 
       if (
@@ -116,7 +115,7 @@ const rows = computed(() => {
           organization[row],
           '',
           true,
-          fieldType == 'Datetime',
+          fieldType == 'Datetime'
         )
       }
 

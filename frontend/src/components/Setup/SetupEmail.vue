@@ -6,7 +6,7 @@
     <p class="mt-2 text-p-base text-ink-gray-6">
       {{
         __(
-          'Send and receive email from the CRM, and keep every conversation on the right lead or deal.',
+          'Send and receive email from the CRM, and keep every conversation on the right lead or deal.'
         )
       }}
     </p>
@@ -56,7 +56,7 @@
         <TextInput
           v-model="state.frappe_mail_site"
           :label="__('Frappe Mail site')"
-          placeholder="https://frappemail.com"
+          placeholder="https://mail.example.com"
         />
         <TextInput v-model="state.api_key" :label="__('API key')" />
         <Password v-model="state.api_secret" :label="__('API secret')" />
@@ -142,7 +142,7 @@
           :title="__('Skip email for now?')"
           :description="
             __(
-              'Emails won\'t show on leads and deals, you can\'t reply from the CRM, and incoming mail won\'t create leads. Connect it later from Settings.',
+              'Emails won\'t show on leads and deals, you can\'t reply from the CRM, and incoming mail won\'t create leads. Connect it later from Settings.'
             )
           "
           :icon="false"
@@ -207,17 +207,17 @@ watch(
     if (!preview) return
     preview.provider = service
     preview.email = email.trim()
-  },
+  }
 )
 
 watch(
   () => state.service,
   (provider) =>
-    provider && capture('setup_email_provider_selected', { provider }),
+    provider && capture('setup_email_provider_selected', { provider })
 )
 
 const selected = computed(() =>
-  services.find((service) => service.name === state.service),
+  services.find((service) => service.name === state.service)
 )
 
 const account = createResource({

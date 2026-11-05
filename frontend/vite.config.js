@@ -4,7 +4,12 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 import { VitePWA } from 'vite-plugin-pwa'
 import frappeui from 'frappe-ui/vite'
+import { readFileSync } from 'node:fs'
 import { frameworkUiCompatibility } from './compat/framework-ui-plugin.js'
+
+const branding = JSON.parse(
+  readFileSync(new URL('../crm/branding.json', import.meta.url), 'utf8')
+)
 
 const frameworkUiRoot = path.resolve(import.meta.dirname, '../../frappe/ui/src')
 
@@ -14,8 +19,15 @@ export default defineConfig(() => {
     plugins: [
       frameworkUiCompatibility(
         frameworkUiRoot,
-        path.resolve(import.meta.dirname, 'compat/framework-frappe-ui.js'),
+        path.resolve(import.meta.dirname, 'compat/framework-frappe-ui.js')
       ),
+      {
+        name: 'reybill-html-branding',
+        transformIndexHtml: (html) =>
+          html
+            .replaceAll('%REYBILL_PRODUCT_NAME%', branding.productName)
+            .replaceAll('%REYBILL_ICON%', branding.iconLight),
+      },
       vue(),
       vueJsx(),
       VitePWA({
@@ -28,35 +40,20 @@ export default defineConfig(() => {
         },
         manifest: {
           display: 'standalone',
-          name: 'Frappe CRM',
-          short_name: 'Frappe CRM',
+          name: branding.productName,
+          short_name: branding.productName,
           start_url: '/crm',
-          description:
-            'Modern & 100% Open-source CRM tool to supercharge your sales operations',
+          scope: '/crm',
+          id: '/crm',
+          theme_color: branding.colors.light.primary,
+          background_color: '#ffffff',
+          description: branding.description,
           icons: [
             {
-              src: '/assets/crm/manifest/manifest-icon-192.maskable.png',
-              sizes: '192x192',
+              src: branding.iconLight,
+              sizes: '2133x2133',
               type: 'image/png',
               purpose: 'any',
-            },
-            {
-              src: '/assets/crm/manifest/manifest-icon-192.maskable.png',
-              sizes: '192x192',
-              type: 'image/png',
-              purpose: 'maskable',
-            },
-            {
-              src: '/assets/crm/manifest/manifest-icon-512.maskable.png',
-              sizes: '512x512',
-              type: 'image/png',
-              purpose: 'any',
-            },
-            {
-              src: '/assets/crm/manifest/manifest-icon-512.maskable.png',
-              sizes: '512x512',
-              type: 'image/png',
-              purpose: 'maskable',
             },
           ],
         },
@@ -142,7 +139,7 @@ export default defineConfig(() => {
         emptyOutDir: true,
         sourcemap: true,
       },
-    }),
+    })
   )
 
   return config

@@ -179,6 +179,7 @@
 </template>
 
 <script setup>
+import { usePageMeta } from '@/composables/pageMeta'
 import ErrorPage from '@/components/ErrorPage.vue'
 import Resizer from '@/components/Resizer.vue'
 import Icon from '@/components/Icon.vue'
@@ -209,7 +210,6 @@ import {
   Tabs,
   call,
   createResource,
-  usePageMeta,
   Dropdown,
   toast,
 } from 'frappe-ui'
@@ -482,6 +482,6 @@ watch(
       contact._actions = s.actions || []
     }
   },
-  { once: true },
+  { once: true }
 )
 </script>

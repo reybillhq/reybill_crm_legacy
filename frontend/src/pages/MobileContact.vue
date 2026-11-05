@@ -151,6 +151,7 @@
 </template>
 
 <script setup>
+import { usePageMeta } from '@/composables/pageMeta'
 import Icon from '@/components/Icon.vue'
 import SidePanelLayout from '@/components/SidePanelLayout.vue'
 import LayoutHeader from '@/components/LayoutHeader.vue'
@@ -178,7 +179,6 @@ import {
   Tabs,
   call,
   createResource,
-  usePageMeta,
   Dropdown,
   toast,
 } from 'frappe-ui'
@@ -331,7 +331,7 @@ function getParsedSections(_sections) {
   return _sections.map((section) => {
     section.columns = section.columns.map((column) => {
       column.fields = column.fields.map((field) =>
-        transformField(field, { showAddressModal }),
+        transformField(field, { showAddressModal })
       )
       return column
     })

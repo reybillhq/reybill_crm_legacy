@@ -134,6 +134,7 @@
 </template>
 
 <script setup lang="ts">
+import { usePageMeta } from '@/composables/pageMeta'
 import AddChartModal from '@/components/Dashboard/AddChartModal.vue'
 import LucideRefreshCcw from '~icons/lucide/refresh-ccw'
 import LucideUndo2 from '~icons/lucide/undo-2'
@@ -152,13 +153,7 @@ import {
   formatRange,
   parseDateRange,
 } from '@/utils/dashboard'
-import {
-  usePageMeta,
-  createResource,
-  DateRangePicker,
-  Dropdown,
-  Tooltip,
-} from 'frappe-ui'
+import { createResource, DateRangePicker, Dropdown, Tooltip } from 'frappe-ui'
 import { ref, reactive, computed, provide } from 'vue'
 
 const { users, getUser, isManager, isAdmin } = usersStore()

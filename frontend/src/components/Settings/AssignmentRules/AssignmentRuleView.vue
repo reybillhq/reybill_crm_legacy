@@ -70,7 +70,7 @@
                 <div>
                   {{
                     priorityOptions.find(
-                      (option) => option.value == assignmentRuleData.priority,
+                      (option) => option.value == assignmentRuleData.priority
                     )?.label
                   }}
                 </div>
@@ -150,12 +150,6 @@
                   documentType,
                 ])
               }}
-              <a
-                class="font-medium underline"
-                href="https://docs.frappe.io/crm/assignment-rule"
-                target="_blank"
-                >{{ __('Learn about conditions') }}</a
-              >
             </span>
             <div v-if="isOldSla && step.data">
               <HoverCard :hover-delay="250" side="top" align="end">
@@ -190,7 +184,7 @@
               }}</a>
               {{
                 __(
-                  'which are not compatible with this UI, you will need to recreate the conditions here if you want to manage and add new conditions from this UI.',
+                  'which are not compatible with this UI, you will need to recreate the conditions here if you want to manage and add new conditions from this UI.'
                 )
               }}
             </span>
@@ -227,15 +221,9 @@
               {{
                 __(
                   'Choose which {0} are affected by this un-assignment rule.',
-                  [documentType],
+                  [documentType]
                 )
               }}
-              <a
-                class="font-medium underline"
-                href="https://docs.frappe.io/crm/assignment-rule"
-                target="_blank"
-                >{{ __('Learn about conditions') }}</a
-              >
             </span>
             <div
               v-if="
@@ -274,7 +262,7 @@
               </a>
               {{
                 __(
-                  'which are not compatible with this UI, you will need to recreate the conditions here if you want to manage and add new conditions from this UI.',
+                  'which are not compatible with this UI, you will need to recreate the conditions here if you want to manage and add new conditions from this UI.'
                 )
               }}
             </span>
@@ -359,7 +347,7 @@ const isOldSla = ref(false)
 const documentType = computed(() =>
   assignmentRuleData.value.documentType == 'CRM Lead'
     ? __('leads')
-    : __('deals'),
+    : __('deals')
 )
 const deskUrl = `${window.location.origin}/app/assignment-rule/${step.value.data?.name}`
 
@@ -418,7 +406,7 @@ const validateAssignmentRule = (key, skipConditionCheck = false) => {
 
         if (!validateConditions(assignmentRuleData.value.assignConditionJson)) {
           assignmentRuleErrors.value.assignConditionError = __(
-            'Assign conditions are invalid',
+            'Assign conditions are invalid'
           )
         } else {
           assignmentRuleErrors.value.assignConditionError = ''
@@ -434,7 +422,7 @@ const validateAssignmentRule = (key, skipConditionCheck = false) => {
           !validateConditions(assignmentRuleData.value.unassignConditionJson)
         ) {
           assignmentRuleErrors.value.unassignConditionError = __(
-            'Unassign conditions are invalid',
+            'Unassign conditions are invalid'
           )
         } else {
           assignmentRuleErrors.value.unassignConditionError = ''
@@ -556,7 +544,7 @@ const goBack = () => {
     $dialog({
       title: __('Unsaved Changes'),
       message: __(
-        'Are you sure you want to go back? Unsaved changes will be lost.',
+        'Are you sure you want to go back? Unsaved changes will be lost.'
       ),
       variant: 'solid',
       actions: [
@@ -619,7 +607,7 @@ const saveAssignmentRule = () => {
       dialog.confirm({
         title: __('Confirm Overwrite'),
         message: __(
-          'Your old condition will be overwritten. Are you sure you want to save?',
+          'Your old condition will be overwritten. Are you sure you want to save?'
         ),
         onConfirm: () => updateAssignmentRule(),
       })
@@ -656,10 +644,10 @@ const createAssignmentRule = () => {
           conditions: assignmentRuleData.value.unassignConditionJson,
         }),
         assign_condition_json: JSON.stringify(
-          assignmentRuleData.value.assignConditionJson,
+          assignmentRuleData.value.assignConditionJson
         ),
         unassign_condition_json: JSON.stringify(
-          assignmentRuleData.value.unassignConditionJson,
+          assignmentRuleData.value.unassignConditionJson
         ),
       },
     },
@@ -771,7 +759,7 @@ watch(
       disableSettingModalOutsideClick.value = false
     }
   },
-  { deep: true },
+  { deep: true }
 )
 
 useUnsavedChangesWarning(() => isDirty.value)

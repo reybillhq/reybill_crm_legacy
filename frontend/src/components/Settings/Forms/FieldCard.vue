@@ -86,7 +86,7 @@
           v-if="locked"
           :text="
             __(
-              'This field is required by the record and can\'t be made optional. Remove it to move it to hidden fields.',
+              'This field is required by the record and can\'t be made optional. Remove it to move it to hidden fields.'
             )
           "
         >
@@ -120,7 +120,7 @@
           <Tooltip
             :text="
               __(
-                'Frappe expression referencing other fields as doc.<fieldname>, e.g. eval:doc.country == \'India\'. Leave blank for no condition.',
+                'Expression referencing other fields as doc.<fieldname>, e.g. eval:doc.country == \'India\'. Leave blank for no condition.'
               )
             "
           >
@@ -163,7 +163,7 @@
             {{
               __(
                 "Guests can't see {0} records. Grant select access to list them publicly.",
-                [field.options],
+                [field.options]
               )
             }}
           </p>

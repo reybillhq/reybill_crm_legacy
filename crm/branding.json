@@ -1,0 +1,32 @@
+{
+  "productName": "ReyBill Sales",
+  "companyName": "ReyBill",
+  "erpName": "ReyBill ERP",
+  "description": "ReyBill Sales helps teams manage leads, deals and customer relationships.",
+  "website": "https://reybill.com",
+  "repository": "https://github.com/reybillhq/reybill_crm",
+  "sourceUrl": "https://github.com/reybillhq/reybill_crm/tree/feat/reybill-sales-branding",
+  "documentation": null,
+  "logoLight": "/assets/crm/images/branding/reybill-logo-black.svg",
+  "logoDark": "/assets/crm/images/branding/reybill-logo-white.svg",
+  "iconLight": "/assets/crm/images/branding/reybill-icon-black.png",
+  "iconDark": "/assets/crm/images/branding/reybill-icon-white.png",
+  "colors": {
+    "light": {
+      "primary": "#74003a",
+      "hover": "#680034",
+      "active": "#5c002e",
+      "soft": "#faf2f6",
+      "foreground": "#74003a",
+      "border": "#f1d8e2"
+    },
+    "dark": {
+      "primary": "#a82e68",
+      "hover": "#98265c",
+      "active": "#861b4d",
+      "soft": "#2b1b23",
+      "foreground": "#e6a3c2",
+      "border": "#54303f"
+    }
+  }
+}

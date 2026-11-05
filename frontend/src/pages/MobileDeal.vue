@@ -17,7 +17,7 @@
               document.statuses?.length
                 ? document.statuses
                 : document._statuses,
-              triggerStatusChange,
+              triggerStatusChange
             )
           "
         >
@@ -265,6 +265,7 @@
   />
 </template>
 <script setup>
+import { usePageMeta } from '@/composables/pageMeta'
 import DeleteLinkedDocModal from '@/components/DeleteLinkedDocModal.vue'
 import ErrorPage from '@/components/ErrorPage.vue'
 import Icon from '@/components/Icon.vue'
@@ -314,7 +315,6 @@ import {
   Tabs,
   Breadcrumbs,
   call,
-  usePageMeta,
   toast,
 } from 'frappe-ui'
 import { ref, computed, h, watch, onMounted } from 'vue'
@@ -359,7 +359,7 @@ watch(error, (err) => {
     errorTitle.value = __(
       err.exc_type == 'DoesNotExistError'
         ? __('Document not found')
-        : __('Error occurred'),
+        : __('Error occurred')
     )
     errorMessage.value = __(err.messages?.[0] || 'An error occurred')
   } else {
@@ -385,7 +385,7 @@ watch(
       document._statuses = s.statuses || []
     }
   },
-  { once: true },
+  { once: true }
 )
 
 const reload = ref(false)
@@ -607,7 +607,7 @@ const dealContacts = createResource({
   auto: true,
   onSuccess: (data) => {
     let contactSection = sections.data?.find(
-      (section) => section.name == 'contacts_section',
+      (section) => section.name == 'contacts_section'
     )
     if (!contactSection) return
     // get_deal_contacts orders primary first, so expanding the first contact

@@ -1,13 +1,15 @@
 import frappe
 
+from crm.branding import BRANDING, PRODUCT_NAME
+
 app_name = "crm"
-app_title = "Frappe CRM"
-app_publisher = "Frappe Technologies Pvt. Ltd."
-app_description = "Kick-ass Open Source CRM"
-app_email = "shariq@frappe.io"
+app_title = PRODUCT_NAME
+app_publisher = BRANDING["companyName"]
+app_description = BRANDING["description"]
+app_email = ""  # No unverified ReyBill support mailbox.
 app_license = "AGPLv3"
-app_icon_url = "/assets/crm/images/logo.svg"
-app_icon_title = "CRM"
+app_icon_url = BRANDING["iconLight"]
+app_icon_title = PRODUCT_NAME
 app_icon_route = "/crm"
 
 # Apps
@@ -17,8 +19,8 @@ app_icon_route = "/crm"
 add_to_apps_screen = [
 	{
 		"name": "crm",
-		"logo": "/assets/crm/images/logo.svg",
-		"title": "CRM",
+		"logo": BRANDING["iconLight"],
+		"title": PRODUCT_NAME,
 		"route": "/crm",
 		"has_permission": "crm.api.check_app_permission",
 	}
@@ -456,7 +458,8 @@ standard_dropdown_items = [
 	},
 	{
 		"name1": "login_to_fc",
-		"label": "Login to Frappe Cloud",
+		"label": "Manage Billing",
+		"hidden": 1,
 		"type": "Route",
 		"route": "#",
 		"is_standard": 1,

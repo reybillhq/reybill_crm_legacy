@@ -39,3 +39,48 @@
 .mention[data-id] {
   cursor: default;
 }
+
+/* Exact active ReyBill Core accent values are supplied by branding.json.
+   Target primary action classes only; semantic success/danger colors stay native. */
+:root {
+  --reybill-primary: var(--reybill-light-primary);
+  --reybill-primary-hover: var(--reybill-light-hover);
+  --reybill-primary-active: var(--reybill-light-active);
+  --reybill-soft: var(--reybill-light-soft);
+  --reybill-foreground: var(--reybill-light-foreground);
+  --reybill-border: var(--reybill-light-border);
+}
+[data-theme='dark'] {
+  --reybill-primary: var(--reybill-dark-primary);
+  --reybill-primary-hover: var(--reybill-dark-hover);
+  --reybill-primary-active: var(--reybill-dark-active);
+  --reybill-soft: var(--reybill-dark-soft);
+  --reybill-foreground: var(--reybill-dark-foreground);
+  --reybill-border: var(--reybill-dark-border);
+}
+:is(button, a):is(.bg-surface-gray-10, .bg-surface-blue-6):not(:disabled):not(
+    [aria-disabled='true']
+  ) {
+  background-color: var(--reybill-primary);
+  color: white;
+}
+:is(button, a):is(.bg-surface-gray-10, .bg-surface-blue-6):not(:disabled):not(
+    [aria-disabled='true']
+  ):hover {
+  background-color: var(--reybill-primary-hover);
+}
+:is(button, a):is(.bg-surface-gray-10, .bg-surface-blue-6):not(:disabled):not(
+    [aria-disabled='true']
+  ):active {
+  background-color: var(--reybill-primary-active);
+}
+
+:is(button, a).bg-surface-blue-2:not(:disabled):not([aria-disabled='true']) {
+  background-color: var(--reybill-soft);
+  color: var(--reybill-foreground);
+}
+:is(button, a).bg-surface-blue-2:not(:disabled):not(
+    [aria-disabled='true']
+  ):hover {
+  background-color: var(--reybill-border);
+}

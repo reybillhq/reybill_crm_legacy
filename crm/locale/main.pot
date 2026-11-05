@@ -1659,7 +1659,7 @@ msgstr ""
 
 #: crm/fcrm/doctype/crm_product/crm_product.py:82
 #, python-brace-format
-msgid "Cannot delete: linked ERPNext Item {0} is referenced by a Quotation. Remove the reference or delete the Item in ERPNext first."
+msgid "Cannot delete: linked ReyBill ERP Item {0} is referenced by a Quotation. Remove the reference or delete the Item in ReyBill ERP first."
 msgstr ""
 
 #: frontend/src/components/Settings/AssignmentRules/AssignmentRuleListItem.vue:173
@@ -2018,7 +2018,7 @@ msgstr ""
 
 #. Label of the erpnext_company (Data) field in DocType 'ERPNext CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json:60
-msgid "Company in ERPNext site"
+msgid "Company in ReyBill ERP site"
 msgstr ""
 
 #. Description of the 'Organization Logo' (Attach Image) field in DocType 'CRM
@@ -2133,7 +2133,7 @@ msgid "Confirm {0}"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:436
-msgid "Connect ERPNext to Frappe CRM"
+msgid "Connect ReyBill ERP to ReyBill Sales"
 msgstr ""
 
 #: frontend/src/components/Setup/SetupEmail.vue:124
@@ -2315,7 +2315,7 @@ msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:158
 #, python-brace-format
-msgid "Could not create the Frappe CRM custom fields on {0} automatically. If it is running the latest ERPNext, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
+msgid "Could not create the ReyBill Sales custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
 msgstr ""
 
 #: frontend/src/components/Settings/WorkflowAutomations/WorkflowAutomationPage.vue:367
@@ -2485,7 +2485,7 @@ msgid "Create a quotation from this deal to see it here."
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:274
-msgid "Create customer in ERPNext when the deal status is changed"
+msgid "Create customer in ReyBill ERP when the deal status is changed"
 msgstr ""
 
 #. Label of the create_customer_on_status_change (Check) field in DocType
@@ -2505,7 +2505,7 @@ msgstr ""
 #: crm/fcrm/doctype/crm_product/crm_product.js:12
 #: crm/fcrm/doctype/crm_product/crm_product_list.js:10
 #: frontend/src/composables/document.js:32
-msgid "Create products as Items in ERPNext"
+msgid "Create products as Items in ReyBill ERP"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:661
@@ -3061,7 +3061,7 @@ msgid "Disable"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:660
-msgid "Disable ERPNext Integration"
+msgid "Disable ReyBill ERP Integration"
 msgstr ""
 
 #: frontend/src/components/Settings/Hierarchy/Hierarchy.vue:314
@@ -3279,7 +3279,7 @@ msgstr ""
 
 #: frontend/src/components/Layouts/AppSidebar.vue:681
 #: frontend/src/components/Settings/Settings.vue:252
-msgid "ERPNext"
+msgid "ReyBill ERP"
 msgstr ""
 
 #. Name of a DocType
@@ -3288,49 +3288,49 @@ msgid "ERPNext CRM Settings"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:220
-msgid "ERPNext Items always sync into CRM Products. Turn this on to also sync CRM Product changes back to ERPNext Items."
+msgid "ReyBill ERP Items always sync into CRM Products. Turn this on to also sync CRM Product changes back to ReyBill ERP Items."
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:3
 #: frontend/src/components/Settings/ERPNextSettings.vue:9
-msgid "ERPNext Settings"
+msgid "ReyBill ERP Settings"
 msgstr ""
 
 #. Label of the section_break_oubd (Section Break) field in DocType 'ERPNext
 #. CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json:43
-msgid "ERPNext Site API's"
+msgid "ReyBill ERP Site API's"
 msgstr ""
 
 #. Label of the erpnext_site_url (Data) field in DocType 'ERPNext CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json:53
-msgid "ERPNext Site URL"
+msgid "ReyBill ERP Site URL"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:162
-msgid "ERPNext custom fields not created"
+msgid "ReyBill ERP custom fields not created"
 msgstr ""
 
 #: crm/fcrm/doctype/crm_product/crm_product.py:43
-msgid "ERPNext integration is active. Create an Item in ERPNext and it will appear in CRM Product automatically."
+msgid "ReyBill ERP integration is active. Create an Item in ReyBill ERP and it will appear in CRM Product automatically."
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:221
-msgid "ERPNext integration must be enabled on the same site"
+msgid "ReyBill ERP integration must be enabled on the same site"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:71
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:88
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:684
-msgid "ERPNext is not installed in the current site"
+msgid "ReyBill ERP is not installed in the current site"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:71
-msgid "ERPNext is not installed on this site either install it or enter the URL of your ERPNext site to connect"
+msgid "ReyBill ERP is not installed on this site either install it or enter the URL of your ReyBill ERP site to connect"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:27
-msgid "ERPNext is not integrated with the CRM"
+msgid "ReyBill ERP is not integrated with the CRM"
 msgstr ""
 
 #: frontend/src/components/Setup/SetupFeedback.vue:13
@@ -3621,7 +3621,7 @@ msgid "Enable enrichment"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:440
-msgid "Enable the integration to create quotations and more in ERPNext."
+msgid "Enable the integration to create quotations and more in ReyBill ERP."
 msgstr ""
 
 #. Label of the enabled (Check) field in DocType 'CRM Enrichment Field Mapping'
@@ -4464,11 +4464,11 @@ msgstr ""
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json:14
-msgid "Frappe CRM"
+msgid "ReyBill Sales"
 msgstr ""
 
 #: frontend/src/components/Layouts/AppSidebar.vue:685
-msgid "Frappe CRM mobile"
+msgid "ReyBill Sales mobile"
 msgstr ""
 
 #: frontend/src/components/Settings/emailConfig.js:81
@@ -5160,7 +5160,7 @@ msgstr ""
 #. Label of the is_erpnext_in_different_site (Check) field in DocType 'ERPNext
 #. CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json:85
-msgid "Is ERPNext installed on a different site?"
+msgid "Is ReyBill ERP installed on a different site?"
 msgstr ""
 
 #. Label of the is_group (Check) field in DocType 'CRM Sales Hierarchy'
@@ -5794,7 +5794,7 @@ msgid "Makes \"Expected Closure Date\" and \"Expected Deal Value\" mandatory for
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:4
-msgid "Manage ERPNext integration settings."
+msgid "Manage ReyBill ERP integration settings."
 msgstr ""
 
 #: frontend/src/components/Settings/Profile/ProfileSettings.vue:120
@@ -7925,7 +7925,7 @@ msgid "Reset Changes"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.js:7
-msgid "Reset ERPNext Form Script"
+msgid "Reset ReyBill ERP Form Script"
 msgstr ""
 
 #: frontend/src/components/ColumnSettings.vue:86
@@ -8160,11 +8160,11 @@ msgid "Run As"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:248
-msgid "Run a manual bi-directional sync between ERPNext Items and CRM Products."
+msgid "Run a manual bi-directional sync between ReyBill ERP Items and CRM Products."
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:251
-msgid "Run a manual synchronization to pull the latest Items from ERPNext."
+msgid "Run a manual synchronization to pull the latest Items from ReyBill ERP."
 msgstr ""
 
 #: frontend/src/components/Settings/WorkflowAutomations/workflowTriggers.js:86
@@ -8610,7 +8610,7 @@ msgid "Select the assignees for {0}."
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:304
-msgid "Select the deal status to trigger the auto customer creation in ERPNext"
+msgid "Select the deal status to trigger the auto customer creation in ReyBill ERP"
 msgstr ""
 
 #: frontend/src/components/Settings/WorkflowAutomations/WorkflowUserPicker.vue:8
@@ -8622,7 +8622,7 @@ msgid "Select whether to display time with or without seconds"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:155
-msgid "Select your ERPNext company to connect with"
+msgid "Select your ReyBill ERP company to connect with"
 msgstr ""
 
 #: frontend/src/components/FieldLayout/Field.vue:659
@@ -8812,7 +8812,7 @@ msgid "Set the name of your brand. Appears in the left sidebar."
 msgstr ""
 
 #: frontend/src/pages/Setup.vue:206
-msgid "Set up Frappe CRM"
+msgid "Set up ReyBill Sales"
 msgstr ""
 
 #: frontend/src/components/Settings/Enrichment/EnrichmentSettings.vue:16
@@ -10350,7 +10350,7 @@ msgid "Use \"{0}\""
 msgstr ""
 
 #: crm/fcrm/doctype/crm_product/crm_product.py:45
-msgid "Use ERPNext to Create Products"
+msgid "Use ReyBill ERP to Create Products"
 msgstr ""
 
 #: frontend/src/pages/Contact.vue:157
@@ -10747,7 +10747,7 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr ""
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access Frappe CRM. Please contact your administrator if you believe this is an error."
+msgid "You do not have enough permissions to access ReyBill Sales. Please contact your administrator if you believe this is an error."
 msgstr ""
 
 #: crm/integrations/exotel/handler.py:102
@@ -10755,7 +10755,7 @@ msgid "You do not have mobile number set in your Telephony Agent"
 msgstr ""
 
 #: crm/www/crm.py:20
-msgid "You do not have permission to access Frappe CRM"
+msgid "You do not have permission to access ReyBill Sales"
 msgstr ""
 
 #: frontend/src/data/document.js:85
@@ -11629,3 +11629,39 @@ msgstr ""
 msgid "⚠️ No row found for idx: {0} in parent field: {1}"
 msgstr ""
 
+
+#: ReyBill Sales branding
+msgid "Welcome to ReyBill Sales"
+msgstr ""
+
+#: ReyBill Sales branding
+msgid "How many people will use ReyBill Sales?"
+msgstr ""
+
+#: ReyBill Sales branding
+msgid "We are changing how permissions work in ReyBill Sales"
+msgstr ""
+
+#: ReyBill Sales branding
+msgid "No synced ReyBill ERP Items"
+msgstr ""
+
+#: ReyBill Sales branding
+msgid "You have been invited to join {0}"
+msgstr ""
+
+#: ReyBill Sales branding
+msgid "Source Code"
+msgstr ""
+
+#: ReyBill Sales branding
+msgid "Setting up Frappe Mail requires an API key and API secret for your email account."
+msgstr ""
+
+#: ReyBill Sales branding
+msgid "Expression referencing other fields as doc.<fieldname>, e.g. eval:doc.country == 'India'. Leave blank for no condition."
+msgstr ""
+
+#: frontend/src/components/Layouts/AppSidebar.vue
+msgid "Select a lead to convert it to a deal."
+msgstr ""

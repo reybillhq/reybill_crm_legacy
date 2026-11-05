@@ -24,7 +24,7 @@ def _log_and_throw(message: str, title: str | None = None):
 def _get_enabled_settings():
 	settings = frappe.get_single("ERPNext CRM Settings")
 	if not settings.enabled:
-		frappe.throw(_("ERPNext is not integrated with the CRM"))
+		frappe.throw(_("ReyBill ERP is not integrated with the CRM"))
 	return settings
 
 
@@ -68,7 +68,7 @@ class ERPNextCRMSettings(Document):
 	def validate_if_erpnext_installed(self):
 		if not self.is_erpnext_in_different_site:
 			if not _is_erpnext_installed():
-				frappe.throw(_("ERPNext is not installed in the current site"))
+				frappe.throw(_("ReyBill ERP is not installed in the current site"))
 
 	def add_quotation_to_option(self):
 		if not self.is_erpnext_in_different_site:
@@ -85,7 +85,7 @@ class ERPNextCRMSettings(Document):
 	def create_custom_fields(self):
 		if not self.is_erpnext_in_different_site:
 			if not _is_erpnext_installed():
-				frappe.throw(_("ERPNext is not installed in the current site"))
+				frappe.throw(_("ReyBill ERP is not installed in the current site"))
 		else:
 			self.create_custom_fields_in_remote_site()
 
@@ -97,7 +97,7 @@ class ERPNextCRMSettings(Document):
 				{
 					"fieldname": "erpnext_customer",
 					"fieldtype": "Data",
-					"label": "Customer in ERPNext",
+					"label": "Customer in ReyBill ERP",
 					"insert_after": "lead_name",
 				}
 			],
@@ -105,7 +105,7 @@ class ERPNextCRMSettings(Document):
 				{
 					"fieldname": "erpnext_item_code",
 					"fieldtype": "Data",
-					"label": "Item Code in ERPNext",
+					"label": "Item Code in ReyBill ERP",
 					"read_only": 1,
 					"insert_after": "product_code",
 				}
@@ -127,7 +127,7 @@ class ERPNextCRMSettings(Document):
 				{
 					"fieldname": "crm_deal",
 					"fieldtype": "Data",
-					"label": "Frappe CRM Deal",
+					"label": "ReyBill Sales Deal",
 					"read_only": 1,
 					"insert_after": "party_name",
 				}
@@ -137,7 +137,7 @@ class ERPNextCRMSettings(Document):
 				{
 					"fieldname": "crm_deal",
 					"fieldtype": "Data",
-					"label": "Frappe CRM Deal",
+					"label": "ReyBill Sales Deal",
 					"read_only": 1,
 					"insert_after": "prospect_name",
 				}
@@ -151,15 +151,15 @@ class ERPNextCRMSettings(Document):
 		except Exception:
 			frappe.log_error(
 				frappe.get_traceback(),
-				f"Could not create custom fields on remote ERPNext site: {self.erpnext_site_url}",
+				f"Could not create custom fields on remote ReyBill ERP site: {self.erpnext_site_url}",
 			)
 			frappe.msgprint(
 				_(
-					"Could not create the Frappe CRM custom fields on {0} automatically. "
-					"If it is running the latest ERPNext, enable <b>Frappe CRM Data Synchronization</b> "
+					"Could not create the ReyBill Sales custom fields on {0} automatically. "
+					"If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> "
 					"in its CRM Settings, Otherwise check the Error Log."
 				).format(self.erpnext_site_url),
-				title=_("ERPNext custom fields not created"),
+				title=_("ReyBill ERP custom fields not created"),
 				indicator="orange",
 			)
 
@@ -218,7 +218,7 @@ class ERPNextCRMSettings(Document):
 	@frappe.whitelist()
 	def run_product_sync(self):
 		if not self.enabled or self.is_erpnext_in_different_site:
-			frappe.throw(_("ERPNext integration must be enabled on the same site"))
+			frappe.throw(_("ReyBill ERP integration must be enabled on the same site"))
 		from crm.fcrm.doctype.crm_product.reconcile_job import enqueue_reconciliation
 
 		enqueue_reconciliation()
@@ -366,7 +366,7 @@ def get_customer_link(crm_deal: str):
 		return ""
 	except Exception:
 		_log_and_throw(
-			"Error while fetching customer in ERPNext, check error log for more details",
+			"Error while fetching customer in ReyBill ERP, check error log for more details",
 			f"Error while fetching customer in remote site: {erpnext_crm_settings.erpnext_site_url}",
 		)
 
@@ -434,7 +434,7 @@ def get_deal_quotations(crm_deal: str):
 		)
 	except Exception:
 		_log_and_throw(
-			"Error while fetching quotations in ERPNext, check error log for more details",
+			"Error while fetching quotations in ReyBill ERP, check error log for more details",
 			f"Error while fetching quotations in remote site: {settings.erpnext_site_url}",
 		)
 	for row in rows:
@@ -522,7 +522,7 @@ def create_prospect_in_remote_site(crm_deal, erpnext_crm_settings):
 		)
 	except Exception:
 		_log_and_throw(
-			"Error while creating prospect in ERPNext, check error log for more details",
+			"Error while creating prospect in ReyBill ERP, check error log for more details",
 			f"Error while creating prospect in remote site: {erpnext_crm_settings.erpnext_site_url}",
 		)
 
@@ -681,7 +681,7 @@ def create_customer_from_deal(doc, erpnext_crm_settings):
 			try:
 				from erpnext.crm.frappe_crm_api import create_customer
 			except ImportError:
-				frappe.throw(_("ERPNext is not installed in the current site"))
+				frappe.throw(_("ReyBill ERP is not installed in the current site"))
 
 			if doc.territory and not frappe.db.exists("Territory", doc.territory):
 				customer_data["territory"] = ""
@@ -703,13 +703,13 @@ def create_customer_from_deal(doc, erpnext_crm_settings):
 
 		if not customer_name:
 			_log_and_throw(
-				"Error while creating customer in ERPNext, check error log for more details",
-				f"Error while creating customer in ERPNext for CRM Deal: {doc.name}",
+				"Error while creating customer in ReyBill ERP, check error log for more details",
+				f"Error while creating customer in ReyBill ERP for CRM Deal: {doc.name}",
 			)
 	except (frappe.ValidationError, frappe.PermissionError):
 		raise
 	except Exception:
-		_log_and_throw("Error while creating customer in ERPNext, check error log for more details")
+		_log_and_throw("Error while creating customer in ReyBill ERP, check error log for more details")
 
 	if customer_name:
 		frappe.db.set_value("CRM Deal", doc.name, "erpnext_customer", customer_name)
@@ -750,10 +750,10 @@ def get_crm_form_script():
 						if (quotation_url) {
 							window.open(quotation_url, '_blank');
 						} else {
-							toast.error("Error while creating quotation in ERPNext");
+							toast.error("Error while creating quotation in ReyBill ERP");
 						}
 					}).catch((e) => {
-						toast.error(e.messages[0] || "Error while creating quotation in ERPNext. Check error log in ERPNext for more details");
+						toast.error(e.messages[0] || "Error while creating quotation in ReyBill ERP. Check error log in ReyBill ERP for more details");
 					});
 				}
 			})
@@ -770,7 +770,7 @@ def get_crm_form_script():
 				});
 			}
 		}).catch((e) => {
-			toast.error(e.messages[0] || "Error while fetching customer link from ERPNext. Check error log in ERPNext for more details");
+			toast.error(e.messages[0] || "Error while fetching customer link from ReyBill ERP. Check error log in ReyBill ERP for more details");
 		});
 	}
 }

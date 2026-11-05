@@ -335,6 +335,7 @@
   />
 </template>
 <script setup>
+import { usePageMeta } from '@/composables/pageMeta'
 import Icon from '@/components/Icon.vue'
 import ListIcon from '@/components/Icons/ListIcon.vue'
 import KanbanIcon from '@/components/Icons/KanbanIcon.vue'
@@ -370,7 +371,6 @@ import {
   Dropdown,
   toast,
   call,
-  usePageMeta,
 } from 'frappe-ui'
 import {
   computed,
@@ -525,10 +525,10 @@ const view = ref({
 const DEFAULT_PAGE_LENGTH = 20
 
 const pageLength = computed(
-  () => list.value?.data?.page_length ?? DEFAULT_PAGE_LENGTH,
+  () => list.value?.data?.page_length ?? DEFAULT_PAGE_LENGTH
 )
 const pageLengthCount = computed(
-  () => list.value?.data?.page_length_count ?? DEFAULT_PAGE_LENGTH,
+  () => list.value?.data?.page_length_count ?? DEFAULT_PAGE_LENGTH
 )
 
 watch(loadMore, (value) => {
@@ -730,7 +730,7 @@ async function exportRows() {
       if (!Array.isArray(value)) return
       // Handle all operator-based filter format: { owner: ["=", "@me"], _assign: ["LIKE", "%@me%"] }
       filters[key] = value.map((entry) =>
-        entry === '@me' ? userId : entry === '%@me%' ? `%${userId}%` : entry,
+        entry === '@me' ? userId : entry === '%@me%' ? `%${userId}%` : entry
       )
     })
   }
@@ -743,7 +743,13 @@ async function exportRows() {
     page_length = list.value.data.total_count
   }
 
-  let url = `/api/method/frappe.desk.reportview.export_query?file_format_type=${export_type.value}&title=${props.doctype}&doctype=${props.doctype}&fields=${fields}&filters=${encodeURIComponent(filters)}&order_by=${order_by}&page_length=${page_length}&start=0&view=Report&with_comment_count=1`
+  let url = `/api/method/frappe.desk.reportview.export_query?file_format_type=${
+    export_type.value
+  }&title=${props.doctype}&doctype=${
+    props.doctype
+  }&fields=${fields}&filters=${encodeURIComponent(
+    filters
+  )}&order_by=${order_by}&page_length=${page_length}&start=0&view=Report&with_comment_count=1`
 
   // Add selected items parameter if rows are selected
   if (selectedRows.value?.length && !export_all.value) {
@@ -845,7 +851,7 @@ const viewsDropdownOptions = computed(() => {
     })
     let publicViews = list.value.data.views.filter((v) => v.public)
     let savedViews = list.value.data.views.filter(
-      (v) => !v.pinned && !v.public && !v.is_standard,
+      (v) => !v.pinned && !v.public && !v.is_standard
     )
     let pinnedViews = list.value.data.views.filter((v) => v.pinned)
 
@@ -907,7 +913,7 @@ function addQuickFilter(f) {
 
 function removeQuickFilter(f) {
   newQuickFilters.value = newQuickFilters.value.filter(
-    (filter) => filter.fieldname !== f.fieldname,
+    (filter) => filter.fieldname !== f.fieldname
   )
 }
 
@@ -974,7 +980,7 @@ const quickFilterList = computed(() => {
       if (Array.isArray(value)) {
         if (
           (['Check', 'Select', 'Link', 'Date', 'Datetime'].includes(
-            filter.fieldtype,
+            filter.fieldtype
           ) &&
             value[0]?.toLowerCase() == 'like') ||
           value[0]?.toLowerCase() != 'like'
@@ -1052,8 +1058,8 @@ function flatFilterCommands() {
     .filter(isFilterableField)
     .flatMap((filter) =>
       (flatFilterOptions.value[filter.fieldname] || []).map((option) =>
-        flatFilterCommand(filter, option),
-      ),
+        flatFilterCommand(filter, option)
+      )
     )
 }
 
@@ -1077,7 +1083,7 @@ async function loadFlatFilterOptions() {
     filters.map(async (filter) => [
       filter.fieldname,
       await commandFilterOptions(filter),
-    ]),
+    ])
   )
   flatFilterOptions.value = Object.fromEntries(entries)
 }
@@ -1101,7 +1107,7 @@ async function filterCommands() {
   const commands = [
     ...quick.map((filter) => filterFieldCommand(filter, 'Quick filters')),
     ...(await otherFilterFields(configured)).map((field) =>
-      filterFieldCommand(field, 'All fields'),
+      filterFieldCommand(field, 'All fields')
     ),
   ]
   if (Object.keys(list.value.params?.filters || {}).length) {
@@ -1125,7 +1131,7 @@ function isFilterableField(field) {
 async function otherFilterFields(configured) {
   if (!filterableFields.data) await filterableFields.fetch()
   return (filterableFields.data || []).filter(
-    (field) => isFilterableField(field) && !configured.has(field.fieldname),
+    (field) => isFilterableField(field) && !configured.has(field.fieldname)
   )
 }
 
@@ -1433,7 +1439,7 @@ function createOrUpdateStandardView() {
     'crm.fcrm.doctype.crm_view_settings.crm_view_settings.create_or_update_standard_view',
     {
       view: view.value,
-    },
+    }
   ).then(() => {
     reloadViewAfterSave()
     view.value = {
@@ -1663,7 +1669,7 @@ function fetchAndUpdateKanbanColumns(v) {
     'crm.fcrm.doctype.crm_view_settings.crm_view_settings.fetch_and_update_kanban_columns',
     {
       name: v.name,
-    },
+    }
   ).then((columns) => {
     list.value.params.kanban_columns = columns
     view.value.kanban_columns = columns
@@ -1774,7 +1780,7 @@ watch(
     if (_.isEqual(value, old_value)) return
     reload()
   },
-  { deep: true },
+  { deep: true }
 )
 
 watch([() => route, () => route.params.viewType], (value, old_value) => {

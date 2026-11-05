@@ -143,6 +143,7 @@
 </template>
 
 <script setup>
+import { usePageMeta } from '@/composables/pageMeta'
 import SidePanelLayout from '@/components/SidePanelLayout.vue'
 import Icon from '@/components/Icon.vue'
 import LayoutHeader from '@/components/LayoutHeader.vue'
@@ -172,7 +173,6 @@ import {
   Tabs,
   call,
   createListResource,
-  usePageMeta,
   createResource,
   toast,
 } from 'frappe-ui'
@@ -214,7 +214,7 @@ const breadcrumbs = computed(() => {
     let view = getView(
       route.query.view,
       route.query.viewType,
-      'CRM Organization',
+      'CRM Organization'
     )
     if (view) {
       items.push({

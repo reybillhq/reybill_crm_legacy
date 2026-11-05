@@ -218,11 +218,10 @@
     :title="__('No deals yet')"
     :description="
       __(
-        'A deal is a sale you are working on. Create one, or convert a lead into a deal once it looks promising.',
+        'A deal is a sale you are working on. Create one, or convert a lead into a deal once it looks promising.'
       )
     "
     :filtered="!!Object.keys(deals.params?.filters || {}).length"
-    docsLink="https://docs.frappe.io/crm/deal"
     importDoctype="CRM Deal"
     @create="showDealModal = true"
   />
@@ -321,7 +320,7 @@ const rows = computed(() => {
     return getGroupedByRows(
       deals.value?.data.data,
       deals.value?.data.group_by_field,
-      deals.value.data.columns,
+      deals.value.data.columns
     )
   } else if (deals.value.data.view_type === 'kanban') {
     return getKanbanRows(deals.value.data.data, deals.value.data.fields)
@@ -355,7 +354,7 @@ function getGroupedByRows(listRows, groupByField, columns) {
       filteredRows = listRows.filter((row) => !row[groupByField.fieldname])
     } else {
       filteredRows = listRows.filter(
-        (row) => row[groupByField.fieldname] == option,
+        (row) => row[groupByField.fieldname] == option
       )
     }
 
@@ -440,8 +439,8 @@ function parseRows(rows, columns = []) {
           deal.sla_status == 'Failed'
             ? 'red'
             : deal.sla_status == 'Fulfilled'
-              ? 'green'
-              : 'amber'
+            ? 'green'
+            : 'amber'
         if (value == 'First Response Due' || value == 'Rolling Response Due') {
           value = __(timeAgo(deal.response_by))
           tooltipText = formatDate(deal.response_by)
@@ -470,7 +469,7 @@ function parseRows(rows, columns = []) {
         _rows[row] = timestampCell(deal[row])
       } else if (
         ['first_response_time', 'first_responded_on', 'response_by'].includes(
-          row,
+          row
         )
       ) {
         let field = row == 'response_by' ? 'response_by' : 'first_responded_on'
@@ -523,7 +522,7 @@ function actions(itemName) {
     },
   ]
   return actions.filter((action) =>
-    action.condition ? action.condition() : true,
+    action.condition ? action.condition() : true
   )
 }
 

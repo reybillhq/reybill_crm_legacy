@@ -141,7 +141,7 @@
                       doc.mobile_no
                         ? makeCall(doc.mobile_no)
                         : toast.error(
-                            __('Please set a mobile number to make calls'),
+                            __('Please set a mobile number to make calls')
                           )
                   "
                 />
@@ -153,7 +153,7 @@
                     doc.email
                       ? openEmailBox()
                       : toast.error(
-                          __('Please set an email address to send emails'),
+                          __('Please set an email address to send emails')
                         )
                   "
                 />
@@ -244,6 +244,7 @@
   />
 </template>
 <script setup>
+import { usePageMeta } from '@/composables/pageMeta'
 import DeleteLinkedDocModal from '@/components/DeleteLinkedDocModal.vue'
 import ErrorPage from '@/components/ErrorPage.vue'
 import Icon from '@/components/Icon.vue'
@@ -298,7 +299,6 @@ import {
   Tabs,
   Breadcrumbs,
   call,
-  usePageMeta,
   toast,
 } from 'frappe-ui'
 import { ref, computed, watch, nextTick, onMounted } from 'vue'
@@ -341,7 +341,7 @@ const canDelete = computed(() => permissions.data?.permissions?.delete || false)
 
 const doc = computed(() => document.doc || {})
 const isLeadConversionDisabled = computed(
-  () => doc.value.status && getLeadStatus(doc.value.status)?.type === 'Lost',
+  () => doc.value.status && getLeadStatus(doc.value.status)?.type === 'Lost'
 )
 
 useUnsavedChangesWarning(() => document.isDirty)
@@ -358,7 +358,7 @@ watch(error, (err) => {
     errorTitle.value = __(
       err.exc_type == 'DoesNotExistError'
         ? __('Document not found')
-        : __('Error occurred'),
+        : __('Error occurred')
     )
     errorMessage.value = __(err.messages?.[0] || __('An error occurred'))
   } else {
@@ -384,7 +384,7 @@ watch(
       document._statuses = s.statuses || []
     }
   },
-  { once: true },
+  { once: true }
 )
 
 const breadcrumbs = computed(() => {
@@ -533,7 +533,7 @@ function scriptCommands() {
       (action) =>
         action.label &&
         action.onClick &&
-        (!action.condition || action.condition()),
+        (!action.condition || action.condition())
     )
     .map((action, index) => ({
       id: `lead-script-${index}-${action.label}`,

@@ -17,7 +17,7 @@
           <div
             class="url mx-auto flex h-6 w-60 items-center justify-center gap-1.5 rounded-full text-xs text-ink-gray-5"
           >
-            <LockIcon class="size-3" />acme.frappe.cloud
+            <LockIcon class="size-3" />sales.example.com
           </div>
           <Sk w="14px" /><Sk w="14px" />
           <span class="loadbar absolute -bottom-px left-0 h-0.5" />
@@ -290,7 +290,7 @@ function later(fn, ms) {
 function typeOut(text, start) {
   typed.value = ''
   ;[...text].forEach((_, i) =>
-    later(() => (typed.value = text.slice(0, i + 1)), start + i * 45),
+    later(() => (typed.value = text.slice(0, i + 1)), start + i * 45)
   )
 }
 
@@ -299,7 +299,7 @@ function countTo(target, start, duration) {
   for (let i = 1; i <= 20; i++)
     later(
       () => (count.value = Math.round((target * i) / 20)),
-      start + (duration * i) / 20,
+      start + (duration * i) / 20
     )
 }
 
@@ -343,11 +343,11 @@ function onMove(event) {
   const bounds = card.getBoundingClientRect()
   card.style.setProperty(
     '--hover-x',
-    `${((event.clientX - bounds.left) / bounds.width) * 100}%`,
+    `${((event.clientX - bounds.left) / bounds.width) * 100}%`
   )
   card.style.setProperty(
     '--hover-y',
-    `${((event.clientY - bounds.top) / bounds.height) * 100}%`,
+    `${((event.clientY - bounds.top) / bounds.height) * 100}%`
   )
 }
 </script>
@@ -424,11 +424,8 @@ function onMove(event) {
   border: 1px solid var(--st-hair-strong);
   background: var(--st-win);
   overflow: hidden;
-  box-shadow:
-    inset 0 1px 0 var(--st-hi),
-    0 0 0 6px var(--st-halo),
-    0 0 0 7px var(--st-hair),
-    var(--st-win-shadow);
+  box-shadow: inset 0 1px 0 var(--st-hi), 0 0 0 6px var(--st-halo),
+    0 0 0 7px var(--st-hair), var(--st-win-shadow);
   animation: rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .light {
@@ -453,9 +450,7 @@ function onMove(event) {
   border-radius: 12px;
   border: 1px solid var(--st-hair-strong);
   background: var(--st-frag);
-  box-shadow:
-    inset 0 1px 0 var(--st-hi),
-    var(--st-frag-shadow);
+  box-shadow: inset 0 1px 0 var(--st-hi), var(--st-frag-shadow);
   transform: rotate(var(--r));
   animation: drop 800ms cubic-bezier(0.2, 0.9, 0.3, 1.15) var(--d) both;
 }
@@ -465,10 +460,7 @@ function onMove(event) {
 
 @media (hover: hover) and (pointer: fine) {
   .frag:not(.toast):not(.dragfile):not(.menu) {
-    transition:
-      translate 180ms ease,
-      scale 180ms ease,
-      box-shadow 180ms ease,
+    transition: translate 180ms ease, scale 180ms ease, box-shadow 180ms ease,
       border-color 180ms ease;
   }
   .frag:not(.toast):not(.dragfile):not(.menu)::after {
@@ -489,9 +481,7 @@ function onMove(event) {
     translate: 0 -4px;
     scale: 1.015;
     border-color: var(--outline-gray-4);
-    box-shadow:
-      inset 0 1px 0 var(--st-hi),
-      var(--elevation-md);
+    box-shadow: inset 0 1px 0 var(--st-hi), var(--elevation-md);
   }
   .frag:hover::after {
     opacity: 1;
@@ -597,8 +587,7 @@ function onMove(event) {
 
 /* fx: ambient bob */
 .fx-bob .frag:not(.toast):not(.dragfile):not(.menu) {
-  animation:
-    drop 800ms cubic-bezier(0.2, 0.9, 0.3, 1.15) var(--d) both,
+  animation: drop 800ms cubic-bezier(0.2, 0.9, 0.3, 1.15) var(--d) both,
     bob 7s ease-in-out calc(var(--d) + 900ms) infinite;
 }
 
@@ -630,8 +619,7 @@ function onMove(event) {
 }
 .fx-journey .dragfile {
   display: flex;
-  animation:
-    cursor-in 900ms cubic-bezier(0.3, 0.7, 0.2, 1) 800ms both,
+  animation: cursor-in 900ms cubic-bezier(0.3, 0.7, 0.2, 1) 800ms both,
     absorb 300ms ease var(--click) forwards;
 }
 .fx-journey .menu {

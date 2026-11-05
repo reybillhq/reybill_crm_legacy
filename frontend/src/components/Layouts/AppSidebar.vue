@@ -115,17 +115,6 @@
 
         <div v-if="!mobile" class="mt-auto flex flex-col gap-1 pt-2">
           <div class="mb-1 flex flex-col gap-2">
-            <SignupBanner
-              v-if="isDemoSite"
-              :isSidebarCollapsed="isCollapsed"
-              :afterSignup="() => capture('signup_from_demo_site')"
-            />
-            <TrialBanner
-              v-if="isFCSite && !isCloudSettingsAvailable()"
-              :isSidebarCollapsed="isCollapsed"
-              :afterUpgrade="() => capture('upgrade_plan_from_trial_banner')"
-            />
-            <TrialCard v-if="!isCollapsed" />
             <GettingStartedBanner
               v-if="!isOnboardingStepsCompleted"
               :isSidebarCollapsed="isCollapsed"
@@ -172,13 +161,10 @@
     <HelpModal
       v-if="showHelpModal"
       v-model="showHelpModal"
-      v-model:articles="articles"
-      :logo="CRMLogo"
       :afterSkip="(step) => capture('onboarding_step_skipped_' + step)"
       :afterSkipAll="() => capture('onboarding_steps_skipped')"
       :afterReset="(step) => capture('onboarding_step_reset_' + step)"
       :afterResetAll="() => capture('onboarding_steps_reset')"
-      docsLink="https://docs.frappe.io/crm"
     />
     <IntermediateStepModal
       v-model="showIntermediateModal"
@@ -188,8 +174,8 @@
 </template>
 
 <script setup>
+import HelpModal from '@/components/HelpModal.vue'
 import BrushCleaningIcon from '~icons/lucide/brush-cleaning'
-import CRMLogo from '@/components/Icons/CRMLogo.vue'
 import InviteIcon from '@/components/Icons/InviteIcon.vue'
 import ConvertIcon from '@/components/Icons/ConvertIcon.vue'
 import EmailIcon from '@/components/Icons/EmailIcon.vue'
@@ -228,12 +214,7 @@ import {
 } from '@/composables/settings'
 import { useBroadcast } from '@/composables/useBroadcast.js'
 import { call, Sidebar, SidebarItem, SidebarLabel, Tooltip } from 'frappe-ui'
-import { SignupBanner } from '@framework/ui/components/SignupBanner'
-import { TrialBanner } from '@framework/ui/components/TrialBanner'
-import TrialCard from '@/components/Layouts/TrialCard.vue'
-import { isCloudSettingsAvailable } from '@/composables/cloudSettings'
 import {
-  HelpModal,
   GettingStartedBanner,
   useOnboarding,
   showHelpModal,
@@ -265,9 +246,6 @@ const isSidebarCollapsed = useStorage('isSidebarCollapsed', false)
 // The mobile drawer pins the sidebar open, so it is never visually collapsed
 // even when the stored rail state says otherwise.
 const isCollapsed = computed(() => isSidebarCollapsed.value && !props.mobile)
-
-const isFCSite = ref(window.is_fc_site)
-const isDemoSite = ref(window.is_demo_site)
 
 const links = getNavigationItems({ mobile: props.mobile })
 
@@ -370,7 +348,7 @@ function selectItem(event, key) {
 
 watch(
   () => [route.name, route.query.view],
-  () => (activeItem.value = currentRouteKey()),
+  () => (activeItem.value = currentRouteKey())
 )
 
 function onSearchClick() {
@@ -440,7 +418,7 @@ async function reconcileOnboarding(currentSteps) {
   // Drop steps that no longer exist so they can't block completion.
   const knownNames = new Set(steps.map((s) => s.name))
   const hidden = persisted.filter(
-    (s) => !currentNames.has(s.name) && knownNames.has(s.name),
+    (s) => !currentNames.has(s.name) && knownNames.has(s.name)
   )
   const merged = [...visible, ...hidden]
 
@@ -448,8 +426,7 @@ async function reconcileOnboarding(currentSteps) {
     merged.length === persisted.length &&
     merged.every(
       (m, i) =>
-        persisted[i]?.name === m.name &&
-        persisted[i]?.completed === m.completed,
+        persisted[i]?.name === m.name && persisted[i]?.completed === m.completed
     )
   if (unchanged) return
 
@@ -545,7 +522,7 @@ const steps = reactive([
       currentStep.value = {
         title: __('Convert lead to deal'),
         buttonLabel: __('Convert'),
-        videoURL: '/assets/crm/videos/convertToDeal.mov',
+        message: __('Select a lead to convert it to a deal.'),
         onClick: async () => {
           showIntermediateModal.value = false
           currentStep.value = {}
@@ -602,94 +579,4 @@ onMounted(async () => {
   setUp(filteredSteps)
   flushPendingSteps()
 })
-
-// help center
-const articles = ref([
-  {
-    title: __('Introduction'),
-    opened: false,
-    subArticles: [
-      { name: 'introduction', title: __('Introduction') },
-      { name: 'setting-up', title: __('Setting Up') },
-    ],
-  },
-  {
-    title: __('Settings'),
-    opened: false,
-    subArticles: [
-      { name: 'profile-and-preferences', title: __('Profile') },
-      { name: 'custom-branding', title: __('Custom Branding') },
-      { name: 'home-actions', title: __('Home Actions') },
-      { name: 'inviting-your-team', title: __('Invite Users') },
-    ],
-  },
-  {
-    title: __('Masters'),
-    opened: false,
-    subArticles: [
-      { name: 'lead', title: __('Lead') },
-      { name: 'deal', title: __('Deal') },
-      { name: 'contact', title: __('Contact') },
-      { name: 'organization', title: __('Organization') },
-      { name: 'note', title: __('Note') },
-      { name: 'task', title: __('Task') },
-      { name: 'call-log', title: __('Call Log') },
-      { name: 'email-template', title: __('Email Template') },
-    ],
-  },
-  {
-    title: __('Capturing Leads'),
-    opened: false,
-    subArticles: [{ name: 'capturing-leads/web-form', title: __('Web Form') }],
-  },
-  {
-    title: __('Views'),
-    opened: false,
-    subArticles: [
-      { name: 'view', title: __('Saved View') },
-      { name: 'public-view', title: __('Public View') },
-      { name: 'pinned-view', title: __('Pinned View') },
-    ],
-  },
-  {
-    title: __('Other Features'),
-    opened: false,
-    subArticles: [
-      { name: 'email-communication', title: __('Email Communication') },
-      { name: 'comment', title: __('Comment') },
-      { name: 'data', title: __('Data') },
-      { name: 'service-level-agreement', title: __('Service Level Agreement') },
-      { name: 'assignment-rule', title: __('Assignment Rule') },
-      { name: 'notification', title: __('Notification') },
-    ],
-  },
-  {
-    title: __('Customization'),
-    opened: false,
-    subArticles: [
-      { name: 'custom-fields', title: __('Custom Fields') },
-      { name: 'custom-actions', title: __('Custom Actions') },
-      { name: 'custom-statuses', title: __('Custom Statuses') },
-      { name: 'custom-list-actions', title: __('Custom List Actions') },
-      { name: 'quick-entry-layout', title: __('Quick Entry Layout') },
-    ],
-  },
-  {
-    title: __('Integration'),
-    opened: false,
-    subArticles: [
-      { name: 'twilio', title: __('Twilio') },
-      { name: 'exotel', title: __('Exotel') },
-      { name: 'whatsapp', title: __('WhatsApp') },
-      { name: 'erpnext', title: __('ERPNext') },
-    ],
-  },
-  {
-    title: __('Frappe CRM mobile'),
-    opened: false,
-    subArticles: [
-      { name: 'mobile-app-installation', title: __('Mobile App Installation') },
-    ],
-  },
-])
 </script>

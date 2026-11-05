@@ -12,21 +12,6 @@
         :label="accountData.service"
       />
     </div>
-    <!-- banner for setting up email account -->
-    <div
-      class="flex items-center gap-2 p-2 rounded-5 ring-1 ring-outline-gray-3"
-    >
-      <CircleAlert
-        class="size-6 text-ink-gray-4 w-min-5 w-max-5 min-h-5 max-w-5"
-      />
-      <div class="text-xs text-ink-gray-6 text-wrap">
-        {{ info.description }}
-        <a :href="info.link" target="_blank" class="underline">
-          {{ __('here') }}
-        </a>
-        .
-      </div>
-    </div>
     <!-- fields -->
     <div class="flex flex-col gap-4">
       <div class="grid grid-cols-1 gap-4">
@@ -93,7 +78,6 @@ import {
   validateInputs,
   incomingOutgoingFields,
 } from './emailConfig'
-import CircleAlert from '~icons/lucide/circle-alert'
 
 const props = defineProps({
   accountData: { type: Object, default: () => ({}) },
@@ -116,11 +100,6 @@ const state = reactive({
   create_lead_from_incoming_email:
     props.accountData.create_lead_from_incoming_email || false,
 })
-
-const info = {
-  description: __('To know more about setting up email accounts, click'),
-  link: 'https://docs.erpnext.com/docs/user/manual/en/email-account',
-}
 
 const isCustomService = computed(() => {
   return services.find((s) => s.name === props.accountData.service)?.custom

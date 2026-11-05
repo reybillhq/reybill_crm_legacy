@@ -116,11 +116,10 @@
     :title="__('No notes yet')"
     :description="
       __(
-        'Notes keep what you learned on a call or in a meeting next to the lead or deal it belongs to.',
+        'Notes keep what you learned on a call or in a meeting next to the lead or deal it belongs to.'
       )
     "
     :filtered="!!Object.keys(notes.params?.filters || {}).length"
-    docsLink="https://docs.frappe.io/crm/note"
     @create="createNote"
   />
 </template>
@@ -158,12 +157,12 @@ watch(
   (val, old_value) => {
     if (!val || val === old_value) return
     updatedPageCount.value = val
-  },
+  }
 )
 
 watch(
   () => notes.value?.data?.data,
-  (rows) => loadLinkedTitles(rows),
+  (rows) => loadLinkedTitles(rows)
 )
 
 function copyNoteLink(name) {

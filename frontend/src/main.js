@@ -1,4 +1,14 @@
 import './index.css'
+import branding from './branding'
+
+for (const [mode, colors] of Object.entries(branding.colors)) {
+  for (const [state, value] of Object.entries(colors)) {
+    document.documentElement.style.setProperty(
+      `--reybill-${mode}-${state}`,
+      value
+    )
+  }
+}
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -64,7 +74,7 @@ if (import.meta.env.DEV) {
       socket = initSocket()
       app.config.globalProperties.$socket = socket
       app.mount('#app')
-    },
+    }
   )
 } else {
   socket = initSocket()

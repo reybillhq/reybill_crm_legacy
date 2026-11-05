@@ -2,16 +2,16 @@
 	"private": true,
 	"type": "module",
 	"name": "crm",
-	"description": "Frappe CRM helps you work, not slow you down. Open-source, intuitive, and free from extra costs.",
+	"description": "ReyBill Sales helps teams manage leads, deals and customer relationships.",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/frappe/crm.git"
+		"url": "git+https://github.com/reybillhq/reybill_crm.git"
 	},
-	"homepage": "https://frappe.io/crm",
+	"homepage": "https://reybill.com",
 	"author": "Frappe Technologies Pvt. Ltd.",
-	"license": "GPL-3.0",
+	"license": "AGPL-3.0-only",
 	"bugs": {
-		"url": "https://github.com/frappe/crm/issues"
+		"url": "https://github.com/reybillhq/reybill_crm/issues"
 	},
 	"scripts": {
 		"postinstall": "cd frontend && yarn install --check-files",

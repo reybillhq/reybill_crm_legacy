@@ -4,12 +4,12 @@
 frappe.ui.form.on("ERPNext CRM Settings", {
   refresh(frm) {
     if (!frm.doc.enabled) return;
-    frm.add_custom_button(__("Reset ERPNext Form Script"), () => {
+    frm.add_custom_button(__("Reset ReyBill ERP Form Script"), () => {
       frappe.confirm(
         __(
-          "Are you sure you want to reset 'Create Quotation from CRM Deal' Form Script?",
+          "Are you sure you want to reset 'Create Quotation from CRM Deal' Form Script?"
         ),
-        () => frm.trigger("reset_erpnext_form_script"),
+        () => frm.trigger("reset_erpnext_form_script")
       );
     });
   },

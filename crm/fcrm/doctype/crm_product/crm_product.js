@@ -9,7 +9,7 @@ frappe.ui.form.on("CRM Product", {
       .then((enabled) => {
         if (!enabled) return;
         frappe.show_alert({
-          message: __("Create products as Items in ERPNext"),
+          message: __("Create products as Items in ReyBill ERP"),
           indicator: "blue",
         });
         frappe.set_route("Form", "Item", "new");

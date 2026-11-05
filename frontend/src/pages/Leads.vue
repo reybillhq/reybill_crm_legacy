@@ -244,11 +244,10 @@
     :title="__('No leads yet')"
     :description="
       __(
-        'A lead is someone who might buy from you. Add one yourself, import a list, or capture them from a web form.',
+        'A lead is someone who might buy from you. Add one yourself, import a list, or capture them from a web form.'
       )
     "
     :filtered="!!Object.keys(leads.params?.filters || {}).length"
-    docsLink="https://docs.frappe.io/crm/lead"
     importDoctype="CRM Lead"
     @create="showLeadModal = true"
   />
@@ -345,7 +344,7 @@ const rows = computed(() => {
     return getGroupedByRows(
       leads.value?.data.data,
       leads.value?.data.group_by_field,
-      leads.value.data.columns,
+      leads.value.data.columns
     )
   } else if (leads.value.data.view_type === 'kanban') {
     return getKanbanRows(leads.value.data.data, leads.value.data.fields)
@@ -380,7 +379,7 @@ function getGroupedByRows(listRows, groupByField, columns) {
       filteredRows = listRows.filter((row) => !row[groupByField.fieldname])
     } else {
       filteredRows = listRows.filter(
-        (row) => row[groupByField.fieldname] == option,
+        (row) => row[groupByField.fieldname] == option
       )
     }
 
@@ -468,8 +467,8 @@ function parseRows(rows, columns = []) {
           lead.sla_status == 'Failed'
             ? 'red'
             : lead.sla_status == 'Fulfilled'
-              ? 'green'
-              : 'amber'
+            ? 'green'
+            : 'amber'
         if (value == 'First Response Due' || value == 'Rolling Response Due') {
           value = __(timeAgo(lead.response_by))
           tooltipText = formatDate(lead.response_by)
@@ -498,7 +497,7 @@ function parseRows(rows, columns = []) {
         _rows[row] = timestampCell(lead[row])
       } else if (
         ['first_response_time', 'first_responded_on', 'response_by'].includes(
-          row,
+          row
         )
       ) {
         let field = row == 'response_by' ? 'response_by' : 'first_responded_on'
@@ -551,7 +550,7 @@ function actions(itemName) {
     },
   ]
   return actions.filter((action) =>
-    action.condition ? action.condition() : true,
+    action.condition ? action.condition() : true
   )
 }
 

@@ -1,18 +1,13 @@
 <template>
   <SettingsLayoutBase
-    :title="__('ERPNext Settings')"
-    :description="__('Manage ERPNext integration settings.')"
+    :title="__('ReyBill ERP Settings')"
+    :description="__('Manage ReyBill ERP integration settings.')"
   >
     <template #title>
       <div class="flex gap-2 items-center">
         <h2 class="flex text-2xl-semibold leading-none h-5">
-          {{ __('ERPNext Settings') }}
+          {{ __('ReyBill ERP Settings') }}
         </h2>
-        <Tooltip text="View documentation">
-          <a href="https://docs.frappe.io/crm/erpnext" target="_blank">
-            <lucide-circle-question-mark class="h-4 w-4 text-ink-gray-6" />
-          </a>
-        </Tooltip>
       </div>
     </template>
     <template #header-actions>
@@ -69,7 +64,7 @@
               required
               :description="
                 __(
-                  'ERPNext is not installed on this site either install it or enter the URL of your ERPNext site to connect',
+                  'ReyBill ERP is not installed on this site either install it or enter the URL of your ReyBill ERP site to connect'
                 )
               "
               autocomplete="off"
@@ -152,7 +147,7 @@
                     {{ __('Company Name') }}
                   </div>
                   <div class="text-p-sm text-ink-gray-5 truncate">
-                    {{ __('Select your ERPNext company to connect with') }}
+                    {{ __('Select your ReyBill ERP company to connect with') }}
                   </div>
                 </div>
                 <div class="w-48">
@@ -167,7 +162,7 @@
                         (company) => ({
                           label: company.company_name,
                           value: company.company_name,
-                        }),
+                        })
                       ) || []
                     "
                     required
@@ -218,7 +213,7 @@
                   <div class="text-p-sm text-ink-gray-5">
                     {{
                       __(
-                        'ERPNext Items always sync into CRM Products. Turn this on to also sync CRM Product changes back to ERPNext Items.',
+                        'ReyBill ERP Items always sync into CRM Products. Turn this on to also sync CRM Product changes back to ReyBill ERP Items.'
                       )
                     }}
                   </div>
@@ -246,10 +241,10 @@
                     {{
                       erpnextCRMSettingsResource.doc.sync_products
                         ? __(
-                            'Run a manual bi-directional sync between ERPNext Items and CRM Products.',
+                            'Run a manual bi-directional sync between ReyBill ERP Items and CRM Products.'
                           )
                         : __(
-                            'Run a manual synchronization to pull the latest Items from ERPNext.',
+                            'Run a manual synchronization to pull the latest Items from ReyBill ERP.'
                           )
                     }}
                   </div>
@@ -272,7 +267,7 @@
                   <div class="text-p-sm text-ink-gray-5 truncate">
                     {{
                       __(
-                        'Create customer in ERPNext when the deal status is changed',
+                        'Create customer in ReyBill ERP when the deal status is changed'
                       )
                     }}
                   </div>
@@ -302,7 +297,7 @@
                     <div class="text-p-sm text-ink-gray-5">
                       {{
                         __(
-                          'Select the deal status to trigger the auto customer creation in ERPNext',
+                          'Select the deal status to trigger the auto customer creation in ReyBill ERP'
                         )
                       }}
                     </div>
@@ -433,12 +428,12 @@
             <ERPNextIcon class="size-7.5 text-ink-gray-5" />
             <div class="flex flex-col items-center gap-1.5 text-center">
               <span class="text-lg-medium text-ink-gray-8">
-                {{ __('Connect ERPNext to Frappe CRM') }}
+                {{ __('Connect ReyBill ERP to ReyBill Sales') }}
               </span>
               <span class="text-center text-p-base text-ink-gray-6">
                 {{
                   __(
-                    'Enable the integration to create quotations and more in ERPNext.',
+                    'Enable the integration to create quotations and more in ReyBill ERP.'
                   )
                 }}
               </span>
@@ -466,8 +461,7 @@ import {
   LoadingIndicator,
   Switch,
   toast,
-  Tooltip,
-} from 'frappe-ui'
+  } from 'frappe-ui'
 import SettingsLayoutBase from '@/components/Layouts/SettingsLayoutBase.vue'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import Link from '../Controls/Link.vue'
@@ -529,7 +523,7 @@ const productSyncSections = computed(() => {
   const data = productSyncStatus.data || {}
   return [
     getProductSyncSection('products', 'Products', 'No CRM Products'),
-    getProductSyncSection('items', 'Items', 'No synced ERPNext Items'),
+    getProductSyncSection('items', 'Items', 'No synced ReyBill ERP Items'),
     getProductSyncSection('failed', 'Failed Logs', 'No failed syncs'),
   ].map((section) => ({
     ...section,
@@ -541,16 +535,16 @@ const productSyncSections = computed(() => {
 const currentProductSyncSection = computed(
   () =>
     productSyncSections.value.find(
-      (section) => section.name === activeProductSyncLogTab.value,
-    ) || productSyncSections.value[0],
+      (section) => section.name === activeProductSyncLogTab.value
+    ) || productSyncSections.value[0]
 )
 
 const currentProductSyncRows = computed(
-  () => currentProductSyncSection.value?.rows || [],
+  () => currentProductSyncSection.value?.rows || []
 )
 
 const isSyncedDocumentLog = computed(() =>
-  ['products', 'items'].includes(activeProductSyncLogTab.value),
+  ['products', 'items'].includes(activeProductSyncLogTab.value)
 )
 
 const unsyncedSummary = computed(() => {
@@ -562,7 +556,7 @@ const unsyncedSummary = computed(() => {
   }
   if (data.sync_products && data.products) {
     parts.push(
-      `${data.products} ${data.products === 1 ? __('product') : __('products')}`,
+      `${data.products} ${data.products === 1 ? __('product') : __('products')}`
     )
   }
   if (!parts.length) return ''
@@ -650,16 +644,16 @@ const saveSettings = async () => {
         }
         await erpnextCRMSettingsResource.get.reload()
       },
-    },
+    }
   )
 }
 
 const toggleEnable = (value) => {
   if (value) {
     $dialog({
-      title: __('Disable ERPNext Integration'),
+      title: __('Disable ReyBill ERP Integration'),
       message: __(
-        'Create quotation button on deal page and auto customer creation on deal status change will be disabled. Are you sure?',
+        'Create quotation button on deal page and auto customer creation on deal status change will be disabled. Are you sure?'
       ),
       actions: [
         {
@@ -686,7 +680,7 @@ async function runProductSync() {
   ) {
     await updateFields(
       'sync_products',
-      erpnextCRMSettingsResource.doc.sync_products,
+      erpnextCRMSettingsResource.doc.sync_products
     )
   }
   await erpnextCRMSettingsResource.runProductSync.submit()
@@ -721,7 +715,9 @@ function getSyncRowId(row) {
 function getDeskUrl(row) {
   const doctype = getDeskDoctype()
   if (!doctype || !row.name) return ''
-  return `${window.location.origin}/app/${doctype}/${encodeURIComponent(row.name)}`
+  return `${window.location.origin}/app/${doctype}/${encodeURIComponent(
+    row.name
+  )}`
 }
 
 function getDeskDoctype() {
@@ -749,7 +745,7 @@ function verifyConnection() {
           erpnextCRMSettingsResource.getExternalCompanies.submit()
         }
       },
-    },
+    }
   )
 }
 

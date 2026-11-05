@@ -54,11 +54,10 @@
     :title="__('No contacts yet')"
     :description="
       __(
-        'Contacts are the people you talk to at your leads and customers. They are added when you convert a lead, or you can add them here.',
+        'Contacts are the people you talk to at your leads and customers. They are added when you convert a lead, or you can add them here.'
       )
     "
     :filtered="!!Object.keys(contacts.params?.filters || {}).length"
-    docsLink="https://docs.frappe.io/crm/contact"
     importDoctype="Contact"
     @create="showContactModal = true"
   />
@@ -111,7 +110,7 @@ const rows = computed(() => {
       _rows[row] = contact[row]
 
       let fieldType = contacts.value?.data.columns?.find(
-        (col) => (col.key || col.value) == row,
+        (col) => (col.key || col.value) == row
       )?.type
 
       if (

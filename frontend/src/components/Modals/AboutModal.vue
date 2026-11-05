@@ -4,9 +4,11 @@
       <div class="p-4 pt-5">
         <div class="flex justify-center">
           <div class="flex flex-col items-center">
-            <CRMLogo class="mb-3 size-12" />
+            <CRMLogo wordmark class="mb-3 h-24 w-32" />
             <Dialog.Title as-child>
-              <h3 class="text-2xl-semibold text-ink-gray-9">Frappe CRM</h3>
+              <h3 class="text-2xl-semibold text-ink-gray-9">
+                {{ branding.productName }}
+              </h3>
             </Dialog.Title>
           </div>
         </div>
@@ -17,6 +19,7 @@
             :key="link.label"
             class="flex py-2 px-2 hover:bg-surface-gray-1 rounded-4 cursor-pointer"
             target="_blank"
+            rel="noopener noreferrer"
             :href="link.url"
           >
             <component
@@ -31,48 +34,24 @@
         </div>
         <hr class="border-t my-3 mx-2" />
         <p class="text-sm text-ink-gray-6 px-2 mt-2">
-          © Frappe Technologies Pvt. Ltd. and contributors
+          {{ branding.productName }} is based on Frappe CRM. © Frappe
+          Technologies Pvt. Ltd. and contributors. AGPLv3.
         </p>
       </div>
     </template>
   </Dialog>
 </template>
 <script setup>
+import branding from '@/branding'
 import CRMLogo from '@/components/Icons/CRMLogo.vue'
 import GitHubIcon from '@/components/Icons/GitHubIcon.vue'
 import LucideGlobe from '~icons/lucide/globe'
-import LucideHeadset from '~icons/lucide/headset'
-import LucideBug from '~icons/lucide/bug'
-import LucideBookOpen from '~icons/lucide/book-open'
 import { Dialog } from 'frappe-ui'
 
 let show = defineModel({ type: Boolean })
 
-let links = [
-  {
-    label: __('Website'),
-    url: 'https://frappe.io/crm',
-    icon: LucideGlobe,
-  },
-  {
-    label: __('GitHub Repository'),
-    url: 'https://github.com/frappe/crm',
-    icon: GitHubIcon,
-  },
-  {
-    label: __('Documentation'),
-    url: 'https://docs.frappe.io/crm',
-    icon: LucideBookOpen,
-  },
-  {
-    label: __('Report an Issue'),
-    url: 'https://github.com/frappe/crm/issues',
-    icon: LucideBug,
-  },
-  {
-    label: __('Contact Support'),
-    url: 'https://support.frappe.io',
-    icon: LucideHeadset,
-  },
+const links = [
+  { label: __('Website'), url: branding.website, icon: LucideGlobe },
+  { label: __('Source Code'), url: branding.sourceUrl, icon: GitHubIcon },
 ]
 </script>

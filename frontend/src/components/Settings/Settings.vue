@@ -249,7 +249,7 @@ const tabs = computed(() => {
           condition: () => isWhatsappInstalled.value && isManager(),
         },
         {
-          label: __('ERPNext'),
+          label: __('ReyBill ERP'),
           icon: ERPNextIcon,
           component: markRaw(ERPNextSettings),
           condition: () => isManager(),
@@ -294,7 +294,7 @@ function setActiveTab(tabName) {
 function scrollActiveIntoView() {
   nextTick(() => {
     const el = sidebarContainer.value?.querySelector(
-      `[data-page="${activeTab.value?.label}"]`,
+      `[data-page="${activeTab.value?.label}"]`
     )
     el?.scrollIntoView({ block: 'nearest' })
   })

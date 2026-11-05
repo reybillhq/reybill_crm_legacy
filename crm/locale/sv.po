@@ -1032,7 +1032,7 @@ msgid "Between"
 msgstr "Mellan"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:195
-msgid "Bidirectional sync of existing CRM Products and ERPNext Items. Runs in the background."
+msgid "Bidirectional sync of existing CRM Products and ReyBill ERP Items. Runs in the background."
 msgstr "Dubbelriktad synkronisering av befintliga Säljstöd Artiklar och Affärssystem Artiklar. Körs i bakgrunden."
 
 #: frontend/src/components/Settings/Settings.vue:137
@@ -1367,7 +1367,7 @@ msgid "Cannot delete standard items {0}"
 msgstr "Kan inte ta bort standard artikel {0}"
 
 #: crm/fcrm/doctype/crm_product/crm_product.py:81
-msgid "Cannot delete: linked ERPNext Item {0} is referenced by a Quotation. Remove the reference or delete the Item in ERPNext first."
+msgid "Cannot delete: linked ReyBill ERP Item {0} is referenced by a Quotation. Remove the reference or delete the Item in ReyBill ERP first."
 msgstr "Kan inte ta bort: länkad Affärssystem Artikel {0} refereras av Offert. Ta bort referens eller ta bort artikel i Affärssystem först."
 
 #: frontend/src/components/Settings/AssignmentRules/AssignmentRuleListItem.vue:170
@@ -1627,7 +1627,7 @@ msgstr "Bolag Namn"
 
 #. Label of the erpnext_company (Data) field in DocType 'ERPNext CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "Company in ERPNext site"
+msgid "Company in ReyBill ERP site"
 msgstr "Webbplats Bolag"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:517
@@ -1733,7 +1733,7 @@ msgid "Confirm {0}"
 msgstr "Bekräfta {0}"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:274
-msgid "Connect ERPNext to Frappe CRM"
+msgid "Connect ReyBill ERP to ReyBill Sales"
 msgstr "Koppla Affärssystem till Säljstöd"
 
 #: frontend/src/pages/Welcome.vue:35
@@ -1862,7 +1862,7 @@ msgid "Copied to Clipboard"
 msgstr "Kopierad till Urklipp"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:156
-msgid "Could not create the Frappe CRM custom fields on {0} automatically. If it is running the latest ERPNext, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
+msgid "Could not create the ReyBill Sales custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
 msgstr "Kunde inte skapa Säljstöd anpassade fält {0} automatiskt. Om det körs på senaste Affärssystem, aktivera <b>Säljstöd Data Synkronisering</b> i Säljstöd Inställningar, eller kontrollera fellogg."
 
 #: frontend/src/components/Settings/Hierarchy/useRemoveNode.js:16
@@ -1940,7 +1940,7 @@ msgid "Create an Event"
 msgstr "Skapa Händelse"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:217
-msgid "Create customer in ERPNext when the deal status is changed"
+msgid "Create customer in ReyBill ERP when the deal status is changed"
 msgstr "Skapa kund i Affärssystem när affärsstatus ändras"
 
 #. Label of the create_customer_on_status_change (Check) field in DocType
@@ -1952,7 +1952,7 @@ msgstr "Skapa kund vid statusändring"
 #: crm/fcrm/doctype/crm_product/crm_product.js:12
 #: crm/fcrm/doctype/crm_product/crm_product_list.js:10
 #: frontend/src/composables/document.js:29
-msgid "Create products as Items in ERPNext"
+msgid "Create products as Items in ReyBill ERP"
 msgstr "Skapa artiklar som artiklar i Affärssystem"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:435
@@ -2457,7 +2457,7 @@ msgid "Disable"
 msgstr "Inaktivera"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:434
-msgid "Disable ERPNext Integration"
+msgid "Disable ReyBill ERP Integration"
 msgstr "Inaktivera Affärssystem Integration"
 
 #: frontend/src/components/Settings/Hierarchy/Hierarchy.vue:310
@@ -2640,7 +2640,7 @@ msgstr "Varaktighet"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:634
 #: frontend/src/components/Settings/Settings.vue:231
-msgid "ERPNext"
+msgid "ReyBill ERP"
 msgstr "Affärssystem"
 
 #. Name of a DocType
@@ -2650,44 +2650,44 @@ msgstr "Affärssystem Säljstöd Inställningar"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:3
 #: frontend/src/components/Settings/ERPNextSettings.vue:9
-msgid "ERPNext Settings"
+msgid "ReyBill ERP Settings"
 msgstr "Inställningar"
 
 #. Label of the section_break_oubd (Section Break) field in DocType 'ERPNext
 #. CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "ERPNext Site API's"
+msgid "ReyBill ERP Site API's"
 msgstr "Affärssystem Webbplats API'er"
 
 #. Label of the erpnext_site_url (Data) field in DocType 'ERPNext CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "ERPNext Site URL"
+msgid "ReyBill ERP Site URL"
 msgstr "Affärssystem Webbplats URL"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:161
-msgid "ERPNext custom fields not created"
+msgid "ReyBill ERP custom fields not created"
 msgstr "Affärssystem anpassade fält skapades inte"
 
 #: crm/fcrm/doctype/crm_product/crm_product.py:42
-msgid "ERPNext integration is active. Create an Item in ERPNext and it will appear in CRM Product automatically."
+msgid "ReyBill ERP integration is active. Create an Item in ReyBill ERP and it will appear in CRM Product automatically."
 msgstr "Affärssystem Integration är aktiv. Skapa artikel i Affärssystem så visas det automatiskt som Säljstöd Artikel."
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:220
-msgid "ERPNext integration must be enabled on the same site"
+msgid "ReyBill ERP integration must be enabled on the same site"
 msgstr "Affärssystem integration måste vara aktiverad på samma webbplats"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:70
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:87
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:523
-msgid "ERPNext is not installed in the current site"
+msgid "ReyBill ERP is not installed in the current site"
 msgstr "Afförsystem är inte installerat på aktuell webbplats"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:71
-msgid "ERPNext is not installed on this site either install it or enter the URL of your ERPNext site to connect"
+msgid "ReyBill ERP is not installed on this site either install it or enter the URL of your ReyBill ERP site to connect"
 msgstr "Affärssystem är inte installerat på denna webbplats, installera det eller ange webbadress till din Affärssystem webbplats för att ansluta"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:27
-msgid "ERPNext is not integrated with the CRM"
+msgid "ReyBill ERP is not integrated with the CRM"
 msgstr "Affärssystem är inte integrerat med Säljstöd"
 
 #: frontend/src/components/Activities/CommentArea.vue:94
@@ -2941,7 +2941,7 @@ msgid "Enable call recording for incoming and outgoing calls"
 msgstr "Aktivera samtalsinspelning för inkommande och utgående samtal"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:278
-msgid "Enable the integration to create quotations and auto create customers in ERPNext."
+msgid "Enable the integration to create quotations and auto create customers in ReyBill ERP."
 msgstr "Aktivera integration för att skapa offerter och automatiskt skapa kunder i Affärssystem."
 
 #. Label of the enabled (Check) field in DocType 'CRM Exotel Settings'
@@ -3584,11 +3584,11 @@ msgstr "Formulär Skript uppdaterad"
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
-msgid "Frappe CRM"
+msgid "ReyBill Sales"
 msgstr "Säljstöd"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:638
-msgid "Frappe CRM mobile"
+msgid "ReyBill Sales mobile"
 msgstr "Mobil App"
 
 #: frontend/src/components/Settings/emailConfig.js:81
@@ -3826,7 +3826,7 @@ msgid "How do new leads usually come to you?"
 msgstr "Hur brukar nya potentiella kunder komma till er?"
 
 #: frontend/src/pages/PersonaForm.vue:108
-msgid "How many people will use Frappe CRM?"
+msgid "How many people will use ReyBill Sales?"
 msgstr "Hur många kommer att använda Säljstöd?"
 
 #. Description of the 'Timeline Timestamp Format' (Select) field in DocType
@@ -4155,7 +4155,7 @@ msgstr "Är Standard"
 #. Label of the is_erpnext_in_different_site (Check) field in DocType 'ERPNext
 #. CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
-msgid "Is ERPNext installed on a different site?"
+msgid "Is ReyBill ERP installed on a different site?"
 msgstr "Är Affärssystem installerad på annan webbplats?"
 
 #. Label of the is_group (Check) field in DocType 'CRM Sales Hierarchy'
@@ -4708,7 +4708,7 @@ msgid "Manage CRM users by adding or inviting them, and assign roles to control 
 msgstr "Hantera Säljstöd användare genom att lägga till eller bjuda in dem och tilldela roller för att styra deras åtkomst och behörigheter"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:4
-msgid "Manage ERPNext integration settings"
+msgid "Manage ReyBill ERP integration settings"
 msgstr "Hantera Affärssystem Integration Inställningar"
 
 #: frontend/src/components/Settings/Profile/ProfileSettings.vue:100
@@ -6301,7 +6301,7 @@ msgid "Reset Changes"
 msgstr "Återställ ändringar"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.js:7
-msgid "Reset ERPNext Form Script"
+msgid "Reset ReyBill ERP Form Script"
 msgstr "Återställ Affärssystem Formulär Script"
 
 #: frontend/src/components/ColumnSettings.vue:86
@@ -6799,7 +6799,7 @@ msgid "Select the assignees for {0}."
 msgstr "Välj de tilldelade för {0}."
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:245
-msgid "Select the deal status to trigger the auto customer creation in ERPNext"
+msgid "Select the deal status to trigger the auto customer creation in ReyBill ERP"
 msgstr "Välj affärsstatus för att utlösa automatisk kundskapande i Affärssystem"
 
 #: frontend/src/components/Settings/CalendarSettings.vue:38
@@ -6811,7 +6811,7 @@ msgid "Select whether to display time with or without seconds"
 msgstr "Välj om tiden ska visas med eller utan sekunder"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:133
-msgid "Select your ERPNext company to connect with"
+msgid "Select your ReyBill ERP company to connect with"
 msgstr "Välj Affärssystem bolag att ansluta till"
 
 #: frontend/src/components/FieldLayout/Field.vue:574
@@ -7312,7 +7312,7 @@ msgid "Sync Now"
 msgstr "Synkronisera Nu"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:191
-msgid "Sync Products with ERPNext"
+msgid "Sync Products with ReyBill ERP"
 msgstr "Synkronisera artiklar med Affärssystem"
 
 #: frontend/src/components/Settings/LeadSyncing/FailureLogs.vue:132
@@ -7995,7 +7995,7 @@ msgid "Uploading {0}%"
 msgstr "Ladda Upp {0}%"
 
 #: crm/fcrm/doctype/crm_product/crm_product.py:45
-msgid "Use ERPNext to Create Products"
+msgid "Use ReyBill ERP to Create Products"
 msgstr "Använd Affärssystem för att skapa artiklar"
 
 #. Label of the user (Link) field in DocType 'CRM Dashboard'
@@ -8108,7 +8108,7 @@ msgid "Walk-ins"
 msgstr "Drop-in"
 
 #: frontend/src/components/SalesHierarchyBanner.vue:20
-msgid "We are changing how permissions work in Frappe CRM"
+msgid "We are changing how permissions work in ReyBill Sales"
 msgstr "Vi ändrar hur behörigheter fungerar i Säljstöd"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:593
@@ -8166,7 +8166,7 @@ msgid "Welcome Message"
 msgstr "Välkomstmeddelande"
 
 #: frontend/src/pages/PersonaForm.vue:132
-msgid "Welcome to Frappe CRM"
+msgid "Welcome to ReyBill Sales"
 msgstr "Välkommen till Säljstöd"
 
 #: frontend/src/pages/Welcome.vue:4
@@ -8310,7 +8310,7 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr "Du har inget Exotel Nummer angiven i din Telefoni Agent"
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access Frappe CRM. Please contact your administrator if you believe this is an error."
+msgid "You do not have enough permissions to access ReyBill Sales. Please contact your administrator if you believe this is an error."
 msgstr "Du har inte tillräcklig behörighet för att komma åt Säljstöd. Kontakta administratör om du tror att detta är felaktigt."
 
 #: crm/integrations/exotel/handler.py:92
@@ -8318,7 +8318,7 @@ msgid "You do not have mobile number set in your Telephony Agent"
 msgstr "Du har inget Mobil Nummer angiven i din Telefoni Agent"
 
 #: crm/www/crm.py:18
-msgid "You do not have permission to access Frappe CRM"
+msgid "You do not have permission to access ReyBill Sales"
 msgstr "Du har inte åtkomstbehörighet till Säljstöd"
 
 #: frontend/src/data/document.js:45

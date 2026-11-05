@@ -17,7 +17,7 @@
               document.statuses?.length
                 ? document.statuses
                 : document._statuses,
-              triggerStatusChange,
+              triggerStatusChange
             )
           "
         >
@@ -132,6 +132,7 @@
   />
 </template>
 <script setup>
+import { usePageMeta } from '@/composables/pageMeta'
 import DeleteLinkedDocModal from '@/components/DeleteLinkedDocModal.vue'
 import ErrorPage from '@/components/ErrorPage.vue'
 import Icon from '@/components/Icon.vue'
@@ -170,7 +171,6 @@ import {
   Tabs,
   Breadcrumbs,
   call,
-  usePageMeta,
 } from 'frappe-ui'
 import { ref, computed, watch, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
@@ -203,7 +203,7 @@ const {
 
 const doc = computed(() => document.doc || {})
 const isLeadConversionDisabled = computed(
-  () => doc.value.status && getLeadStatus(doc.value.status)?.type === 'Lost',
+  () => doc.value.status && getLeadStatus(doc.value.status)?.type === 'Lost'
 )
 
 const { markVisited } = useVisitedRecords('CRM Lead')
@@ -218,7 +218,7 @@ watch(error, (err) => {
     errorTitle.value = __(
       err.exc_type == 'DoesNotExistError'
         ? __('Document Not Found')
-        : __('Error Occurred'),
+        : __('Error Occurred')
     )
     errorMessage.value = __(err.messages?.[0] || 'An Error Occurred')
   } else {
@@ -244,7 +244,7 @@ watch(
       document._statuses = s.statuses || []
     }
   },
-  { once: true },
+  { once: true }
 )
 
 const reload = ref(false)

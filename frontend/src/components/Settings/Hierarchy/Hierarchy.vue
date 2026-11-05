@@ -6,19 +6,11 @@
           <h2 class="flex text-2xl-semibold leading-none h-5">
             {{ __('Sales Hierarchy') }}
           </h2>
-          <Tooltip :text="__('View documentation')">
-            <a
-              href="https://docs.frappe.io/crm/settings/sales-hierarchy"
-              target="_blank"
-            >
-              <LucideCircleQuestionMark class="h-4 w-4 text-ink-gray-6" />
-            </a>
-          </Tooltip>
         </div>
         <p class="text-p-base text-ink-gray-6">
           {{
             __(
-              'Restrict visibility of Leads and Deals based on a reporting tree.',
+              'Restrict visibility of Leads and Deals based on a reporting tree.'
             )
           }}
         </p>
@@ -198,7 +190,7 @@
               {{
                 __(
                   'Remove {0} from the hierarchy. What should happen to their direct reports?',
-                  [removeTarget?.full_name],
+                  [removeTarget?.full_name]
                 )
               }}
             </template>
@@ -256,13 +248,11 @@ import { useDragDrop } from './useDragDrop'
 import { globalStore } from '@/stores/global'
 import { usersStore } from '@/stores/users'
 import LucideNetwork from '~icons/lucide/network'
-import LucideCircleQuestionMark from '~icons/lucide/circle-question-mark'
 import {
   Button,
   Dialog,
   LoadingIndicator,
   TextInput,
-  Tooltip,
   call,
   createDocumentResource,
   createListResource,
@@ -297,7 +287,7 @@ const fcrmSettings = createDocumentResource({
 })
 
 const hierarchyEnabled = computed(
-  () => !!fcrmSettings.doc?.enable_sales_hierarchy,
+  () => !!fcrmSettings.doc?.enable_sales_hierarchy
 )
 
 const nodes = createListResource({
@@ -313,7 +303,7 @@ function toggleEnable(currentlyEnabled) {
     $dialog({
       title: __('Disable Sales Hierarchy'),
       message: __(
-        'Lead and deal visibility will no longer be restricted by the reporting tree. Are you sure?',
+        'Lead and deal visibility will no longer be restricted by the reporting tree. Are you sure?'
       ),
       actions: [
         {
@@ -325,7 +315,7 @@ function toggleEnable(currentlyEnabled) {
               { enable_sales_hierarchy: 0 },
               {
                 onSuccess: () => toast.success(__('Sales hierarchy disabled')),
-              },
+              }
             )
             close()
           },
@@ -339,7 +329,7 @@ function toggleEnable(currentlyEnabled) {
         onSuccess: () => {
           toast.success(__('Sales hierarchy enabled'))
         },
-      },
+      }
     )
   }
 }
@@ -376,12 +366,12 @@ function enrich(node) {
 }
 
 const enrichedNodes = computed(() =>
-  (nodes.data || []).map(enrich).filter(Boolean),
+  (nodes.data || []).map(enrich).filter(Boolean)
 )
 
 const tree = computed(() => {
   const byName = new Map(
-    enrichedNodes.value.map((n) => [n.name, { ...n, children: [] }]),
+    enrichedNodes.value.map((n) => [n.name, { ...n, children: [] }])
   )
   const roots = []
   for (const n of byName.values()) {
@@ -418,7 +408,7 @@ function clearTree(node) {
 }
 
 const visibleRoots = computed(() =>
-  tree.value.map(clearTree).filter((n) => n !== null),
+  tree.value.map(clearTree).filter((n) => n !== null)
 )
 
 function getLastNode(list) {
@@ -431,7 +421,7 @@ function getLastNode(list) {
 const lastNodeName = computed(() => getLastNode(visibleRoots.value)?.name)
 
 const placedUserIds = computed(
-  () => new Set(enrichedNodes.value.map((n) => n.user)),
+  () => new Set(enrichedNodes.value.map((n) => n.user))
 )
 
 const ALLOWED_ROLES = new Set(['Sales Manager', 'Sales User'])
@@ -460,7 +450,7 @@ function getCandidates(parent) {
 }
 
 const candidatesLoading = computed(
-  () => !!(usersResource.loading || nodes.loading),
+  () => !!(usersResource.loading || nodes.loading)
 )
 
 async function reparent(name, newParent) {
@@ -508,12 +498,12 @@ async function bulkAdd(parent, userIds) {
       toast.success(
         added === 1
           ? __('User added to hierarchy')
-          : __('{0} users added to hierarchy', [added]),
+          : __('{0} users added to hierarchy', [added])
       )
     }
     if (lastError) {
       toast.error(
-        lastError?.messages?.[0] || __('Some users could not be added'),
+        lastError?.messages?.[0] || __('Some users could not be added')
       )
     }
     await nodes.reload()
@@ -542,7 +532,7 @@ const removeTarget = ref(null)
 const removing = ref(null)
 
 const checkTargetChild = computed(() =>
-  enrichedNodes.value.some((n) => n.reports_to === removeTarget.value?.name),
+  enrichedNodes.value.some((n) => n.reports_to === removeTarget.value?.name)
 )
 
 const unlinkCount = computed(() => {

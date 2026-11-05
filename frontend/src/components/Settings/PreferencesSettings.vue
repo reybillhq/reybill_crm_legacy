@@ -4,7 +4,7 @@
     :title="__('Preferences')"
     :description="
       __(
-        'Choose how you want to use the application by setting your preferences.',
+        'Choose how you want to use the application by setting your preferences.'
       )
     "
   >
@@ -28,7 +28,7 @@
           </div>
           <ThemeSwitcher
             :logo="brand.logo || CRMLogo"
-            :name="brand.name || 'CRM'"
+            :name="brand.name || branding.productName"
           />
         </div>
         <div class="flex items-center justify-between">
@@ -83,6 +83,7 @@
 </template>
 
 <script setup>
+import branding from '@/branding'
 import CRMLogo from '@/components/Icons/CRMLogo.vue'
 import ThemeSwitcher from '@/components/Settings/ThemeSwitcher.vue'
 import SettingsLayoutBase from '@/components/Layouts/SettingsLayoutBase.vue'

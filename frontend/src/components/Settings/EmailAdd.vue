@@ -32,10 +32,15 @@
         <CircleAlert class="w-5 h-6 w-min-5 w-max-5 min-h-5 max-w-5" />
         <div class="text-xs text-wrap">
           {{ selectedService.info }}
-          <a :href="selectedService.link" target="_blank" class="underline">
+          <a
+            v-if="selectedService.link"
+            :href="selectedService.link"
+            target="_blank"
+            class="underline"
+          >
             {{ __('here') }}
           </a>
-          .
+          <span v-if="selectedService.link">.</span>
         </div>
       </div>
       <!-- service provider fields -->
@@ -128,7 +133,7 @@ const { completeStep } = useCrmOnboarding()
 
 const selectedService = ref(null)
 const fields = computed(() =>
-  selectedService.value.custom ? customProviderFields : popularProviderFields,
+  selectedService.value.custom ? customProviderFields : popularProviderFields
 )
 
 function handleSelect(service) {

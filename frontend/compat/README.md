@@ -44,3 +44,12 @@ Official migration tracking:
 - https://github.com/frappe/crm/issues/2636
 - https://ui.frappe.io/docs/migration
 - https://github.com/frappe/frappe-ui/commit/a0f7747dee84731500c868cc3763c31d7c0cdedf
+
+## ReyBill fork validation
+
+This patch was carried without resolver/component behavior changes to the ReyBill
+fork baseline `1cd8334c4d889df541588b5112f029070e013987` (app version 1.91.1).
+That fork pins the same frappe-ui version and links the same frozen Framework UI.
+The production build, 365 frontend tests and 14 browser checks passed on this
+baseline with the adapter. The upstream 1.92.0 revision above records the
+original patch's provenance; this rebranding does not upgrade the stable fork.

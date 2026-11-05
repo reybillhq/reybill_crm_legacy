@@ -7,8 +7,8 @@
           isCollapsed
             ? 'w-auto px-0'
             : open
-              ? 'w-full px-2 bg-surface-elevation-3 shadow-sm'
-              : 'w-full px-2 hover:bg-surface-gray-2'
+            ? 'w-full px-2 bg-surface-elevation-3 shadow-sm'
+            : 'w-full px-2 hover:bg-surface-gray-2'
         "
       >
         <BrandLogo v-model="brand" class="h-8 max-w-16 flex-shrink-0" />
@@ -21,7 +21,7 @@
           "
         >
           <div class="text-base-medium leading-none text-ink-gray-9 truncate">
-            {{ __(brand.name || 'CRM') }}
+            {{ __(brand.name || branding.productName) }}
           </div>
           <div class="mt-1 text-sm leading-none text-ink-gray-7 truncate">
             {{ user.full_name }}
@@ -46,17 +46,14 @@
 </template>
 
 <script setup>
+import branding from '@/branding'
 import BrandLogo from '@/components/BrandLogo.vue'
-import FrappeCloudIcon from '@/components/Icons/FrappeCloudIcon.vue'
 import AppsIcon from '@/components/Icons/AppsIcon.vue'
 import { sessionStore } from '@/stores/session'
 import { usersStore } from '@/stores/users'
 import { getSettings } from '@/stores/settings'
 import { showSettings, isMobileView } from '@/composables/settings'
 import { showAboutModal } from '@/composables/modals'
-import { confirmLoginToFrappeCloud } from '@/composables/frappecloud'
-import { useCloudSettings } from '@/composables/cloudSettings'
-import CreditCardIcon from '~icons/lucide/credit-card'
 import { spriteIcon } from '@/utils/spriteIcon'
 import { createResource, Dropdown } from 'frappe-ui'
 import { computed, h, markRaw } from 'vue'
@@ -67,7 +64,6 @@ defineProps({
 
 const { settings, brand } = getSettings()
 const { logout } = sessionStore()
-const { available: canManageBilling, open: openBilling } = useCloudSettings()
 const { getUser } = usersStore()
 
 const user = computed(() => getUser() || {})
@@ -93,10 +89,10 @@ const dropdownItems = computed(() => {
   ]
 
   items.forEach((item) => {
-    if (item.hidden) return
+    if (item.hidden || item.name1 === 'login_to_fc') return
     if (item.type !== 'Separator') {
       _dropdownItems[_dropdownItems.length - 1].options.push(
-        dropdownItemObj(item),
+        dropdownItemObj(item)
       )
     } else {
       _dropdownItems.push({
@@ -146,20 +142,7 @@ function getStandardItem(item) {
         condition: () => !isMobileView.value,
       }
     case 'login_to_fc':
-      if (canManageBilling) {
-        return {
-          icon: markRaw(CreditCardIcon),
-          label: __('Manage Billing'),
-          onClick: () => openBilling(),
-          condition: () => !isMobileView.value,
-        }
-      }
-      return {
-        icon: h(FrappeCloudIcon),
-        label: __(item.label),
-        onClick: () => confirmLoginToFrappeCloud(),
-        condition: () => !isMobileView.value && window.is_fc_site,
-      }
+      return null
     case 'about':
       return {
         icon: item.icon,
@@ -188,8 +171,8 @@ function appMenuItems() {
 function deskApp() {
   return {
     name: 'frappe',
-    logo: '/assets/frappe/images/framework.png',
-    title: __('Desk'),
+    logo: branding.iconLight,
+    title: __('ReyBill ERP'),
     route: '/desk',
   }
 }
@@ -200,7 +183,8 @@ function crmSiblingApps(data) {
     .map((app) => ({
       name: app.name,
       logo: app.logo,
-      title: __(app.title),
+      title: app.name === 'erpnext' ? __('ReyBill ERP') : __(app.title),
+      ...(app.name === 'erpnext' ? { logo: branding.iconLight } : {}),
       route: app.route,
     }))
 }

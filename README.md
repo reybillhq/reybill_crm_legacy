@@ -1,203 +1,52 @@
-<div align="center" markdown="1">
+# ReyBill Sales
 
-<a href="https://frappe.io/products/crm">
-    <img src=".github/logo.svg" height="80" alt="Frappe CRM Logo">
-</a>
+ReyBill Sales is ReyBill's sales CRM for managing leads, deals, contacts,
+organizations and pipelines. It is built on the open-source Frappe CRM project
+and Frappe Framework, with integration support for ReyBill ERP (ERPNext).
 
-<h1>Frappe CRM</h1>
+[ReyBill](https://reybill.com) · [Source code](https://github.com/reybillhq/reybill_crm)
 
-**Simplify Sales, Amplify Relationships**
+The ReyBill documentation portal is planned. Product help links remain hidden
+until corresponding articles are available.
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/frappe/crm)](https://github.com/frappe/crm/releases)
+## Development
 
-<div>
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset=".github/screenshots/FrappeCRMHeroImage.png">
-        <img width="1402" alt="Frappe CRM Hero Image" src=".github/screenshots/FrappeCRMHeroImage.png">
-    </picture>
-</div>
+The internal Frappe app and Python package name remain `crm`. Use a Frappe v16
+bench with the compatible ERPNext v16 app when validating ERP integration.
+Keep the checkout at `apps/crm` in a normal bench installation; the folder name
+`reybill_crm` in this audit is an isolated checkout protecting existing work.
 
-[Live Demo](https://frappecrm-demo.frappe.cloud/api/method/crm.api.live_demo.login) - [Website](https://frappe.io/crm) - [Documentation](https://docs.frappe.io/crm)
-
-</div>
-
-## Frappe CRM
-
-Frappe CRM is a simple, affordable, open-source CRM tool designed for modern sales teams with unlimited users. Frappe CRM is crafted for providing a great user experience, packed with features for core CRM activities helping you build strong customer relationships while keeping things clean and organised.
-
-### Motivation
-
-The motivation behind building Frappe CRM stems from the need for a simple, customizable, and open-source solution tailored to modern business needs. Many existing CRMs are either too complex, overly generic, or locked behind steep pricing models that hinder accessibility and flexibility. Frappe CRM was designed to bridge this gap, offering a tool that empowers businesses to manage their customer relationships seamlessly while being easy to adapt to specific workflows. Built on the Frappe framework, it prioritizes usability, extensibility, and affordability, making it an ideal choice for growing teams and organizations looking for a CRM that aligns with their unique processes.
-
-### Key Features
-
--   **User-Friendly and Flexible:** A simple, intuitive interface that’s easy to navigate and highly customizable, enabling teams to adapt it to their specific processes effortlessly.
--   **All-in-One Lead/Deal Page:** Consolidate all essential actions and details—like activities, comments, notes, tasks, and more—into a single page for a seamless workflow experience.
--   **Kanban View:** Manage leads and deals visually with a drag-and-drop Kanban board, offering clarity and efficiency in tracking progress across stages.
--   **Custom Views:** Design personalized views to organize and display leads and deals using custom filters, sorting, and columns, ensuring quick access to the most relevant information.
-
-    <details>
-    <summary>Screenshots</summary>
-
-    <div>
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset=".github/screenshots/LeadList.png">
-            <img width="1402" alt="Lead List" src=".github/screenshots/LeadList.png">
-        </picture>
-    </div>
-    <div>
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset=".github/screenshots/LeadPage.png">
-            <img width="1402" alt="Lead Page" src=".github/screenshots/LeadPage.png">
-        </picture>
-    </div>
-    <div>
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset=".github/screenshots/EmailTemplate.png">
-            <img width="1402" alt="Email Template" src=".github/screenshots/EmailTemplate.png">
-        </picture>
-    </div>
-    <div>
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset=".github/screenshots/CallUI.png">
-            <img width="1402" alt="Call UI" src=".github/screenshots/CallUI.png">
-        </picture>
-    </div>
-    <div>
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset=".github/screenshots/CallLog.png">
-            <img width="1402" alt="Call Log" src=".github/screenshots/CallLog.png">
-        </picture>
-    </div>
-
-    </details>
-
-### Integrations
-
--   **Twilio:** Integrate Twilio to make and receive calls from the CRM. You can also record calls. It is a built-in integration.
--   **Exotel:** Integrate Exotel to make and receive calls via agents mobile phone from the CRM. You can also record calls. It is a built-in integration.
--   **WhatsApp:** Integrate WhatsApp to send and receive messages from the CRM. [Frappe WhatsApp](https://github.com/shridarpatil/frappe_whatsapp) is used for this integration.
--   **ERPNext:** Integrate with [ERPNext](https://erpnext.com) to extend the CRM capabilities to include invoicing, accounting, and more.
-
-### Under the Hood
-
-- [Frappe Framework](https://github.com/frappe/frappe): A full-stack web application framework.
-- [Frappe UI](https://github.com/frappe/frappe-ui): A Vue-based UI library, to provide a modern user interface.
-
-### Compatibility
-This app is compatible with the following versions of Frappe and ERPNext:
-
-| CRM branch            | Stability | Frappe branch        | ERPNext branch       |
-| :-------------------- | :-------- | :------------------- | :------------------- |
-| main - v1.x           | stable    | v15.x & v16.x        | v15.x & v16.x        |
-| develop - future/v2.x | unstable  | develop - future/v17 | develop - future/v17 |
-
-## Getting Started (Production)
-
-### Managed Hosting
-
-Get started with your personal or business site with a few clicks on Frappe Cloud - our official hosting service.
-<div>
-	<a href="https://frappecloud.com/crm/signup" target="_blank">
-		<picture>
-			<source media="(prefers-color-scheme: dark)" srcset="https://frappe.io/files/try-on-fc-white.png">
-			<img src="https://frappe.io/files/try-on-fc-black.png" alt="Try on Frappe Cloud" height="28" />
-		</picture>
-	</a>
-</div>
-
-### Self Hosting
-
-Follow these steps to set up Frappe CRM in production:
-
-**Step 1**: Download the easy install script
-
-```bash
-wget https://frappe.io/easy-install.py
+```sh
+bench get-app crm https://github.com/reybillhq/reybill_crm.git
+bench --site your-test-site install-app crm
+cd apps/crm/frontend
+yarn install --frozen-lockfile
+yarn test:run
+yarn build
 ```
 
-**Step 2**: Run the deployment command
+Follow [AGENTS.md](AGENTS.md) and the existing scripting contracts in `.pi/`.
+The scoped Framework UI adapter in `frontend/compat/` supports the locked
+Framework UI and frappe-ui versions without changing the Framework application.
+See its README for provenance, regression tests and removal conditions.
 
-```bash
-python3 ./easy-install.py deploy \
-    --project=crm_prod_setup \
-    --email=email.example.com \
-    --image=ghcr.io/frappe/crm \
-    --version=stable \
-    --app=crm \
-    --sitename subdomain.domain.tld
-```
+## Branding and review
 
-Replace the following parameters with your values:
+Customer-facing defaults are centralized in `crm/branding.json`. Existing
+FCRM Settings brand name, logo and favicon overrides remain supported.
+Official ReyBill artwork is copied unchanged from ReyBill Core; see
+[the audit](docs/branding/AUDIT.md) for inventory, compatibility, asset provenance,
+validation and release requirements.
 
--   `email.example.com`: Your email address
--   `subdomain.domain.tld`: Your domain name where CRM will be hosted
+## License and upstream attribution
 
-The script will set up a production-ready instance of Frappe CRM with all the necessary configurations in about 5 minutes.
+Based on [Frappe CRM](https://github.com/frappe/crm).
+Copyright Frappe Technologies Pvt. Ltd. and contributors. Original notices and
+third-party licenses are retained. This application is licensed under the
+[GNU Affero General Public License v3](LICENSE).
 
-## Getting Started (Development)
-
-### Local Setup
-
-1. [Setup Bench](https://docs.frappe.io/framework/user/en/installation).
-1. In the frappe-bench directory, run `bench start` and keep it running.
-1. Open a new terminal session and cd into `frappe-bench` directory and run following commands:
-    ```sh
-    $ bench get-app crm
-    $ bench new-site sitename.localhost --install-app crm
-    $ bench browse sitename.localhost --user Administrator
-    ```
-1. Access the crm page at `sitename.localhost:8000/crm` in your web browser.
-
-**For Frontend Development**
-1. Open a new terminal session and cd into `frappe-bench/apps/crm`, and run the following commands:
-    ```
-    yarn install
-    yarn dev
-    ```
-1. Now, you can access the site on vite dev server at `http://sitename.localhost:8080`
-
-**Note:** You'll find all the code related to Frappe CRM's frontend inside `frappe-bench/apps/crm/frontend`
-
-### Docker
-
-You need Docker, docker-compose and git setup on your machine. Refer [Docker documentation](https://docs.docker.com/). After that, follow below steps:
-
-**Step 1**: Setup folder and download the required files
-
-    mkdir frappe-crm
-    cd frappe-crm
-
-    # Download the docker-compose file
-    wget -O docker-compose.yml https://raw.githubusercontent.com/frappe/crm/develop/docker/docker-compose.yml
-
-    # Download the setup script
-    wget -O init.sh https://raw.githubusercontent.com/frappe/crm/develop/docker/init.sh
-
-**Step 2**: Run the container and daemonize it
-
-    docker compose up -d
-
-**Step 3**: The site [http://crm.localhost:8000/crm](http://crm.localhost:8000/crm) should now be available. The default credentials are:
-
--   Username: Administrator
--   Password: admin
-
-## Learn and connect
-
--   [Telegram Public Group](https://t.me/frappecrm)
--   [Discuss Forum](https://discuss.frappe.io/c/frappe-crm)
--   [Documentation](https://docs.frappe.io/crm)
--   [YouTube](https://www.youtube.com/@frappetech)
--   [X/Twitter](https://x.com/frappetech)
-
-<br>
-<br>
-<div align="center" style="padding-top: 0.75rem;">
-	<a href="https://frappe.io" target="_blank">
-		<picture>
-			<source media="(prefers-color-scheme: dark)" srcset="https://frappe.io/files/Frappe-white.png">
-			<img src="https://frappe.io/files/Frappe-black.png" alt="Frappe Technologies" height="28"/>
-		</picture>
-	</a>
-</div>
+The About dialog exposes the corresponding source repository. Before offering
+this modified version over a network, publish the exact deployed revision and
+make its corresponding source accessible to those users. Do not ship a source
+link pointing at an unavailable or different revision. Framework, ERPNext and
+third-party libraries retain their original identities and licenses.

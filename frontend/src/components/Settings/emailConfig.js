@@ -35,7 +35,7 @@ export const incomingOutgoingFields = [
     name: 'enable_outgoing',
     type: 'checkbox',
     description: __(
-      'If enabled, outgoing emails can be sent from this account.',
+      'If enabled, outgoing emails can be sent from this account.'
     ),
   },
   {
@@ -43,7 +43,7 @@ export const incomingOutgoingFields = [
     name: 'default_incoming',
     type: 'checkbox',
     description: __(
-      'If enabled, all replies to your company (eg: replies@yourcompany.com) will come to this account. Note: Only one account can be default incoming.',
+      'If enabled, all replies to your company (eg: replies@yourcompany.com) will come to this account. Note: Only one account can be default incoming.'
     ),
   },
   {
@@ -51,7 +51,7 @@ export const incomingOutgoingFields = [
     name: 'default_outgoing',
     type: 'checkbox',
     description: __(
-      'If enabled, all outgoing emails will be sent from this account. Note: Only one account can be default outgoing.',
+      'If enabled, all outgoing emails will be sent from this account. Note: Only one account can be default outgoing.'
     ),
   },
   {
@@ -59,7 +59,7 @@ export const incomingOutgoingFields = [
     name: 'create_lead_from_incoming_email',
     type: 'checkbox',
     description: __(
-      'If enabled, a lead will be automatically created when an incoming email is received from an unknown contact.',
+      'If enabled, a lead will be automatically created when an incoming email is received from an unknown contact.'
     ),
     condition: (state) => state.enable_incoming,
   },
@@ -81,7 +81,7 @@ export const customProviderFields = [
     label: __('Frappe Mail Site'),
     name: 'frappe_mail_site',
     type: 'text',
-    placeholder: 'https://frappemail.com',
+    placeholder: 'https://mail.example.com',
   },
   {
     label: __('API Key'),
@@ -102,9 +102,9 @@ export const services = [
     name: 'Frappe Mail',
     icon: LogoFrappeMail,
     info: __(
-      'Setting up Frappe Mail requires you to have an API key and API secret for your email account. Read more',
+      'Setting up Frappe Mail requires an API key and API secret for your email account.'
     ),
-    link: 'https://github.com/frappe/mail',
+    link: null,
     custom: true,
   },
   {
@@ -112,7 +112,7 @@ export const services = [
     label: 'Gmail',
     icon: LogoGmail,
     info: __(
-      'Setting up GMail requires you to enable two factor authentication and app specific passwords. Read more',
+      'Setting up GMail requires you to enable two factor authentication and app specific passwords. Read more'
     ),
     link: 'https://support.google.com/accounts/answer/185833',
     custom: false,
@@ -121,7 +121,7 @@ export const services = [
     name: 'Outlook',
     icon: LogoOutlook,
     info: __(
-      'Setting up Outlook requires you to enable two factor authentication and app specific passwords. Read more',
+      'Setting up Outlook requires you to enable two factor authentication and app specific passwords. Read more'
     ),
     link: 'https://support.microsoft.com/en-us/account-billing/how-to-get-and-use-app-passwords-5896ed9b-4263-e681-128a-a6f2979a7944',
     custom: false,
@@ -130,7 +130,7 @@ export const services = [
     name: 'Sendgrid',
     icon: LogoSendgrid,
     info: __(
-      'Setting up Sendgrid requires you to enable two factor authentication and app specific passwords. Read more',
+      'Setting up Sendgrid requires you to enable two factor authentication and app specific passwords. Read more'
     ),
     link: 'https://sendgrid.com/docs/ui/account-and-settings/two-factor-authentication/',
     custom: false,
@@ -139,7 +139,7 @@ export const services = [
     name: 'SparkPost',
     icon: LogoSparkpost,
     info: __(
-      'Setting up Sparkpost requires you to enable two factor authentication and app specific passwords. Read more',
+      'Setting up Sparkpost requires you to enable two factor authentication and app specific passwords. Read more'
     ),
     link: 'https://support.sparkpost.com/docs/my-account-and-profile/enabling-two-factor-authentication',
     custom: false,
@@ -148,7 +148,7 @@ export const services = [
     name: 'Yahoo',
     icon: LogoYahoo,
     info: __(
-      'Setting up Yahoo requires you to enable two factor authentication and app specific passwords. Read more',
+      'Setting up Yahoo requires you to enable two factor authentication and app specific passwords. Read more'
     ),
     link: 'https://help.yahoo.com/kb/SLN15241.html',
     custom: false,
@@ -157,7 +157,7 @@ export const services = [
     name: 'Yandex',
     icon: LogoYandex,
     info: __(
-      'Setting up Yandex requires you to enable two factor authentication and app specific passwords. Read more',
+      'Setting up Yandex requires you to enable two factor authentication and app specific passwords. Read more'
     ),
     link: 'https://yandex.com/support/id/authorization/app-passwords.html',
     custom: false,

@@ -19,6 +19,7 @@
 </template>
 
 <script setup lang="ts">
+import { usePageMeta } from '@/composables/pageMeta'
 import LayoutHeader from '@/components/LayoutHeader.vue'
 import LegacyDataImport from '@/components/LegacyDataImport.vue'
 import { importListQuery } from '@/utils/dataImport'
@@ -26,7 +27,7 @@ import { importListQuery } from '@/utils/dataImport'
 // import would fail the build there
 import * as dataImportUi from '@framework/ui/components/DataImport'
 import { getSettings } from '@/stores/settings'
-import { Breadcrumbs, usePageMeta, type BreadcrumbsProps } from 'frappe-ui'
+import { Breadcrumbs, type BreadcrumbsProps } from 'frappe-ui'
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -83,7 +84,7 @@ watch(name, (importName) => {
 })
 watch(
   () => route.params.importName,
-  (importName) => (name.value = (importName as string) || null),
+  (importName) => (name.value = (importName as string) || null)
 )
 
 const breadcrumbs = computed(() => {

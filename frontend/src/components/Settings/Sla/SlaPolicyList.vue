@@ -8,14 +8,6 @@
         <h2 class="flex text-2xl-semibold leading-none h-5">
           {{ __('SLA Policies') }}
         </h2>
-        <Tooltip :text="__('View documentation')">
-          <a
-            href="https://docs.frappe.io/crm/service-level-agreement"
-            target="_blank"
-          >
-            <LucideCircleQuestionMark class="h-4 w-4 text-ink-gray-6" />
-          </a>
-        </Tooltip>
       </div>
     </template>
     <template #header-actions>
@@ -175,9 +167,7 @@ import {
   LoadingIndicator,
   Switch,
   toast,
-  Tooltip,
-} from 'frappe-ui'
-import LucideCircleQuestionMark from '~icons/lucide/circle-question-mark'
+  } from 'frappe-ui'
 import { ConfirmDelete } from '@/utils'
 import { resetSlaData } from './utils'
 import { inject, ref, watch } from 'vue'
@@ -283,7 +273,7 @@ const onToggle = (sla) => {
       onSuccess: () => {
         toast.success(__('SLA policy status updated'))
       },
-    },
+    }
   )
 }
 

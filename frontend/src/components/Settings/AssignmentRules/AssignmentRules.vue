@@ -7,19 +7,11 @@
           <h2 class="flex text-2xl-semibold leading-none h-5">
             {{ __('Assignment Rules') }}
           </h2>
-          <Tooltip :text="__('View documentation')">
-            <a
-              href="https://docs.frappe.io/crm/assignment-rule"
-              target="_blank"
-            >
-              <LucideCircleQuestionMark class="h-4 w-4 text-ink-gray-6" />
-            </a>
-          </Tooltip>
         </div>
         <p class="text-p-base text-ink-gray-6">
           {{
             __(
-              'Auto-assign leads/deals to the right sales user based on predefined conditions.',
+              'Auto-assign leads/deals to the right sales user based on predefined conditions.'
             )
           }}
         </p>
@@ -43,8 +35,7 @@
 
 <script setup>
 import AssignmentRulesList from './AssignmentRulesList.vue'
-import { createResource, Tooltip } from 'frappe-ui'
-import LucideCircleQuestionMark from '~icons/lucide/circle-question-mark'
+import { createResource } from 'frappe-ui'
 import { inject, provide } from 'vue'
 
 const updateStep = inject('updateStep')

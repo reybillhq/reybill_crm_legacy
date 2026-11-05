@@ -44,7 +44,7 @@
       <SetupTelemetryConsent class="mb-3" />
       <footer class="flex items-center gap-2 text-sm text-ink-gray-5">
         <CRMLogo class="size-4" />
-        Frappe CRM
+        ReyBill Sales
       </footer>
     </section>
     <SetupPreview
@@ -56,6 +56,7 @@
 </template>
 
 <script setup>
+import { usePageMeta } from '@/composables/pageMeta'
 import CRMLogo from '@/components/Icons/CRMLogo.vue'
 import SetupPreview from '@/components/Setup/SetupPreview.vue'
 import SetupEmail from '@/components/Setup/SetupEmail.vue'
@@ -65,7 +66,7 @@ import SetupTelemetryConsent from '@/components/Setup/SetupTelemetryConsent.vue'
 import { setupFeedback } from '@/composables/modals'
 import { SETUP_DONE_KEY } from '@/router'
 import { globalStore } from '@/stores/global'
-import { Button, Progress, call, usePageMeta } from 'frappe-ui'
+import { Button, Progress, call } from 'frappe-ui'
 import { useTelemetry } from '@framework/ui/telemetry'
 import { computed, markRaw, provide, reactive, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
@@ -110,7 +111,7 @@ watch(
     stepStartedAt = Date.now()
     capture('setup_step_viewed', { step: step.name })
   },
-  { immediate: true },
+  { immediate: true }
 )
 
 function goBack() {
@@ -153,7 +154,7 @@ function confirmSkipSetup() {
   $dialog({
     title: __('Skip setup?'),
     message: __(
-      "You won't see this guided setup again. You can still connect email, import leads and invite your team from Settings.",
+      "You won't see this guided setup again. You can still connect email, import leads and invite your team from Settings."
     ),
     actions: [
       { label: __('Cancel'), onClick: ({ close }) => close() },
@@ -203,15 +204,13 @@ async function markSetupDone() {
   }
 }
 
-usePageMeta(() => ({ title: __('Set up Frappe CRM') }))
+usePageMeta(() => ({ title: __('Set up ReyBill Sales') }))
 </script>
 
 <style scoped>
 .step-enter-active,
 .step-leave-active {
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease;
+  transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .step-enter-from {

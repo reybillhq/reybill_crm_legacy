@@ -224,6 +224,7 @@
 </template>
 
 <script setup>
+import { usePageMeta } from '@/composables/pageMeta'
 import ErrorPage from '@/components/ErrorPage.vue'
 import Resizer from '@/components/Resizer.vue'
 import SidePanelLayout from '@/components/SidePanelLayout.vue'
@@ -261,7 +262,6 @@ import {
   Dropdown,
   Tabs,
   createListResource,
-  usePageMeta,
   createResource,
   toast,
   call,
@@ -319,7 +319,7 @@ const breadcrumbs = computed(() => {
     let view = getView(
       route.query.view,
       route.query.viewType,
-      'CRM Organization',
+      'CRM Organization'
     )
     if (view) {
       items.push({
@@ -661,6 +661,6 @@ watch(
       organization._actions = s.actions || []
     }
   },
-  { once: true },
+  { once: true }
 )
 </script>
