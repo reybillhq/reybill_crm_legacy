@@ -1862,7 +1862,7 @@ msgid "Copied to Clipboard"
 msgstr "Copié dans le presse-papiers"
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:156
-msgid "Could not create the ReyBill CRM custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
+msgid "Could not create the ReyBill CRM custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable the <b>CRM data synchronization</b> option in its CRM Settings, Otherwise check the Error Log."
 msgstr ""
 
 #: frontend/src/components/Settings/Hierarchy/useRemoveNode.js:16
@@ -6799,7 +6799,7 @@ msgid "Select the assignees for {0}."
 msgstr "Sélectionner les responsables pour {0}."
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:245
-msgid "Select the deal status to trigger the auto customer creation in ReyBill ERP"
+msgid "Select the deal status to trigger automatic customer creation in ReyBill ERP"
 msgstr "Sélectionner le statut d'opportunité qui déclenchera la création automatique du client dans ReyBill ERP"
 
 #: frontend/src/components/Settings/CalendarSettings.vue:38

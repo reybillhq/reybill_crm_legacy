@@ -431,6 +431,7 @@ ignore_links_on_delete = ["Failed Lead Sync Log"]
 on_session_creation = ["crm.api.onboarding.complete_setup_for_fc_site"]
 
 after_migrate = [
+	"crm.branding.sync_display_labels",
 	"crm.app_icon.sync_desktop_icon",
 	"crm.fcrm.doctype.fcrm_settings.fcrm_settings.after_migrate",
 	"crm.api.whatsapp.add_roles",

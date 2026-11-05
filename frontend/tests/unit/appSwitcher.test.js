@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { crmSwitcherApps } from '../../src/utils/appSwitcher'
 
 describe('CRM app-switcher presentation', () => {
-  it('uses app identity to exclude ERPNext and the current app', () => {
+  it('uses app identity to exclude ERPNext while branding the CRM entry', () => {
     const apps = [
       {
         name: 'erpnext',
@@ -15,9 +15,10 @@ describe('CRM app-switcher presentation', () => {
     ]
     const original = JSON.stringify(apps)
     const result = crmSwitcherApps(apps)
-    expect(result.map((app) => app.name)).toEqual(['frappe', 'other'])
+    expect(result.map((app) => app.name)).toEqual(['frappe', 'crm', 'other'])
     expect(result[0]).toMatchObject({ title: 'ReyBill', route: '/desk' })
-    expect(result[1].title).toBe('ERPNext')
+    expect(result[1]).toMatchObject({ title: 'ReyBill CRM', route: '/crm' })
+    expect(result[2].title).toBe('ERPNext')
     expect(JSON.stringify(apps)).toBe(original)
   })
 

@@ -235,6 +235,7 @@
 </template>
 
 <script setup>
+import branding from '@/branding'
 import LockIcon from '~icons/lucide/lock'
 import ChevronDownIcon from '~icons/lucide/chevron-down'
 import CheckIcon from '~icons/lucide/circle-check'
@@ -267,7 +268,7 @@ const TOAST = {
   leads: '21 leads imported',
   team: 'Invite sent to Ria',
 }
-const PROVIDERS = ['Gmail', 'Outlook', 'Frappe Mail', 'Yahoo']
+const PROVIDERS = ['Gmail', 'Outlook', branding.mailProviderLabel, 'Yahoo']
 const INVITE = 'ria.kapoor@acme.com'
 
 const journey = computed(() => props.fx.includes('journey'))

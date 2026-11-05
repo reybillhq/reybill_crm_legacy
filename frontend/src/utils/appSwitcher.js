@@ -12,6 +12,10 @@ export function crmSwitcherApps(apps = [], translate = (value) => value) {
     },
     ...(apps || [])
       .filter((app) => !branding.excludedSwitcherApps.includes(app.name))
-      .map((app) => ({ ...app, title: translate(app.title) })),
+      .map((app) => ({
+        ...app,
+        title: translate(app.name === 'crm' ? branding.appName : app.title),
+        ...(app.name === 'crm' ? { logo: branding.appIcon } : {}),
+      })),
   ]
 }

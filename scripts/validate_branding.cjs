@@ -133,15 +133,15 @@ async function main() {
     await page.getByRole('option', { name: /^Settings/ }).first().click()
     await input.fill(branding.erpName)
     await page.getByRole('option', { name: new RegExp(branding.erpName) }).click()
-    await page.getByText('Connect ReyBill ERP to ReyBill CRM', { exact: true }).waitFor()
+    await page.getByRole('heading', { name: 'ReyBill ERP Settings', exact: true }).waitFor()
     await page.keyboard.press('Escape')
     return { label: branding.erpName, settingsNavigation: true }
   })
-  await check('Settings and disabled ERP integration UI' , async () => {
+  await check('Settings and native ERP integration UI' , async () => {
     await openMenu(page)
     await page.getByRole('menuitem', { name: 'Settings', exact: true }).click()
     await page.locator('[data-page="ReyBill ERP"]').click()
-    await page.getByText('Connect ReyBill ERP to ReyBill CRM', { exact: true }).waitFor()
+    await page.getByRole('heading', { name: 'ReyBill ERP Settings', exact: true }).waitFor()
     const dialog = page.getByRole('dialog').last()
     assert(!/Frappe Cloud|Manage Billing/.test(await dialog.innerText()))
     await cleanLinks(page)
@@ -150,7 +150,7 @@ async function main() {
     await page.getByText('Dark', { exact: true }).click()
     assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark')
     await page.keyboard.press('Escape')
-    return { integrationEnabled: false, remoteActionsExecuted: false, nativeThemeSwitcher: true }
+    return { integrationSettingsPreserved: true, remoteActionsExecuted: false, nativeThemeSwitcher: true }
   })
   await check('About, dark artwork, legal notice and source access', async () => {
     await openMenu(page)

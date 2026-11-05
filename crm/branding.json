@@ -35,8 +35,10 @@
   "issues": "https://github.com/reybillhq/reybill_crm/issues",
   "platformName": "ReyBill",
   "excludedSwitcherApps": [
-    "crm",
     "erpnext",
     "frappe"
-  ]
+  ],
+  "mailProviderLabel": "Mail server",
+  "mailProviderSiteLabel": "Mail server URL",
+  "mailProviderDescription": "Connect your mail server using the API key and API secret for your email account."
 }

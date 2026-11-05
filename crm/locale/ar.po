@@ -1862,7 +1862,7 @@ msgid "Copied to Clipboard"
 msgstr ""
 
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.py:156
-msgid "Could not create the ReyBill CRM custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> in its CRM Settings, Otherwise check the Error Log."
+msgid "Could not create the ReyBill CRM custom fields on {0} automatically. If it is running the latest ReyBill ERP, enable the <b>CRM data synchronization</b> option in its CRM Settings, Otherwise check the Error Log."
 msgstr ""
 
 #: frontend/src/components/Settings/Hierarchy/useRemoveNode.js:16
@@ -6799,7 +6799,7 @@ msgid "Select the assignees for {0}."
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:245
-msgid "Select the deal status to trigger the auto customer creation in ReyBill ERP"
+msgid "Select the deal status to trigger automatic customer creation in ReyBill ERP"
 msgstr "اختر حالة الصفقة لتفعيل إنشاء العميل تلقائيًا في ReyBill ERP"
 
 #: frontend/src/components/Settings/CalendarSettings.vue:38
@@ -8975,3 +8975,15 @@ msgstr "فعّل التكامل لإنشاء عروض الأسعار والمز�
 #: frontend/src/components/Layouts/AppSidebar.vue
 msgid "Select a lead to convert it to a deal."
 msgstr "اختر عميلاً محتملاً لتحويله إلى صفقة."
+
+#: ReyBill CRM branding
+msgid "Mail server"
+msgstr "خادم البريد"
+
+#: ReyBill CRM branding
+msgid "Mail server URL"
+msgstr "رابط خادم البريد"
+
+#: ReyBill CRM branding
+msgid "Connect your mail server using the API key and API secret for your email account."
+msgstr "اربط خادم البريد باستخدام مفتاح API والرمز السري لحساب بريدك الإلكتروني."

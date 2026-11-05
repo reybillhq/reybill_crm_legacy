@@ -55,7 +55,7 @@
       <template v-if="selected.custom">
         <TextInput
           v-model="state.frappe_mail_site"
-          :label="__('Frappe Mail site')"
+          :label="__(branding.mailProviderSiteLabel)"
           placeholder="https://mail.example.com"
         />
         <TextInput v-model="state.api_key" :label="__('API key')" />
@@ -162,6 +162,7 @@
 </template>
 
 <script setup>
+import branding from '@/branding'
 import LucideChevronRight from '~icons/lucide/chevron-right'
 import { services, validateInputs } from '@/components/Settings/emailConfig'
 import { useCrmOnboarding } from '@/composables/onboarding'

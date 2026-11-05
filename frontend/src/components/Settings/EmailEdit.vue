@@ -9,7 +9,10 @@
     <div class="w-fit">
       <EmailProviderIcon
         :logo="emailIcon[accountData.service]"
-        :label="accountData.service"
+        :label="
+          services.find((service) => service.name === accountData.service)
+            ?.label || accountData.service
+        "
       />
     </div>
     <!-- fields -->

@@ -60,7 +60,7 @@
               v-model="erpnextCRMSettingsResource.doc.erpnext_site_url"
               :label="__('Site URL')"
               type="text"
-              placeholder="https://erpnext.example.com"
+              placeholder="https://erp.example.com"
               required
               :description="
                 __(
@@ -297,7 +297,7 @@
                     <div class="text-p-sm text-ink-gray-5">
                       {{
                         __(
-                          'Select the deal status to trigger the auto customer creation in ReyBill ERP'
+                          'Select the deal status to trigger automatic customer creation in ReyBill ERP'
                         )
                       }}
                     </div>

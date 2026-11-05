@@ -156,7 +156,7 @@ class ERPNextCRMSettings(Document):
 			frappe.msgprint(
 				_(
 					"Could not create the ReyBill CRM custom fields on {0} automatically. "
-					"If it is running the latest ReyBill ERP, enable <b>Frappe CRM Data Synchronization</b> "
+					"If it is running the latest ReyBill ERP, enable the <b>CRM data synchronization</b> option "
 					"in its CRM Settings, Otherwise check the Error Log."
 				).format(self.erpnext_site_url),
 				title=_("ReyBill ERP custom fields not created"),
