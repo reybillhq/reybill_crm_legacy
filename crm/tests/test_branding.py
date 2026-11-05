@@ -15,6 +15,9 @@ class TestBranding(unittest.TestCase):
 
 		self.assertEqual(hooks.app_name, "crm")
 		self.assertEqual(hooks.app_title, BRANDING["appName"])
+		self.assertEqual(hooks.app_logo_url, BRANDING["appIcon"])
+		self.assertEqual(hooks.app_icon_url, BRANDING["appIcon"])
+		self.assertEqual(hooks.extend_bootinfo, "crm.app_icon.extend_bootinfo")
 		self.assertEqual(hooks.add_to_apps_screen[0]["route"], "/crm")
 		public = Path(__file__).parents[1] / "public"
 		for key in ("logoLight", "logoDark", "iconLight", "iconDark"):

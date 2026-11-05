@@ -10,6 +10,7 @@ app_publisher = "ReyBill Technologies Ltd."
 app_description = "ReyBill CRM helps teams manage leads, deals and customer relationships."
 app_email = ""  # No unverified ReyBill support mailbox.
 app_license = "AGPLv3"
+app_logo_url = BRANDING["appIcon"]
 app_icon_url = BRANDING["appIcon"]
 app_icon_title = BRANDING["appName"]
 app_icon_route = "/crm"
@@ -492,5 +493,5 @@ standard_dropdown_items = [
 	},
 ]
 
-# CRM-only Desktop presentation; saved layouts keep their native identities.
-boot_session = "crm.app_icon.extend_bootinfo"
+# Applied to fresh and cached sessions; saved layouts keep native identities.
+extend_bootinfo = "crm.app_icon.extend_bootinfo"

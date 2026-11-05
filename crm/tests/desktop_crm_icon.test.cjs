@@ -12,7 +12,7 @@ function fixture() {
   const icons = [crm, erp, workspace];
   const calls = [];
   const desktop = { edit_mode: false, prepare(...args) { calls.push(args); return 'native'; } };
-  const frappe = { boot: { crm_app_icon: { name: 'ReyBill CRM', src: '/assets/crm/images/reybill-crm.svg' } }, desktop_icons: icons, new_desktop_icons: icons, pages: { desktop: { desktop_page: desktop, on_page_load() {} } } };
+  const frappe = { boot: { crm_app_icon: { name: 'ReyBill CRM', src: '/assets/crm/images/reybill-crm.svg', legacy_workspaces: { 'Frappe CRM': 'crm', CRM: 'erpnext' } } }, desktop_icons: icons, new_desktop_icons: icons, pages: { desktop: { desktop_page: desktop, on_page_load() {} } } };
   const context = { frappe };
   vm.runInNewContext(source, context);
   return { frappe, desktop, icons, context, calls };
@@ -54,4 +54,43 @@ test('installs after native page creation and preserves its return value', () =>
   vm.runInNewContext(source, { frappe: { pages: { desktop: page } } });
   assert.equal(page.on_page_load(), 'loaded');
   assert.equal(desktop.prepare.crm_app_icon, true);
+});
+
+test('saved layouts with duplicate App and exact legacy workspace entries render one CRM', () => {
+  const { frappe, desktop, icons } = fixture();
+  icons[0].hidden = 0;
+  const legacy = { name: 'CRM', app: 'erpnext', icon_type: 'Link', link_type: 'Workspace Sidebar', link_to: 'CRM', label: 'CRM' };
+  const custom = { ...legacy, app: 'another_app' };
+  icons.push({ ...icons[0], name: 'Another CRM' }, legacy, custom);
+  const original = JSON.stringify(icons);
+  desktop.prepare();
+  assert.equal(JSON.stringify(icons), original);
+  assert.equal(frappe.desktop_icons.filter(icon => icon.app === 'crm' && icon.icon_type === 'App').length, 1);
+  assert(!frappe.desktop_icons.includes(legacy));
+  assert(frappe.desktop_icons.includes(custom));
+  assert.equal(frappe.desktop_icons[0].name, 'Frappe CRM');
+});
+
+test('legacy workspace remains accessible when CRM App is absent or removed', () => {
+  const { frappe, desktop } = fixture();
+  const legacy = { name: 'CRM', app: 'erpnext', icon_type: 'Link', link_type: 'Workspace Sidebar', link_to: 'CRM' };
+  frappe.desktop_icons.push(legacy);
+  desktop.prepare();
+  assert(frappe.desktop_icons.includes(legacy));
+  frappe.desktop_icons = [legacy];
+  desktop.prepare();
+  assert.deepEqual(frappe.desktop_icons, [legacy]);
+});
+
+test('native string hidden values and edit-mode duplicates preserve the visible record', () => {
+  const { frappe, desktop, icons } = fixture();
+  icons[0].hidden = '1';
+  const visible = { ...icons[0], name: 'Current CRM', hidden: '0' };
+  icons.push(visible);
+  desktop.edit_mode = true;
+  desktop.prepare();
+  assert.equal(frappe.desktop_icons, icons);
+  assert.equal(frappe.new_desktop_icons.filter(icon => icon.app === 'crm' && icon.icon_type === 'App').length, 1);
+  assert.equal(frappe.new_desktop_icons.find(icon => icon.app === 'crm' && icon.icon_type === 'App').name, visible.name);
+  assert.equal(icons[0].hidden, '1');
 });

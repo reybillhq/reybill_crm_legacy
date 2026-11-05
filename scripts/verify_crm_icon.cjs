@@ -5,11 +5,14 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const base = process.env.REYBILL_ICON_BASE_URL || 'http://reybill.localhost:8000';
+const expectedCommit = process.env.REYBILL_ICON_EXPECTED_COMMIT;
+const local = new URL(base).hostname.endsWith('.localhost');
+assert(local || /^[a-f0-9]{40}$/.test(expectedCommit || ''), 'Provide the exact expected commit for a remote test site');
 const output = process.env.REYBILL_ICON_QA_OUTPUT || '/tmp/reybill-crm-icon-qa';
 const source = fs.readFileSync(path.join(__dirname, '../crm/public/images/reybill-crm.svg'));
 const hash = data => crypto.createHash('sha256').update(data).digest('hex');
 const iconPath = '/assets/crm/images/reybill-crm.svg';
-const report = { base, expectedIcon: iconPath, sourceSha256: hash(source), checks: [], pageErrors: [] };
+const report = { base, scope: local ? 'Local development site; not a verified Press deployment' : 'User-designated remote test site', expectedCommit, expectedIcon: iconPath, sourceSha256: hash(source), checks: [], pageErrors: [] };
 fs.mkdirSync(output, { recursive: true });
 async function check(name, run) {
   try { report.checks.push({ name, passed: true, details: await run() }); }
@@ -34,7 +37,24 @@ async function check(name, run) {
     await image.evaluate(image => image.decode());
     assert(await image.evaluate(image => image.complete && image.naturalWidth === 512 && image.naturalHeight === 512));
     assert.equal(await image.evaluate(image => getComputedStyle(image).filter), 'none');
+    const rendered = await page.evaluate(() => frappe.desktop_icons.filter(icon => icon.hidden != 1));
+    assert.equal(rendered.filter(icon => icon.app === 'crm' && icon.icon_type === 'App').length, 1);
+    assert(!rendered.some(icon => icon.icon_type === 'Link' && icon.link_type === 'Workspace Sidebar' && icon.name === 'CRM' && icon.app === 'erpnext'));
+    assert.equal(await page.locator('.desktop-icon[data-id="Frappe CRM"]:visible').count(), 0);
   }
+  await check('Running Python and built frontend match the expected deployed commit', async () => {
+    const response = await page.request.get(base + '/api/method/crm.api.branding.get_runtime_info');
+    assert.equal(response.status(), 200);
+    const runtime = (await response.json()).message;
+    assert.equal(runtime.app, 'crm');
+    assert.equal(runtime.version, '1.92.0');
+    if (expectedCommit) assert.equal(runtime.commit, expectedCommit);
+    const build = await page.request.get(base + '/assets/crm/frontend/legal/source.json');
+    assert.equal(build.status(), 200);
+    const source = await build.json();
+    assert.equal(source.commit, expectedCommit || runtime.commit);
+    return { runtime, builtCommit: source.commit };
+  });
   await check('Official SVG served unchanged', async () => {
     const response = await page.request.get(base + iconPath);
     assert.equal(response.status(), 200);
@@ -48,10 +68,13 @@ async function check(name, run) {
     await verifyTile();
     const apps = await (await page.request.get(base + '/api/method/frappe.apps.get_apps')).json();
     const crm = apps.message.find(app => app.name === 'crm');
+    assert.equal(apps.message.filter(app => app.name === 'crm').length, 1);
     assert.equal(crm.title, 'ReyBill CRM');
     assert.equal(crm.logo, iconPath);
     assert.equal(crm.route, '/crm');
     await tile().screenshot({ path: path.join(output, 'desk-tile.png') });
+    await page.screenshot({ path: path.join(output, 'desk.png') });
+    report.crmRecordName = await page.evaluate(() => frappe.desktop_icons.find(icon => icon.app === 'crm' && icon.icon_type === 'App').name);
     return { title: crm.title, name: crm.name, route: crm.route, icon: crm.logo };
   });
   await check('Browser refresh retains the new icon and label', async () => {
@@ -61,7 +84,7 @@ async function check(name, run) {
       const icon = frappe.desktop_icons.find(icon => icon.app === 'crm' && icon.icon_type === 'App');
       return { name: icon.name, link: icon.link };
     });
-    assert.equal(identity.name, 'Frappe CRM');
+    assert.equal(identity.name, report.crmRecordName);
     assert.equal(identity.link, '/crm');
     return { refreshed: true, internalRecordName: identity.name };
   });
@@ -75,6 +98,8 @@ async function check(name, run) {
       const saved = JSON.parse(JSON.stringify(frappe.boot.desktop_icons));
       const crm = saved.find(icon => icon.app === 'crm' && icon.icon_type === 'App');
       crm.label = 'Frappe CRM'; crm.logo_url = '/assets/crm/images/logo.svg';
+      saved.push({ ...crm, name: 'Duplicate CRM', hidden: 0 });
+      saved.push({ name: 'CRM', label: 'CRM', app: 'erpnext', icon_type: 'Link', link_type: 'Workspace Sidebar', link_to: 'CRM', hidden: 0 });
       desktop.data = saved;
       desktop.update();
       return { sourceLabel: crm.label, sourceLogo: crm.logo_url, storageUnchanged: storageBefore === localStorage.getItem(storageKey), otherAppsUnchanged: otherAppsBefore === JSON.stringify(fields(frappe.desktop_icons)) };
@@ -84,6 +109,20 @@ async function check(name, run) {
     assert.equal(details.sourceLogo, '/assets/crm/images/logo.svg');
     assert(details.storageUnchanged && details.otherAppsUnchanged);
     return details;
+  });
+  await check('Clicking the actual ReyBill CRM tile opens the branded CRM', async () => {
+    await page.reload({ waitUntil: 'networkidle' });
+    await verifyTile();
+    const popup = page.waitForEvent('popup', { timeout: 8000 }).catch(() => null);
+    await tile().click();
+    const target = await popup || page;
+    await target.waitForURL(url => url.pathname.startsWith('/crm'));
+    const image = target.locator(`img[src="${iconPath}"]:visible`).first();
+    await image.waitFor();
+    assert((await target.title()).includes('ReyBill CRM'));
+    await image.screenshot({ path: path.join(output, 'crm-opened-from-desk.png') });
+    if (target !== page) await target.close();
+    return { openedFromNativeTile: true, route: '/crm', branded: true };
   });
   await check('CRM sidebar, favicon and PWA use the official SVG after refresh', async () => {
     await page.goto(base + '/crm', { waitUntil: 'networkidle' });
