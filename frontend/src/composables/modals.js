@@ -4,6 +4,7 @@ export const showQuickEntryModal = ref(false)
 export const quickEntryProps = ref({})
 
 export const showAboutModal = ref(false)
+export const showLegalNotices = ref(false)
 
 export const showChangePasswordModal = ref(false)
 

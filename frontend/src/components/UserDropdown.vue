@@ -54,7 +54,7 @@ import { sessionStore } from '@/stores/session'
 import { usersStore } from '@/stores/users'
 import { getSettings } from '@/stores/settings'
 import { showSettings, isMobileView } from '@/composables/settings'
-import { showAboutModal } from '@/composables/modals'
+import { showAboutModal, showLegalNotices } from '@/composables/modals'
 import { spriteIcon } from '@/utils/spriteIcon'
 import { createResource, Dropdown } from 'frappe-ui'
 import { computed, h, markRaw } from 'vue'
@@ -76,9 +76,7 @@ const apps = createResource({
 })
 
 const dropdownItems = computed(() => {
-  if (!settings.value?.dropdown_items) return []
-
-  let items = settings.value.dropdown_items
+  let items = settings.value?.dropdown_items || []
 
   let _dropdownItems = [
     {
@@ -103,6 +101,19 @@ const dropdownItems = computed(() => {
     }
   })
 
+  // A permanent, unrestricted entry keeps the source offer available on mobile
+  // and when an administrator customizes the standard menu items.
+  _dropdownItems.push({
+    group: '',
+    hideLabel: true,
+    options: [
+      {
+        label: __('Legal Notices'),
+        icon: spriteIcon('scale'),
+        onClick: () => (showLegalNotices.value = true),
+      },
+    ],
+  })
   return _dropdownItems
 })
 

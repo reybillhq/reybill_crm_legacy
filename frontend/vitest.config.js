@@ -29,6 +29,13 @@ export default defineConfig({
   },
   resolve: {
     alias: [
+      {
+        find: 'virtual:reybill-legal-source',
+        replacement: path.resolve(
+          import.meta.dirname,
+          'tests/stubs/legalSource.js'
+        ),
+      },
       { find: '@', replacement: path.resolve(import.meta.dirname, 'src') },
       {
         find: /^~icons\/.*/,
@@ -38,7 +45,7 @@ export default defineConfig({
         find: /^@framework\/ui\/(.*)$/,
         replacement: path.resolve(
           import.meta.dirname,
-          'tests/stubs/framework/$1',
+          'tests/stubs/framework/$1'
         ),
       },
     ],

@@ -16,6 +16,7 @@
     v-model="showChangePasswordModal"
   />
   <AboutModal v-model="showAboutModal" />
+  <LegalNoticesModal v-if="showLegalNotices" v-model="showLegalNotices" />
   <NoteViewModal v-if="showNoteView" />
   <MentionHoverCard />
   <FieldLayoutDialogContainer />
@@ -28,6 +29,7 @@ import FieldLayoutDialogContainer from '@/components/Modals/FieldLayoutDialogCon
 import ChangePasswordModal from '@/components/Modals/ChangePasswordModal.vue'
 import CreateDocumentModal from '@/components/Modals/CreateDocumentModal.vue'
 import QuickEntryModal from '@/components/Modals/QuickEntryModal.vue'
+import LegalNoticesModal from '@/components/Modals/LegalNoticesModal.vue'
 import AboutModal from '@/components/Modals/AboutModal.vue'
 import NoteViewModal from '@/components/Modals/NoteViewModal.vue'
 import MentionHoverCard from '@/components/MentionHoverCard.vue'
@@ -43,6 +45,7 @@ import {
   showQuickEntryModal,
   quickEntryProps,
   showAboutModal,
+  showLegalNotices,
   showChangePasswordModal,
 } from '@/composables/modals'
 

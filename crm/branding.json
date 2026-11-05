@@ -6,7 +6,7 @@
   "website": "https://reybill.com",
   "repository": "https://github.com/reybillhq/reybill_crm",
   "sourceUrl": "https://github.com/reybillhq/reybill_crm/tree/feat/reybill-sales-branding",
-  "documentation": null,
+  "documentation": "https://docs.reybill.com",
   "logoLight": "/assets/crm/images/branding/reybill-logo-black.svg",
   "logoDark": "/assets/crm/images/branding/reybill-logo-white.svg",
   "iconLight": "/assets/crm/images/branding/reybill-icon-black.png",
@@ -31,7 +31,7 @@
   },
   "appName": "ReyBill CRM",
   "appIcon": "/assets/crm/images/reybill-crm.svg",
-  "support": "https://reybill.com",
+  "support": "https://console.reybill.com/console/support",
   "issues": "https://github.com/reybillhq/reybill_crm/issues",
   "platformName": "ReyBill",
   "excludedSwitcherApps": [
@@ -40,5 +40,6 @@
   ],
   "mailProviderLabel": "Mail server",
   "mailProviderSiteLabel": "Mail server URL",
-  "mailProviderDescription": "Connect your mail server using the API key and API secret for your email account."
+  "mailProviderDescription": "Connect your mail server using the API key and API secret for your email account.",
+  "socialLinks": []
 }

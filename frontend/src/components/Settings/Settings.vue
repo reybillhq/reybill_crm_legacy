@@ -68,6 +68,8 @@ import SettingsIcon2 from '@/components/Icons/SettingsIcon2.vue'
 import Users from '@/components/Settings/Users.vue'
 import Hierarchy from '@/components/Settings/Hierarchy/Hierarchy.vue'
 import InviteUserPage from '@/components/Settings/InviteUserPage.vue'
+import LegalNotices from '@/components/Settings/LegalNotices.vue'
+import LucideScale from '~icons/lucide/scale'
 import ProfilePage from '@/components/Settings/Profile/ProfilePage.vue'
 import PreferencesSettings from '@/components/Settings/PreferencesSettings.vue'
 import WhatsAppSettings from '@/components/Settings/WhatsAppSettings.vue'
@@ -122,6 +124,11 @@ const tabs = computed(() => {
           label: __('Preferences'),
           icon: SlidersIcon,
           component: markRaw(PreferencesSettings),
+        },
+        {
+          label: __('Legal Notices'),
+          icon: LucideScale,
+          component: markRaw(LegalNotices),
         },
       ],
     },

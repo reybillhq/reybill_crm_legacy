@@ -4,7 +4,7 @@ const fs = require('node:fs')
 const path = require('node:path')
 const assert = require('node:assert/strict')
 
-const base = process.env.REYBILL_BASE_URL || 'http://reybill.localhost:8012'
+const base = process.env.REYBILL_BASE_URL || 'http://reybill.localhost:8000'
 const output = process.env.REYBILL_QA_OUTPUT || '/tmp/reybill-qa'
 const sessionFile = process.env.REYBILL_SESSION_FILE
 const branding = require('../crm/branding.json')
@@ -113,7 +113,7 @@ async function main() {
     await page.keyboard.press('Escape')
     return { platform: 'ReyBill', erpEntryAbsent: true }
   })
-  await check('About light artwork and attribution' , async () => {
+  await check('Minimal About light artwork and product identity' , async () => {
     await openMenu(page)
     await page.getByRole('menuitem', { name: 'About', exact: true }).click()
     const dialog = page.getByRole('dialog').last()
@@ -124,7 +124,7 @@ async function main() {
     await dialog.screenshot({ path: path.join(output, 'about-light.png') })
     await cleanLinks(page)
     await page.keyboard.press('Escape')
-    return { artwork: branding.appIcon, upstreamNotice: true }
+    return { artwork: branding.appIcon, upstreamNoticeInAbout: false }
   })
   await check('Command palette uses the current ERP settings label and opens its page', async () => {
     await page.getByRole('button', { name: 'Search', exact: true }).click()
@@ -152,14 +152,13 @@ async function main() {
     await page.keyboard.press('Escape')
     return { integrationSettingsPreserved: true, remoteActionsExecuted: false, nativeThemeSwitcher: true }
   })
-  await check('About, dark artwork, legal notice and source access', async () => {
+  await check('About dark artwork and separate legal source access', async () => {
     await openMenu(page)
     await page.getByRole('menuitem', { name: 'About', exact: true }).click()
     const dialog = page.getByRole('dialog').last()
     await dialog.waitFor()
-    assert.equal(await dialog.getByRole('link', { name: 'Source Code', exact: true }).getAttribute('href'), branding.sourceUrl)
-    await dialog.locator('summary').click()
-    assert((await dialog.innerText()).includes('Frappe Technologies'))
+    assert.equal(await dialog.getByRole('link').count(), 3)
+    assert(!/Frappe|Licenses|GitHub|Source Code/.test(await dialog.innerText()))
     assert((await dialog.innerText()).includes('ReyBill Technologies Ltd.'))
     assert.equal(await dialog.locator('[data-crm-version]').innerText(), 'Version ' + await page.evaluate(() => window.crm_version))
     const logo = dialog.locator('img:visible')
@@ -168,7 +167,14 @@ async function main() {
     await dialog.screenshot({ path: path.join(output, 'about-dark.png') })
     await cleanLinks(page)
     await page.keyboard.press('Escape')
-    return { theme: 'dark', source: branding.sourceUrl, artwork: branding.appIcon }
+    await openMenu(page)
+    await page.getByRole('menuitem', { name: 'Legal Notices', exact: true }).click()
+    const legal = page.getByRole('dialog').last()
+    assert((await legal.innerText()).includes('Frappe Technologies'))
+    const source = await legal.getByRole('link', { name: 'View Corresponding Source', exact: true }).getAttribute('href')
+    assert(source.startsWith(branding.repository + '/tree/'))
+    await page.keyboard.press('Escape')
+    return { theme: 'dark', source, artwork: branding.appIcon }
   })
   await check('PWA manifest, unchanged official icon and service worker', async () => {
     const response = await page.request.get(base + '/assets/crm/frontend/manifest.webmanifest')

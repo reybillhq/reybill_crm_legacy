@@ -5,6 +5,7 @@ import path from 'path'
 import { VitePWA } from 'vite-plugin-pwa'
 import frappeui from 'frappe-ui/vite'
 import { readFileSync } from 'node:fs'
+import { legalNoticesPlugin } from './legal-notices-plugin.js'
 import { frameworkUiCompatibility } from './compat/framework-ui-plugin.js'
 
 const branding = JSON.parse(
@@ -17,6 +18,7 @@ const frameworkUiRoot = path.resolve(import.meta.dirname, '../../frappe/ui/src')
 export default defineConfig(() => {
   const config = {
     plugins: [
+      legalNoticesPlugin(import.meta.dirname),
       frameworkUiCompatibility(
         frameworkUiRoot,
         path.resolve(import.meta.dirname, 'compat/framework-frappe-ui.js')
@@ -135,7 +137,9 @@ export default defineConfig(() => {
       // its esbuild helper breaks Vite 8's dependency scan
       codeLanguages: false,
       buildConfig: {
-        indexHtmlPath: '../crm/www/crm.html',
+        outDir: process.env.CRM_BUILD_DIR || '../crm/public/frontend',
+        indexHtmlPath: process.env.CRM_BUILD_HTML || '../crm/www/crm.html',
+        baseUrl: '/assets/crm/frontend/',
         emptyOutDir: true,
         sourcemap: true,
       },
